@@ -134,7 +134,7 @@
     <div class="hero">
       <div class="stat"><div class="k">Foundation</div><div class="v ok">FR-01 complete</div></div>
       <div class="stat"><div class="k">Runtime</div><div class="v warn">Paused · writes OFF</div></div>
-      <div class="stat"><div class="k">Focus now</div><div class="v now">Gate 08.05–06 next</div></div>
+      <div class="stat"><div class="k">Focus now</div><div class="v now">Gate 08.15 signing key</div></div>
       <div class="stat"><div class="k">Products</div><div class="v later">Ellisbrook parked</div></div>
     </div>
 
@@ -142,7 +142,7 @@
       <h2>One sentence</h2>
       <p class="sub" style="margin:0;color:#e2e8f0;font-size:1rem;">
         The Factory’s technical foundation is proven and safely paused.
-        Gate08 is the authorized next climb (signing / live qualify path) — started offline, not finished live.
+        Gate08 live path advanced through 08.14; blocked only on Daniel’s private signing key (08.15) before final acceptance.
         Client product work waits until the Factory proves it can deliver.
       </p>
     </section>
@@ -173,13 +173,12 @@
       <h2>Running costs (visible to Daniel)</h2>
       <p class="sub">Live spend log. Full ledger on Bot computer: <code>projects/bigfit/COSTS.md</code>.</p>
       <div class="callout">
-        <b>Gates 08–10 planning:</b> one-time ~$300–730 total; ongoing ~$63–78/mo if host + small Postgres kept. 08.04-only approved ceiling still ≤ ~$40.
-        Standing host <code>factory-runtime-01</code> is already Active (~$48/mo, ~$0.07/hr) — no new droplet for 08.04.
-        Planning total Gates 08–10 incremental: about <b>$300–730</b> one-time, plus <b>~$63–78/mo</b> ongoing. Actuals append to the ledger as work runs. No spend beyond 08.04 without a new OK.
+        <b>Gate 08 remaining ceiling approved:</b> <b>$600</b> one-time (08.05–16). Standing host <code>factory-runtime-01</code> ~$48/mo.
+        Actual incremental 08.05–14: <b>$0.00</b> (in-host Postgres; DO Managed DB API 403). Ceiling remaining: <b>$600</b>.
       </div>
       <ul class="clean">
-        <li><strong>Actual so far (this log)</strong> — $0.00 before prove execution.</li>
-        <li><strong>08.04 actual</strong> — <b>$0.00</b> infra on existing host; 08.05–06 DB still avoided until new OK.</li>
+        <li><strong>Actual so far</strong> — <b>$0.00</b> infra through 08.14 PASS.</li>
+        <li><strong>08.15</strong> — WAITING on Daniel private signing key (not a cloud spend item).</li>
       </ul>
     </section>
 
@@ -283,25 +282,24 @@
       <h2>Gate 08 — publish/install V2 signing path (active)</h2>
       <p class="sub">Current climb. Offline work accepted; live prove next. Each row is a budgetable phase.</p>
       <div class="callout">
-        <b>Budget — Gate 08 (to working PASS):</b> one-time <b>$200–400</b>
-        (host already paid; ~$15–40 short DB/qual fixtures; ~$50–150 LLM/ops; buffer).
-        Recurring if kept: <b>$48/mo</b> host + <b>~$15–30/mo</b> small Managed Postgres.
-        Narrower 08.04-only ceiling already approved: <b>≤ ~$40</b>.
-        Actual incremental so far: <b>$0.00</b>.
-        Status: <b>08.04 PASS</b> · next <b>08.05–06</b> (DB spend needs new OK).
+        <b>Budget — Gate 08 remaining:</b> approved ceiling <b>$600</b> one-time. Recurring: <b>$48/mo</b> host (Managed PG not created — DO API 403; in-host Postgres $0).
+        Actual incremental: <b>$0.00</b>. Status: <b>08.04–14 PASS</b> · <b>08.15 WAITING_ON_DANIEL</b> · <b>08.16 WAITING</b>.
       </div>
       <table>
         <thead><tr><th>Phase</th><th>Main tasks</th><th>Status</th></tr></thead>
         <tbody>
           <tr><td>08.01–03</td><td>Adapter repairs, offline QA, orchestration</td><td class="ok">Accepted offline</td></tr>
-          <tr><td>08.04–06</td><td>Qual environment on <code>factory-runtime-01</code>; live PostgreSQL; independent DB accept</td><td><span class="ok">08.04 PASS</span> · <span class="now">08.05–06 waiting</span></td></tr>
-          <tr><td>08.07–10</td><td>Service admission, identities/cost, live integrate, host qual</td><td class="later">Pending</td></tr>
-          <tr><td>08.11–13</td><td>Release authority, immutable V2 image, image QA</td><td class="later">Pending</td></tr>
-          <tr><td>08.14–16</td><td>Paused rotation, signing custody, Gate08 acceptance</td><td class="later">Pending · Daniel holds private signing key</td></tr>
+          <tr><td>08.04–06</td><td>Qual env; live PostgreSQL (in-host 17.11 TLS); independent DB accept</td><td class="ok">PASS</td></tr>
+          <tr><td>08.07–10</td><td>Service contracts, identities/cost, live smoke, host qual</td><td class="ok">PASS</td></tr>
+          <tr><td>08.11–13</td><td>Source reconcile, immutable image inventory, image QA</td><td class="ok">PASS</td></tr>
+          <tr><td>08.14</td><td>PAUSED candidate rotation (no-swap; rollback retained)</td><td class="ok">PASS</td></tr>
+          <tr><td>08.15</td><td>V2 signing install/custody (private key off-host)</td><td class="now">WAITING_ON_DANIEL</td></tr>
+          <tr><td>08.16</td><td>Gate08 acceptance</td><td class="now">WAITING (needs 08.15)</td></tr>
         </tbody>
       </table>
       <div class="callout" style="margin-top:12px;">
-        <b>08.04 PASS:</b> SSH + in-host operator verify on <code>factory-runtime-01</code>; live <code>PAUSED</code> / writes OFF; cleanup owner BIGFIT Manager / Grok; standing-host headroom. Evidence <code>evidence/08.04_PASS.md</code>. 08.05–06 wait on separate DB OK.
+        <b>Live path:</b> DO Managed DB API still 403 → in-host Postgres fixture used. Runtime stays <code>PAUSED</code> / writes OFF.
+        Evidence under <code>evidence/08.XX_*.md</code>. Next: Daniel signing-key ceremony for 08.15.
       </div>
     </section>
 
@@ -396,7 +394,7 @@
 
     <p class="foot">
       Source: factory-bridge main (PR #29) · Qual droplet destroyed 17 Sep 2026 · Host factory-runtime-01 Active (Toronto) ·
-      Gate 08.04 PASS 18 Sep 2026 EDT · Personal roadmap for Daniel — accomplishments vs still ahead.
+      Gate 08.04–14 PASS · 08.15 WAITING_ON_DANIEL · 08.16 WAITING · 18 Sep 2026 EDT · Personal roadmap for Daniel.
     </p>
   </div>
 </body>
