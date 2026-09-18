@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>AI Factory Roadmap — Daniel</title>
+  <style>
+    :root {
+      --bg: #070b14;
+      --panel: #101826;
+      --panel2: #0c1320;
+      --line: #243247;
+      --text: #eef3fb;
+      --muted: #94a3b8;
+      --blue: #60a5fa;
+      --green: #34d399;
+      --orange: #fb923c;
+      --amber: #fbbf24;
+      --slate: #64748b;
+      --red: #f87171;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+      color: var(--text);
+      background:
+        radial-gradient(1000px 520px at 0% -10%, #1e3a8a55 0%, transparent 50%),
+        radial-gradient(800px 420px at 100% 0%, #7c2d1233 0%, transparent 45%),
+        var(--bg);
+      padding: 28px 16px 72px;
+      line-height: 1.45;
+    }
+    .wrap { max-width: 1120px; margin: 0 auto; }
+    .eyebrow {
+      color: var(--orange); font-size: 0.72rem; font-weight: 800;
+      letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 8px;
+    }
+    h1 { margin: 0 0 10px; font-size: clamp(1.7rem, 3.4vw, 2.35rem); letter-spacing: -0.02em; }
+    .lede { color: var(--muted); max-width: 760px; margin: 0 0 14px; font-size: 1.02rem; }
+    .meta { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 22px; }
+    .chip {
+      border: 1px solid var(--line); background: #0b1220;
+      border-radius: 999px; padding: 6px 12px; font-size: 0.8rem; color: var(--muted);
+    }
+    .chip b { color: var(--text); font-weight: 650; }
+    .hero {
+      display: grid; gap: 10px;
+      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+      margin-bottom: 18px;
+    }
+    .stat {
+      background: linear-gradient(180deg, #142033, var(--panel));
+      border: 1px solid var(--line); border-radius: 16px; padding: 14px 14px 16px;
+    }
+    .stat .k { color: var(--muted); font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.06em; }
+    .stat .v { font-size: 1.05rem; font-weight: 750; margin-top: 6px; }
+    .ok { color: var(--green); }
+    .now { color: var(--orange); }
+    .later { color: var(--slate); }
+    .warn { color: var(--amber); }
+    section {
+      background: var(--panel); border: 1px solid var(--line);
+      border-radius: 18px; padding: 18px 18px 14px; margin-bottom: 14px;
+    }
+    section h2 {
+      margin: 0 0 4px; font-size: 1.05rem; display: flex; align-items: center; gap: 8px;
+    }
+    section .sub { color: var(--muted); font-size: 0.88rem; margin: 0 0 14px; }
+    .stages { display: grid; gap: 8px; }
+    .stage {
+      display: grid; grid-template-columns: 52px 1fr auto; gap: 12px; align-items: start;
+      padding: 12px; border-radius: 14px; background: var(--panel2); border: 1px solid #1c2a40;
+    }
+    .stage.current { border-color: #ea580c88; background: #1a120c; box-shadow: inset 0 0 0 1px #ea580c22; }
+    .badge {
+      width: 52px; height: 36px; border-radius: 10px; display: grid; place-items: center;
+      font-weight: 800; font-size: 0.85rem; margin-top: 2px;
+    }
+    .badge.done { background: #14532d55; color: var(--green); }
+    .badge.current { background: #7c2d1255; color: var(--orange); }
+    .badge.todo { background: #1e293b; color: var(--muted); }
+    .label { font-weight: 700; margin-bottom: 2px; }
+    .hint { color: var(--muted); font-size: 0.86rem; }
+    .detail { color: #cbd5e1; font-size: 0.84rem; margin-top: 6px; }
+    .tag {
+      font-size: 0.7rem; font-weight: 800; padding: 4px 8px; border-radius: 999px; white-space: nowrap;
+    }
+    .tag.done { background: #14532d44; color: var(--green); }
+    .tag.current { background: #7c2d1244; color: var(--orange); }
+    .tag.todo { background: #33415555; color: var(--muted); }
+    .two {
+      display: grid; gap: 14px;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    }
+    ul.clean { margin: 0; padding-left: 18px; color: var(--muted); }
+    ul.clean li { margin: 7px 0; }
+    ul.clean strong { color: var(--text); }
+    table { width: 100%; border-collapse: collapse; }
+    th, td { text-align: left; padding: 10px 8px; border-bottom: 1px solid #1e2a3f; vertical-align: top; font-size: 0.9rem; }
+    th { color: var(--muted); font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.05em; }
+    .callout {
+      border-left: 3px solid var(--orange); background: #1a120c;
+      padding: 12px 14px; border-radius: 0 12px 12px 0; margin: 8px 0 4px;
+      color: #fed7aa; font-size: 0.92rem;
+    }
+    .foot { color: var(--muted); font-size: 0.8rem; margin-top: 16px; }
+    code { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; font-size: 0.86em; color: #93c5fd; }
+    .pillrow { display: flex; flex-wrap: wrap; gap: 8px; margin: 8px 0 4px; }
+    .pill {
+      border: 1px solid var(--line); border-radius: 12px; padding: 10px 12px;
+      background: var(--panel2); min-width: 140px; flex: 1;
+    }
+    .pill .t { font-size: 0.72rem; color: var(--muted); text-transform: uppercase; letter-spacing: 0.04em; }
+    .pill .b { font-weight: 700; margin-top: 4px; }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="eyebrow">BIGFIT · AI Factory · personal roadmap (not the software)</div>
+    <h1>Where we stand — the whole picture</h1>
+    <p class="lede">
+      A thinking board for Daniel: what the Factory already earned, what Gate08 still owes,
+      and what comes after. This is a roadmap, not the AI software itself.
+      Truth follows GitHub <code>factory-bridge</code> main after PR #29.
+    </p>
+    <div class="meta">
+      <span class="chip">Updated <b>18 Sep 2026</b> · America/Toronto</span>
+      <span class="chip">Director <b>BIGFIT Manager</b></span>
+      <span class="chip">Product authority <b>Daniel</b></span>
+      <span class="chip">Truth <b>GitHub main</b></span>
+    </div>
+
+    <div class="hero">
+      <div class="stat"><div class="k">Foundation</div><div class="v ok">FR-01 complete</div></div>
+      <div class="stat"><div class="k">Runtime</div><div class="v warn">Paused · writes OFF</div></div>
+      <div class="stat"><div class="k">Focus now</div><div class="v now">Gate08 incomplete</div></div>
+      <div class="stat"><div class="k">Products</div><div class="v later">Ellisbrook parked</div></div>
+    </div>
+
+    <section>
+      <h2>One sentence</h2>
+      <p class="sub" style="margin:0;color:#e2e8f0;font-size:1rem;">
+        The Factory’s technical foundation is proven and safely paused.
+        Gate08 is the authorized next climb (signing / live qualify path) — started offline, not finished live.
+        Client product work waits until the Factory proves it can deliver.
+      </p>
+    </section>
+
+    <section>
+      <h2>The 8-stage journey</h2>
+      <p class="sub">Read top to bottom. Green = earned. Orange = where we are. Gray = still ahead.</p>
+      <div class="stages">
+        <div class="stage">
+          <div class="badge done">1</div>
+          <div>
+            <div class="label">Define the Factory</div>
+            <div class="hint">What it is, who decides, how work is allowed</div>
+            <div class="detail">Vision locked: software that builds, runs, and improves other software under Daniel’s product authority.</div>
+          </div>
+          <span class="tag done">DONE</span>
+        </div>
+        <div class="stage">
+          <div class="badge done">2</div>
+          <div>
+            <div class="label">Build the operating system</div>
+            <div class="hint">Roles, routing, queues, budgets, safe stop, QA rules</div>
+            <div class="detail">Manager / Builder / QA model. Release path <code>dev → rc → main</code>. GitHub is the control-plane truth.</div>
+          </div>
+          <span class="tag done">DONE</span>
+        </div>
+        <div class="stage">
+          <div class="badge done">3</div>
+          <div>
+            <div class="label">Technical foundation (FR-01)</div>
+            <div class="hint">Persistent runtime proved end-to-end, then paused</div>
+            <div class="detail">FB-00.1 complete. Runtime mode PAUSED. Production writes disabled on purpose. Standing host <code>factory-runtime-01</code> (Toronto) kept alive as the workshop.</div>
+          </div>
+          <span class="tag done">DONE</span>
+        </div>
+        <div class="stage current">
+          <div class="badge current">4</div>
+          <div>
+            <div class="label">First supervised self-build</div>
+            <div class="hint">Gate08 → Gate09 canary → Gate10 first useful self-build</div>
+            <div class="detail"><b>You are here.</b> Gate08 is authorized on main and incomplete. Offline adapter/QA/orchestration (08.01–08.03) accepted. Live qualify + DB + service + V2 image + signing acceptance still open.</div>
+          </div>
+          <span class="tag current">NOW</span>
+        </div>
+        <div class="stage">
+          <div class="badge todo">5</div>
+          <div>
+            <div class="label">Supervised dependability</div>
+            <div class="hint">Repeat jobs; measure cost, repair, recovery</div>
+            <div class="detail">Prove the Factory can run the same kinds of jobs again without drama before trusting it with a market product.</div>
+          </div>
+          <span class="tag todo">LATER</span>
+        </div>
+        <div class="stage">
+          <div class="badge todo">6</div>
+          <div>
+            <div class="label">Ellisbrook GC Bidding Portal</div>
+            <div class="hint">First market product after Factory proves delivery</div>
+            <div class="detail">Named on paper as project 001. App code not attached. FB-00.2 not started on main. Parked until Stage 4–5 earn trust.</div>
+          </div>
+          <span class="tag todo">LATER</span>
+        </div>
+        <div class="stage">
+          <div class="badge todo">7</div>
+          <div>
+            <div class="label">Multi-product / tenants</div>
+            <div class="hint">Isolation, membership, portfolio operations</div>
+            <div class="detail">More than one product under the same Factory without mixing scopes or risks.</div>
+          </div>
+          <span class="tag todo">LATER</span>
+        </div>
+        <div class="stage">
+          <div class="badge todo">8</div>
+          <div>
+            <div class="label">Bounded autonomy</div>
+            <div class="hint">Earned autonomy — Daniel still owns consequential authority</div>
+            <div class="detail">Spend, signing keys, admin login, production go-live, and scope changes stay with Daniel even when day-to-day is automated.</div>
+          </div>
+          <span class="tag todo">LATER</span>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>Accomplishments so far (earned)</h2>
+      <p class="sub">These are real. They are why Stage 4 is allowed to start.</p>
+      <ul class="clean">
+        <li><strong>Factory defined</strong> — product vision, authority split, and “GitHub is truth” rule.</li>
+        <li><strong>Control plane on GitHub</strong> — checkpoints, decisions, Manager/Builder/QA roles, release path.</li>
+        <li><strong>FR-01 verified</strong> — persistent Factory runtime proved, then safely paused with production writes off.</li>
+        <li><strong>Standing workshop kept</strong> — <code>factory-runtime-01</code> Active in Toronto (untouched during cleanup).</li>
+        <li><strong>Waste stopped</strong> — short-lived Gate08 qual droplet destroyed 17 Sep 2026.</li>
+        <li><strong>Truth reconciled</strong> — PR #29 merged: Gate08 named as authorized focus and marked incomplete (ended the ChatGPT-vs-GitHub split story).</li>
+        <li><strong>Gate08.01–08.03</strong> — offline adapter / QA / orchestration accepted (per handoff).</li>
+        <li><strong>Director seat</strong> — BIGFIT Manager operates day-to-day; Personal COS may ping status only.</li>
+        <li><strong>Lane split</strong> — Grok primary on Gate08/build/operate; GPT only for roadmap thinking or named bounded tasks.</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Gate08 — what “incomplete” means</h2>
+      <p class="sub">This is the current climb. Offline work is behind us; live prove is next.</p>
+      <div class="callout">
+        Next thin prove: plan live <b>08.04</b> compatibility against <code>factory-runtime-01</code> (spend only with Daniel’s OK), then 08.05–08.06 with real database evidence. Defer V2 signing install until those pass. Daniel keeps the private signing key.
+      </div>
+      <table>
+        <thead><tr><th>Block</th><th>Meaning</th><th>Status</th></tr></thead>
+        <tbody>
+          <tr><td>08.01–03</td><td>Adapter repairs, offline QA, orchestration</td><td class="ok">Accepted offline</td></tr>
+          <tr><td>08.04–06</td><td>Qual environment, live PostgreSQL, independent DB accept</td><td class="now">Next live work</td></tr>
+          <tr><td>08.07–10</td><td>Service admission, identities/cost, live integrate, host qual</td><td class="later">Pending</td></tr>
+          <tr><td>08.11–13</td><td>Release authority, immutable V2 image, image QA</td><td class="later">Pending</td></tr>
+          <tr><td>08.14–16</td><td>Paused rotation, signing custody, Gate08 acceptance</td><td class="later">Pending · Daniel holds private key</td></tr>
+          <tr><td>Gate09</td><td>Paused canary — supervised live check</td><td class="later">After Gate08</td></tr>
+          <tr><td>Gate10</td><td>Activation + first useful self-build</td><td class="later">After Gate09</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <div class="two">
+      <section>
+        <h2>Still ahead (bigger picture)</h2>
+        <p class="sub">After Gate08 earns trust.</p>
+        <ul class="clean">
+          <li><strong>Gate09 / Gate10</strong> — canary, then first useful supervised self-build.</li>
+          <li><strong>Dependability loop</strong> — cost, repair, recovery measured on repeat jobs.</li>
+          <li><strong>Ellisbrook</strong> — attach product code and start FB-00.2 only after Factory delivery is proven.</li>
+          <li><strong>Multi-product</strong> — tenants and portfolio ops without mixed risk.</li>
+          <li><strong>Bounded autonomy</strong> — automation widens; Daniel’s protected approvals stay.</li>
+          <li><strong>Control-room UI</strong> — design north star only until Bridge feeds real records.</li>
+        </ul>
+      </section>
+      <section>
+        <h2>Parked on purpose</h2>
+        <p class="sub">Not forgotten — just not required for the next prove.</p>
+        <ul class="clean">
+          <li><strong>Slack ordinary auto-continue</strong> — only a consumed A→B demo; not needed to start 08.04.</li>
+          <li><strong>Ellisbrook app attach / FB-00.2</strong> — product track waits.</li>
+          <li><strong>Control-room mock meters</strong> — pretty design ≠ live authorization.</li>
+          <li><strong>Off-main Director branches</strong> — do not count as “Gate08 done on main.”</li>
+          <li><strong>ChatGPT Library register alone</strong> — useful history, not live Bridge authority.</li>
+        </ul>
+      </section>
+    </div>
+
+    <section>
+      <h2>Who does what</h2>
+      <p class="sub">Clear seats so the Factory does not get dual-driven.</p>
+      <div class="pillrow">
+        <div class="pill"><div class="t">Daniel</div><div class="b">Vision, priorities, spend, keys, admin login, production go/no-go, scope</div></div>
+        <div class="pill"><div class="t">BIGFIT Manager</div><div class="b">Director — operate Factory, keep GitHub honest, thin Gate08 slices</div></div>
+        <div class="pill"><div class="t">Builder / QA</div><div class="b">Bounded build + independent evidence packs</div></div>
+        <div class="pill"><div class="t">Personal COS</div><div class="b">Status pings / notifications only — does not drive Factory</div></div>
+      </div>
+    </section>
+
+    <section>
+      <h2>Rules that protect the picture</h2>
+      <ul class="clean">
+        <li><strong>GitHub <code>main</code> wins</strong> when any other board disagrees.</li>
+        <li><strong>No unsupervised GPT overlap</strong> on Bridge state, branches, or the same live work.</li>
+        <li><strong>Protected actions wait for Daniel</strong> — money, signing keys, production activation, scope changes.</li>
+        <li><strong>Thin slices</strong> — prove 08.04–06 before installing V2 signing.</li>
+        <li><strong>This page is a thinking map</strong> — update it when Bridge state changes; it is not the product software.</li>
+      </ul>
+    </section>
+
+    <p class="foot">
+      Source: factory-bridge main (PR #29) · Qual droplet destroyed 17 Sep 2026 · Host factory-runtime-01 Active (Toronto) ·
+      Personal roadmap for Daniel — accomplishments vs still ahead.
+    </p>
+  </div>
+</body>
+</html>
