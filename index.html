@@ -134,7 +134,7 @@
     <div class="hero">
       <div class="stat"><div class="k">Foundation</div><div class="v ok">FR-01 complete</div></div>
       <div class="stat"><div class="k">Runtime</div><div class="v warn">Paused · writes OFF</div></div>
-      <div class="stat"><div class="k">Focus now</div><div class="v now">Gate 08.04 in progress</div></div>
+      <div class="stat"><div class="k">Focus now</div><div class="v now">Gate 08.05–06 next</div></div>
       <div class="stat"><div class="k">Products</div><div class="v later">Ellisbrook parked</div></div>
     </div>
 
@@ -179,7 +179,7 @@
       </div>
       <ul class="clean">
         <li><strong>Actual so far (this log)</strong> — $0.00 before prove execution.</li>
-        <li><strong>Open estimate</strong> — ~$0–10 incremental for a short 08.04 prove on existing host (avoid new DB).</li>
+        <li><strong>08.04 actual</strong> — <b>$0.00</b> infra on existing host; 08.05–06 DB still avoided until new OK.</li>
       </ul>
     </section>
 
@@ -288,20 +288,20 @@
         Recurring if kept: <b>$48/mo</b> host + <b>~$15–30/mo</b> small Managed Postgres.
         Narrower 08.04-only ceiling already approved: <b>≤ ~$40</b>.
         Actual incremental so far: <b>$0.00</b>.
-        Status: <b>IN PROGRESS · 08.04 unblocked (SSH works)</b>.
+        Status: <b>08.04 PASS</b> · next <b>08.05–06</b> (DB spend needs new OK).
       </div>
       <table>
         <thead><tr><th>Phase</th><th>Main tasks</th><th>Status</th></tr></thead>
         <tbody>
           <tr><td>08.01–03</td><td>Adapter repairs, offline QA, orchestration</td><td class="ok">Accepted offline</td></tr>
-          <tr><td>08.04–06</td><td>Qual environment on <code>factory-runtime-01</code>; live PostgreSQL; independent DB accept</td><td class="now">08.04 IN PROGRESS · 08.05–06 waiting</td></tr>
+          <tr><td>08.04–06</td><td>Qual environment on <code>factory-runtime-01</code>; live PostgreSQL; independent DB accept</td><td><span class="ok">08.04 PASS</span> · <span class="now">08.05–06 waiting</span></td></tr>
           <tr><td>08.07–10</td><td>Service admission, identities/cost, live integrate, host qual</td><td class="later">Pending</td></tr>
           <tr><td>08.11–13</td><td>Release authority, immutable V2 image, image QA</td><td class="later">Pending</td></tr>
           <tr><td>08.14–16</td><td>Paused rotation, signing custody, Gate08 acceptance</td><td class="later">Pending · Daniel holds private signing key</td></tr>
         </tbody>
       </table>
       <div class="callout" style="margin-top:12px;">
-        <b>08.04 access:</b> SSH to <code>factory-runtime-01</code> works (key <code>bigfit-factory-new</code>). Live in-host compatibility prove can continue. 08.05–06 still wait on 08.04 finish.
+        <b>08.04 PASS:</b> SSH + in-host operator verify on <code>factory-runtime-01</code>; live <code>PAUSED</code> / writes OFF; cleanup owner BIGFIT Manager / Grok; standing-host headroom. Evidence <code>evidence/08.04_PASS.md</code>. 08.05–06 wait on separate DB OK.
       </div>
     </section>
 
@@ -396,7 +396,7 @@
 
     <p class="foot">
       Source: factory-bridge main (PR #29) · Qual droplet destroyed 17 Sep 2026 · Host factory-runtime-01 Active (Toronto) ·
-      Personal roadmap for Daniel — accomplishments vs still ahead.
+      Gate 08.04 PASS 18 Sep 2026 EDT · Personal roadmap for Daniel — accomplishments vs still ahead.
     </p>
   </div>
 </body>
