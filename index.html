@@ -134,7 +134,7 @@
     <div class="hero">
       <div class="stat"><div class="k">Foundation</div><div class="v ok">FR-01 complete</div></div>
       <div class="stat"><div class="k">Runtime</div><div class="v warn">Paused · writes OFF</div></div>
-      <div class="stat"><div class="k">Focus now</div><div class="v now">Gate 08.04 in progress</div></div>
+      <div class="stat"><div class="k">Focus now</div><div class="v now">Gate 08.04 BLOCKED (SSH)</div></div>
       <div class="stat"><div class="k">Products</div><div class="v later">Ellisbrook parked</div></div>
     </div>
 
@@ -168,6 +168,21 @@
         <li><strong>Daniel owns consequential authority</strong> — spend, keys, production go-live, scope.</li>
       </ul>
     </section>
+
+    <section>
+      <h2>Running costs (visible to Daniel)</h2>
+      <p class="sub">Live spend log. Full ledger on Bot computer: <code>projects/bigfit/COSTS.md</code>.</p>
+      <div class="callout">
+        <b>Gate 08.04 estimate (approved)</b> ceiling ≤ ~$40 USD.
+        Standing host <code>factory-runtime-01</code> is already Active (~$48/mo, ~$0.07/hr) — no new droplet for 08.04.
+        Actuals append to the ledger as the prove runs. No spend beyond 08.04 without a new OK.
+      </div>
+      <ul class="clean">
+        <li><strong>Actual so far (this log)</strong> — $0.00 before prove execution.</li>
+        <li><strong>Open estimate</strong> — ~$0–10 incremental for a short 08.04 prove on existing host (avoid new DB).</li>
+      </ul>
+    </section>
+
 
     <section>
       <h2>The 8-stage journey</h2>
@@ -204,8 +219,8 @@
           <div class="badge current">4</div>
           <div>
             <div class="label">First supervised self-build</div>
-            <div class="hint">Gate08 → Gate09 canary → Gate10 first useful self-build</div>
-            <div class="detail"><b>You are here.</b> Gate08 is authorized on main and incomplete. Offline adapter/QA/orchestration (08.01–08.03) accepted. Live qualify + DB + service + V2 image + signing acceptance still open.</div>
+            <div class="hint">Stage 4 splits into three gates below: Gate08, Gate09, Gate10</div>
+            <div class="detail"><b>You are here.</b> Gate08 is the active climb (authorized, incomplete). Gate09 and Gate10 follow — each has its own section and budget line below.</div>
           </div>
           <span class="tag current">NOW</span>
         </div>
@@ -265,22 +280,57 @@
     </section>
 
     <section>
-      <h2>Gate08 — what “incomplete” means</h2>
-      <p class="sub">This is the current climb. Offline work is behind us; live prove is next.</p>
+      <h2>Gate 08 — publish/install V2 signing path (active)</h2>
+      <p class="sub">Current climb. Offline work accepted; live prove next. Each row is a budgetable phase.</p>
       <div class="callout">
-        <b>Active now: Gate 08.04</b> — qual environment compatibility against standing host <code>factory-runtime-01</code> (Toronto). Then 08.05–08.06 live PostgreSQL + independent DB accept. Defer V2 signing install until those pass. Daniel keeps the private signing key. Spend only with Daniel’s OK.
+        <b>Budget — Gate 08:</b> Estimated ceiling ≤ ~$40 for the active 08.04 prove (standing host preferred).
+        Actual spend so far: <b>$0.00</b> incremental.
+        Status: <b>IN PROGRESS · 08.04 BLOCKED</b> (SSH).
       </div>
       <table>
-        <thead><tr><th>Block</th><th>Meaning</th><th>Status</th></tr></thead>
+        <thead><tr><th>Phase</th><th>Main tasks</th><th>Status</th></tr></thead>
         <tbody>
           <tr><td>08.01–03</td><td>Adapter repairs, offline QA, orchestration</td><td class="ok">Accepted offline</td></tr>
-          <tr><td>08.04</td><td>Qual environment compatibility on <code>factory-runtime-01</code></td><td class="now">IN PROGRESS</td></tr>
-          <tr><td>08.05–06</td><td>Live PostgreSQL + independent DB accept</td><td class="later">Next after 08.04</td></tr>
+          <tr><td>08.04–06</td><td>Qual environment on <code>factory-runtime-01</code>; live PostgreSQL; independent DB accept</td><td class="now">08.04 BLOCKED · 08.05–06 waiting</td></tr>
           <tr><td>08.07–10</td><td>Service admission, identities/cost, live integrate, host qual</td><td class="later">Pending</td></tr>
           <tr><td>08.11–13</td><td>Release authority, immutable V2 image, image QA</td><td class="later">Pending</td></tr>
-          <tr><td>08.14–16</td><td>Paused rotation, signing custody, Gate08 acceptance</td><td class="later">Pending · Daniel holds private key</td></tr>
-          <tr><td>Gate09</td><td>Paused canary — supervised live check</td><td class="later">After Gate08</td></tr>
-          <tr><td>Gate10</td><td>Activation + first useful self-build</td><td class="later">After Gate09</td></tr>
+          <tr><td>08.14–16</td><td>Paused rotation, signing custody, Gate08 acceptance</td><td class="later">Pending · Daniel holds private signing key</td></tr>
+        </tbody>
+      </table>
+      <div class="callout" style="border-left-color:#f87171;color:#fecaca;margin-top:12px;">
+        <b>08.04 blocker:</b> Host <code>factory-runtime-01</code> is Active (Toronto), but this computer has no authorized SSH private key — live prove cannot run.
+        Unblock options: (1) place the Factory Runtime SSH private key on this Bot computer, or (2) use the DigitalOcean Recovery Console on that droplet.
+      </div>
+    </section>
+
+    <section>
+      <h2>Gate 09 — paused canary</h2>
+      <p class="sub">After Gate 08. One deterministic paused canary on the accepted path.</p>
+      <div class="callout">
+        <b>Budget — Gate 09:</b> Estimated ceiling — TBD (not started). Actual spend: <b>$0.00</b>. Status: <b>WAITING (after Gate 08)</b>.
+      </div>
+      <table>
+        <thead><tr><th>Phase</th><th>Main tasks</th><th>Status</th></tr></thead>
+        <tbody>
+          <tr><td>09.01</td><td>Admit exact canary package / challenge</td><td class="later">After Gate 08</td></tr>
+          <tr><td>09.02</td><td>Run one supervised paused canary (no production writes)</td><td class="later">After Gate 08</td></tr>
+          <tr><td>09.03</td><td>Independent QA reconcile actual result + host evidence</td><td class="later">After Gate 08</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section>
+      <h2>Gate 10 — activation + first useful self-build</h2>
+      <p class="sub">After Gate 09. Turn on the accepted path and deliver one useful supervised self-build.</p>
+      <div class="callout">
+        <b>Budget — Gate 10:</b> Estimated ceiling — TBD (not started). Actual spend: <b>$0.00</b>. Status: <b>WAITING (after Gate 09)</b>.
+      </div>
+      <table>
+        <thead><tr><th>Phase</th><th>Main tasks</th><th>Status</th></tr></thead>
+        <tbody>
+          <tr><td>10.01</td><td>Activation of accepted Gate08/09 path</td><td class="later">After Gate 09</td></tr>
+          <tr><td>10.02</td><td>First useful supervised self-build</td><td class="later">After Gate 09</td></tr>
+          <tr><td>10.03</td><td>Evidence pack + acceptance for Stage 4 close</td><td class="later">After Gate 09</td></tr>
         </tbody>
       </table>
     </section>
@@ -288,9 +338,8 @@
     <div class="two">
       <section>
         <h2>Still ahead (bigger picture)</h2>
-        <p class="sub">After Gate08 earns trust.</p>
+        <p class="sub">After Stage 4 (Gates 08–10) earns trust.</p>
         <ul class="clean">
-          <li><strong>Gate09 / Gate10</strong> — canary, then first useful supervised self-build.</li>
           <li><strong>Dependability loop</strong> — cost, repair, recovery measured on repeat jobs.</li>
           <li><strong>Ellisbrook</strong> — attach product code and start FB-00.2 only after Factory delivery is proven.</li>
           <li><strong>Multi-product</strong> — tenants and portfolio ops without mixed risk.</li>
