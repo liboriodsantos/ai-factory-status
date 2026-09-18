@@ -134,7 +134,7 @@
     <div class="hero">
       <div class="stat"><div class="k">Foundation</div><div class="v ok">FR-01 complete</div></div>
       <div class="stat"><div class="k">Runtime</div><div class="v warn">Paused · writes OFF</div></div>
-      <div class="stat"><div class="k">Focus now</div><div class="v now">Gate 08.04 BLOCKED (SSH)</div></div>
+      <div class="stat"><div class="k">Focus now</div><div class="v now">Gate 08.04 in progress</div></div>
       <div class="stat"><div class="k">Products</div><div class="v later">Ellisbrook parked</div></div>
     </div>
 
@@ -173,9 +173,9 @@
       <h2>Running costs (visible to Daniel)</h2>
       <p class="sub">Live spend log. Full ledger on Bot computer: <code>projects/bigfit/COSTS.md</code>.</p>
       <div class="callout">
-        <b>Gate 08.04 estimate (approved)</b> ceiling ≤ ~$40 USD.
+        <b>Gates 08–10 planning:</b> one-time ~$300–730 total; ongoing ~$63–78/mo if host + small Postgres kept. 08.04-only approved ceiling still ≤ ~$40.
         Standing host <code>factory-runtime-01</code> is already Active (~$48/mo, ~$0.07/hr) — no new droplet for 08.04.
-        Actuals append to the ledger as the prove runs. No spend beyond 08.04 without a new OK.
+        Planning total Gates 08–10 incremental: about <b>$300–730</b> one-time, plus <b>~$63–78/mo</b> ongoing. Actuals append to the ledger as work runs. No spend beyond 08.04 without a new OK.
       </div>
       <ul class="clean">
         <li><strong>Actual so far (this log)</strong> — $0.00 before prove execution.</li>
@@ -283,23 +283,25 @@
       <h2>Gate 08 — publish/install V2 signing path (active)</h2>
       <p class="sub">Current climb. Offline work accepted; live prove next. Each row is a budgetable phase.</p>
       <div class="callout">
-        <b>Budget — Gate 08:</b> Estimated ceiling ≤ ~$40 for the active 08.04 prove (standing host preferred).
-        Actual spend so far: <b>$0.00</b> incremental.
-        Status: <b>IN PROGRESS · 08.04 BLOCKED</b> (SSH).
+        <b>Budget — Gate 08 (to working PASS):</b> one-time <b>$200–400</b>
+        (host already paid; ~$15–40 short DB/qual fixtures; ~$50–150 LLM/ops; buffer).
+        Recurring if kept: <b>$48/mo</b> host + <b>~$15–30/mo</b> small Managed Postgres.
+        Narrower 08.04-only ceiling already approved: <b>≤ ~$40</b>.
+        Actual incremental so far: <b>$0.00</b>.
+        Status: <b>IN PROGRESS · 08.04 unblocked (SSH works)</b>.
       </div>
       <table>
         <thead><tr><th>Phase</th><th>Main tasks</th><th>Status</th></tr></thead>
         <tbody>
           <tr><td>08.01–03</td><td>Adapter repairs, offline QA, orchestration</td><td class="ok">Accepted offline</td></tr>
-          <tr><td>08.04–06</td><td>Qual environment on <code>factory-runtime-01</code>; live PostgreSQL; independent DB accept</td><td class="now">08.04 BLOCKED · 08.05–06 waiting</td></tr>
+          <tr><td>08.04–06</td><td>Qual environment on <code>factory-runtime-01</code>; live PostgreSQL; independent DB accept</td><td class="now">08.04 IN PROGRESS · 08.05–06 waiting</td></tr>
           <tr><td>08.07–10</td><td>Service admission, identities/cost, live integrate, host qual</td><td class="later">Pending</td></tr>
           <tr><td>08.11–13</td><td>Release authority, immutable V2 image, image QA</td><td class="later">Pending</td></tr>
           <tr><td>08.14–16</td><td>Paused rotation, signing custody, Gate08 acceptance</td><td class="later">Pending · Daniel holds private signing key</td></tr>
         </tbody>
       </table>
-      <div class="callout" style="border-left-color:#f87171;color:#fecaca;margin-top:12px;">
-        <b>08.04 blocker:</b> Host <code>factory-runtime-01</code> is Active (Toronto), but this computer has no authorized SSH private key — live prove cannot run.
-        Unblock options: (1) place the Factory Runtime SSH private key on this Bot computer, or (2) use the DigitalOcean Recovery Console on that droplet.
+      <div class="callout" style="margin-top:12px;">
+        <b>08.04 access:</b> SSH to <code>factory-runtime-01</code> works (key <code>bigfit-factory-new</code>). Live in-host compatibility prove can continue. 08.05–06 still wait on 08.04 finish.
       </div>
     </section>
 
@@ -307,7 +309,8 @@
       <h2>Gate 09 — paused canary</h2>
       <p class="sub">After Gate 08. One deterministic paused canary on the accepted path.</p>
       <div class="callout">
-        <b>Budget — Gate 09:</b> Estimated ceiling — TBD (not started). Actual spend: <b>$0.00</b>. Status: <b>WAITING (after Gate 08)</b>.
+        <b>Budget — Gate 09:</b> one-time <b>$25–80</b>. Recurring: <b>$0</b> extra beyond Gate 08 standing stack.
+        Actual spend: <b>$0.00</b>. Status: <b>WAITING (after Gate 08)</b>.
       </div>
       <table>
         <thead><tr><th>Phase</th><th>Main tasks</th><th>Status</th></tr></thead>
@@ -323,7 +326,8 @@
       <h2>Gate 10 — activation + first useful self-build</h2>
       <p class="sub">After Gate 09. Turn on the accepted path and deliver one useful supervised self-build.</p>
       <div class="callout">
-        <b>Budget — Gate 10:</b> Estimated ceiling — TBD (not started). Actual spend: <b>$0.00</b>. Status: <b>WAITING (after Gate 09)</b>.
+        <b>Budget — Gate 10:</b> one-time <b>$75–250</b>. Recurring: <b>$0</b> extra if no new services.
+        Actual spend: <b>$0.00</b>. Status: <b>WAITING (after Gate 09)</b>.
       </div>
       <table>
         <thead><tr><th>Phase</th><th>Main tasks</th><th>Status</th></tr></thead>
