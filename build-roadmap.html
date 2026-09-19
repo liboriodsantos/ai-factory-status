@@ -45,6 +45,14 @@ td.status{width:120px}
 .order{margin-top:12px;background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:14px 16px}
 .order h2{margin:0 0 8px;font-size:1rem}.order ol{margin:0;padding-left:20px;color:var(--muted)}.order li{margin:5px 0}.order strong{color:var(--text)}
 .foot{color:var(--muted);font-size:.74rem;margin-top:14px}
+
+.pbar{height:4px;border-radius:999px;background:#1e293b;margin:0 0 6px;overflow:hidden}
+.pbar>i{display:block;height:100%;border-radius:999px}
+.pbar.done>i{width:100%;background:#34d399}
+.pbar.wip>i{width:55%;background:#fbbf24}
+.pbar.todo>i{width:12%;background:#64748b}
+.pbar.defer>i{width:8%;background:#475569}
+
 </style></head><body><div class="wrap">
 
 <div class="eyebrow">BIGFIT · Factory OS · build sequence by menu</div>
@@ -58,6 +66,7 @@ td.status{width:120px}
 <div class="leg"><div class="t plater">Later</div><div class="why">Cost, Customers, Commercial, full gates.</div></div>
 <div class="leg"><div class="t st">Status</div><div class="why">In PR #36 · Partial · Not started · Deferred.</div></div>
 <div class="leg"><div class="t nx">Next</div><div class="why">Short “what moves this forward / who.”</div></div>
+<div class="leg"><div class="t st">Bars</div><div class="why">Green done · amber in progress · grey not started.</div></div>
 <div class="leg"><div class="t dp">Deps</div><div class="why">Chips show requires / unlocks / couples / blocks.</div></div>
 </div>
 <div class="costbox">
@@ -71,22 +80,24 @@ td.status{width:120px}
 <li><strong>Do not fake:</strong> Putting dollar fields on every menu before Cost Phase would invent precision. Mark cost cells <b>UNAVAILABLE</b> until Cost menu + metering exist.</li>
 </ul>
 <p><strong>Practical next step for cost:</strong> keep a single Factory-level spend readout on Home (evidence-backed). Per-menu cost columns wait for Costs &amp; Vendors Phase (Later) plus run/token metering from Work / AI &amp; Models.</p>
+
+<p><strong>Implementation path when we do Cost:</strong> (1) extend Bridge health with optional <code>spend</code> evidence object; (2) add Cost ledger records in Factory DB; (3) attribute via <code>commandId</code>/<code>runId</code>/<code>productId</code> — not by menu label alone; (4) menus show rollups only. Cursor subscription usage and DigitalOcean invoices stay outside Factory OS unless we import them as Vendor cost lines.</p>
 </div>
 <section class="family"><h2>CONTROL</h2><div class="scroll"><table class="menu">
 <thead><tr><th>Menu</th><th>Status</th><th class="p0">Phase 0</th><th class="p1">Phase 1</th><th class="p2">Phase 2</th><th class="pl">Later</th></tr></thead><tbody>
 <tr>
 <td class="menu-name"><div class="n">Home</div><div class="src">Post-R3 §7 · Audit Home</div></td>
 <td class="status"><span class="badge st-partial">Partial</span><span class="st-note">P0 in PR #36; later phases open</span></td>
-<td class="col"><div class="item"><div class="n">Factory health / mode strip</div><span class="hint">PR #36 · PAUSED · writes false</span><div class="next"><span class="k">Next</span> Keep strip evidence-backed; wire Bridge health when adapter freezes</div><div class="deps-line"><span class="dep">→ Decision Inbox</span><span class="dep">→ Work</span></div></div><div class="item"><div class="n">Needs Daniel / Decision attention</div><span class="hint">links Decision Inbox</span><div class="next"><span class="k">Next</span> Point counts at typed Decision Inbox once Phase 1 lands</div><div class="deps-line"><span class="dep">← Decision Inbox</span></div></div><div class="item"><div class="n">Live work snapshot</div><div class="next"><span class="k">Next</span> Replace sample jobs with Bridge job summaries after adapter freeze</div><div class="deps-line"><span class="dep">← Work / LIVE FACTORY</span></div></div></td>
-<td class="col"><div class="item"><div class="n">KPI Actual/Target/Variance/Trend/Source/Freshness</div><span class="hint">Post-R3 §7</span><div class="next"><span class="k">Next</span> Define KPI source map in Bridge adapter contract</div><div class="deps-line"><span class="dep">← Bridge adapter</span></div></div><div class="item"><div class="n">KPI drill to exact records</div><div class="next"><span class="k">Next</span> Reuse universal drawer after Decision/Command patterns exist</div><div class="deps-line"><span class="dep">← Universal drawer</span></div></div><div class="item"><div class="n">Period controls Today/7d/MTD/QTD/YTD</div><div class="next"><span class="k">Next</span> Add after KPI sources exist</div><div class="deps-line"><span class="dep">← KPI strip</span></div></div></td>
-<td class="col"><div class="item"><div class="n">Exceptions: overdue, capacity, cost anomalies, risks</div><div class="next"><span class="k">Next</span> Needs Work ledger + Cost signals</div><div class="deps-line"><span class="dep">← Work ledger</span><span class="dep">← Costs &amp; Vendors</span></div></div><div class="item"><div class="n">What changed / deteriorating</div><div class="next"><span class="k">Next</span> Diff against prior evidence packs</div><div class="deps-line"><span class="dep">← KPI strip</span></div></div><div class="item"><div class="n">Upcoming releases / renewals / go-lives</div><div class="next"><span class="k">Next</span> After Releases + Customers calendars exist</div><div class="deps-line"><span class="dep">← Releases</span><span class="dep">← Contracts &amp; Renewals</span></div></div><div class="item"><div class="n">Quick actions: Capture Idea / Create Product / Project / Customer / Incident / Command</div><div class="next"><span class="k">Next</span> Wire after object create paths exist in Discover/Build</div><div class="deps-line"><span class="dep">← Ideas &amp; Concepts</span><span class="dep">← Products &amp; Projects</span></div></div></td>
-<td class="col"><div class="item"><div class="n">Customer impact &amp; financial signal</div><span class="hint">needs Customers/Commercial</span><div class="next"><span class="k">Next</span> Blocked until Customers + Revenue menus</div><div class="deps-line"><span class="dep">← Customers</span><span class="dep">← Revenue &amp; Billing</span></div></div></td>
+<td class="col"><div class="item"><div class="pbar wip" title="wip"><i></i></div><div class="n">Factory health / mode strip</div><span class="hint">PR #36 · PAUSED · writes false</span><div class="next"><span class="k">Next</span> Keep strip evidence-backed; wire Bridge health when adapter freezes</div><div class="deps-line"><span class="dep">→ Decision Inbox</span><span class="dep">→ Work</span></div></div><div class="item"><div class="pbar done" title="done"><i></i></div><div class="n">Needs Daniel / Decision attention</div><span class="hint">links Decision Inbox</span><div class="next"><span class="k">Next</span> Point counts at typed Decision Inbox once Phase 1 lands</div><div class="deps-line"><span class="dep">← Decision Inbox</span></div></div><div class="item"><div class="pbar done" title="done"><i></i></div><div class="n">Live work snapshot</div><div class="next"><span class="k">Next</span> Replace sample jobs with Bridge job summaries after adapter freeze</div><div class="deps-line"><span class="dep">← Work / LIVE FACTORY</span></div></div></td>
+<td class="col"><div class="item"><div class="pbar todo" title="todo"><i></i></div><div class="n">KPI Actual/Target/Variance/Trend/Source/Freshness</div><span class="hint">Post-R3 §7</span><div class="next"><span class="k">Next</span> Define KPI source map in Bridge adapter contract</div><div class="deps-line"><span class="dep">← Bridge adapter</span></div></div><div class="item"><div class="pbar todo" title="todo"><i></i></div><div class="n">KPI drill to exact records</div><div class="next"><span class="k">Next</span> Reuse universal drawer after Decision/Command patterns exist</div><div class="deps-line"><span class="dep">← Universal drawer</span></div></div><div class="item"><div class="pbar todo" title="todo"><i></i></div><div class="n">Period controls Today/7d/MTD/QTD/YTD</div><div class="next"><span class="k">Next</span> Add after KPI sources exist</div><div class="deps-line"><span class="dep">← KPI strip</span></div></div></td>
+<td class="col"><div class="item"><div class="pbar todo" title="todo"><i></i></div><div class="n">Exceptions: overdue, capacity, cost anomalies, risks</div><div class="next"><span class="k">Next</span> Needs Work ledger + Cost signals</div><div class="deps-line"><span class="dep">← Work ledger</span><span class="dep">← Costs &amp; Vendors</span></div></div><div class="item"><div class="pbar todo" title="todo"><i></i></div><div class="n">What changed / deteriorating</div><div class="next"><span class="k">Next</span> Diff against prior evidence packs</div><div class="deps-line"><span class="dep">← KPI strip</span></div></div><div class="item"><div class="pbar todo" title="todo"><i></i></div><div class="n">Upcoming releases / renewals / go-lives</div><div class="next"><span class="k">Next</span> After Releases + Customers calendars exist</div><div class="deps-line"><span class="dep">← Releases</span><span class="dep">← Contracts &amp; Renewals</span></div></div><div class="item"><div class="pbar todo" title="todo"><i></i></div><div class="n">Quick actions: Capture Idea / Create Product / Project / Customer / Incident / Command</div><div class="next"><span class="k">Next</span> Wire after object create paths exist in Discover/Build</div><div class="deps-line"><span class="dep">← Ideas &amp; Concepts</span><span class="dep">← Products &amp; Projects</span></div></div></td>
+<td class="col"><div class="item"><div class="pbar defer" title="defer"><i></i></div><div class="n">Customer impact &amp; financial signal</div><span class="hint">needs Customers/Commercial</span><div class="next"><span class="k">Next</span> Blocked until Customers + Revenue menus</div><div class="deps-line"><span class="dep">← Customers</span><span class="dep">← Revenue &amp; Billing</span></div></div></td>
 </tr>
 <tr>
 <td class="menu-name"><div class="n">Decision Inbox</div><div class="src">Gate12 plan / PR #36</div></td>
 <td class="status"><span class="badge st-partial">Partial</span><span class="st-note">P0 in PR #36; later phases open</span></td>
-<td class="col"><div class="item"><div class="n">Director items + local approve → receipt</div><div class="next"><span class="k">Next</span> Keep local-only until typed Bridge challenges</div><div class="deps-line"><span class="dep">→ Evidence / receipt bind</span></div></div><div class="item"><div class="n">Universal drawer Why/Progress/Blockers/Evidence/Actions/Next</div><div class="next"><span class="k">Next</span> Reuse for Command/Receipt next; don&#x27;t generalize further yet</div><div class="deps-line"><span class="dep">→ Universal drawer</span></div></div></td>
-<td class="col"><div class="item"><div class="n">Typed Decision classes</div><span class="hint">required freeze</span><div class="next"><span class="k">Next</span> Daniel approve type list; lock enums before UI polish</div><div class="deps-line"><span class="dep">blocks Bridge-shaped challenge</span></div></div><div class="item"><div class="n">Bridge-shaped challenge packet</div><div class="next"><span class="k">Next</span> Map Gate08/09 challenge JSON into adapter</div><div class="deps-line"><span class="dep">← Typed Decision classes</span><span class="dep">← Bridge adapter</span></div></div><div class="item"><div class="n">Evidence / receipt bind</div><div class="next"><span class="k">Next</span> Join challenge id → receipt id → evidence ref</div><div class="deps-line"><span class="dep">← Bridge-shaped challenge</span></div></div></td>
+<td class="col"><div class="item"><div class="pbar done" title="done"><i></i></div><div class="n">Director items + local approve → receipt</div><div class="next"><span class="k">Next</span> Keep local-only until typed Bridge challenges</div><div class="deps-line"><span class="dep">→ Evidence / receipt bind</span></div></div><div class="item"><div class="pbar done" title="done"><i></i></div><div class="n">Universal drawer Why/Progress/Blockers/Evidence/Actions/Next</div><div class="next"><span class="k">Next</span> Reuse for Command/Receipt next; don&#x27;t generalize further yet</div><div class="deps-line"><span class="dep">→ Universal drawer</span></div></div></td>
+<td class="col"><div class="item"><div class="pbar todo" title="todo"><i></i></div><div class="n">Typed Decision classes</div><span class="hint">required freeze</span><div class="next"><span class="k">Next</span> Daniel approve type list; lock enums before UI polish</div><div class="deps-line"><span class="dep">blocks Bridge-shaped challenge</span></div></div><div class="item"><div class="pbar todo" title="todo"><i></i></div><div class="n">Bridge-shaped challenge packet</div><div class="next"><span class="k">Next</span> Map Gate08/09 challenge JSON into adapter</div><div class="deps-line"><span class="dep">← Typed Decision classes</span><span class="dep">← Bridge adapter</span></div></div><div class="item"><div class="pbar todo" title="todo"><i></i></div><div class="n">Evidence / receipt bind</div><div class="next"><span class="k">Next</span> Join challenge id → receipt id → evidence ref</div><div class="deps-line"><span class="dep">← Bridge-shaped challenge</span></div></div></td>
 <td class="col"><span class="empty">—</span></td>
 <td class="col"><span class="empty">—</span></td>
 </tr>
@@ -95,15 +106,15 @@ td.status{width:120px}
 <td class="status"><span class="badge st-open">Not started</span><span class="st-note">Queued for Phase 2</span></td>
 <td class="col"><span class="empty">—</span></td>
 <td class="col"><span class="empty">—</span></td>
-<td class="col"><div class="item"><div class="n">Attention classification INVEST/MAINTAIN/FIX/PAUSE/RETIRE + rationale</div><div class="next"><span class="k">Next</span> Needs product health inputs from Build/Operate</div><div class="deps-line"><span class="dep">← Products &amp; Projects</span><span class="dep">← Operations</span></div></div><div class="item"><div class="n">Strategic importance, customers, adoption, growth</div><div class="next"><span class="k">Next</span> After Products list exists</div><div class="deps-line"><span class="dep">← Products &amp; Projects</span></div></div><div class="item"><div class="n">Incident exposure / tech debt / delivery risk / capacity / deps</div><div class="next"><span class="k">Next</span> Pull from Bugs &amp; Delivery</div><div class="deps-line"><span class="dep">← Bugs &amp; Incidents</span><span class="dep">← Delivery</span></div></div><div class="item"><div class="n">Lifecycle + forecast</div><div class="next"><span class="k">Next</span> After Roadmaps/Releases</div><div class="deps-line"><span class="dep">← Roadmaps</span><span class="dep">← Releases</span></div></div><div class="item"><div class="n">Must not duplicate Products &amp; Projects (ownership rule)</div><div class="next"><span class="k">Next</span> Write ownership rule before coding second route</div><div class="deps-line"><span class="dep">↔ Products &amp; Projects</span></div></div></td>
-<td class="col"><div class="item"><div class="n">Health / revenue / cost / margin / budget variance</div><div class="next"><span class="k">Next</span> Blocked on Cost + Commercial data</div><div class="deps-line"><span class="dep">← Costs &amp; Vendors</span><span class="dep">← Revenue &amp; Billing</span></div></div><div class="item"><div class="n">Geography dimension</div><span class="hint">defer</span><div class="next"><span class="k">Next</span> Blocked on geography model</div><div class="deps-line"><span class="dep">← Geography model</span></div></div></td>
+<td class="col"><div class="item"><div class="pbar todo" title="todo"><i></i></div><div class="n">Attention classification INVEST/MAINTAIN/FIX/PAUSE/RETIRE + rationale</div><div class="next"><span class="k">Next</span> Needs product health inputs from Build/Operate</div><div class="deps-line"><span class="dep">← Products &amp; Projects</span><span class="dep">← Operations</span></div></div><div class="item"><div class="pbar todo" title="todo"><i></i></div><div class="n">Strategic importance, customers, adoption, growth</div><div class="next"><span class="k">Next</span> After Products list exists</div><div class="deps-line"><span class="dep">← Products &amp; Projects</span></div></div><div class="item"><div class="pbar todo" title="todo"><i></i></div><div class="n">Incident exposure / tech debt / delivery risk / capacity / deps</div><div class="next"><span class="k">Next</span> Pull from Bugs &amp; Delivery</div><div class="deps-line"><span class="dep">← Bugs &amp; Incidents</span><span class="dep">← Delivery</span></div></div><div class="item"><div class="pbar todo" title="todo"><i></i></div><div class="n">Lifecycle + forecast</div><div class="next"><span class="k">Next</span> After Roadmaps/Releases</div><div class="deps-line"><span class="dep">← Roadmaps</span><span class="dep">← Releases</span></div></div><div class="item"><div class="pbar todo" title="todo"><i></i></div><div class="n">Must not duplicate Products &amp; Projects (ownership rule)</div><div class="next"><span class="k">Next</span> Write ownership rule before coding second route</div><div class="deps-line"><span class="dep">↔ Products &amp; Projects</span></div></div></td>
+<td class="col"><div class="item"><div class="pbar defer" title="defer"><i></i></div><div class="n">Health / revenue / cost / margin / budget variance</div><div class="next"><span class="k">Next</span> Blocked on Cost + Commercial data</div><div class="deps-line"><span class="dep">← Costs &amp; Vendors</span><span class="dep">← Revenue &amp; Billing</span></div></div><div class="item"><div class="pbar defer" title="defer"><i></i></div><div class="n">Geography dimension</div><span class="hint">defer</span><div class="next"><span class="k">Next</span> Blocked on geography model</div><div class="deps-line"><span class="dep">← Geography model</span></div></div></td>
 </tr>
 <tr>
 <td class="menu-name"><div class="n">Work</div><div class="src">Post-R3 §9</div></td>
 <td class="status"><span class="badge st-partial">Partial</span><span class="st-note">P0 in PR #36; later phases open</span></td>
-<td class="col"><div class="item"><div class="n">Recent jobs / self-build / gate evidence (sample records)</div><span class="hint">PR #36</span><div class="next"><span class="k">Next</span> Swap samples for Bridge JobSummary list</div><div class="deps-line"><span class="dep">← Bridge adapter</span></div></div></td>
-<td class="col"><div class="item"><div class="n">LIVE FACTORY: actor/product/project/command/run/heartbeat/cost/blocker/output</div><div class="next"><span class="k">Next</span> Implement after Bridge job/run schema freeze</div><div class="deps-line"><span class="dep">← Bridge adapter</span><span class="dep">→ EXECUTION LEDGER</span></div></div><div class="item"><div class="n">EXECUTION LEDGER: immutable run history</div><div class="next"><span class="k">Next</span> Bind to receipt/evidence ids</div><div class="deps-line"><span class="dep">← LIVE FACTORY</span><span class="dep">← Decision receipts</span></div></div><div class="item"><div class="n">COMMAND HISTORY: authorized command + terminal receipt</div><div class="next"><span class="k">Next</span> Same Command schema as appendix in blueprint</div><div class="deps-line"><span class="dep">← Bridge adapter</span></div></div></td>
-<td class="col"><div class="item"><div class="n">EXECUTION QUEUE: position/priority/deps/locks + actions w/ consequence</div><div class="next"><span class="k">Next</span> Read-only first; mutations wait for locks design</div><div class="deps-line"><span class="dep">← LIVE FACTORY</span></div></div><div class="item"><div class="n">CHANGE QUEUE: proposed change + impacts + approvals</div><div class="next"><span class="k">Next</span> After typed Decision exists for change approvals</div><div class="deps-line"><span class="dep">← Decision Inbox</span></div></div></td>
+<td class="col"><div class="item"><div class="pbar wip" title="wip"><i></i></div><div class="n">Recent jobs / self-build / gate evidence (sample records)</div><span class="hint">PR #36</span><div class="next"><span class="k">Next</span> Swap samples for Bridge JobSummary list</div><div class="deps-line"><span class="dep">← Bridge adapter</span></div></div></td>
+<td class="col"><div class="item"><div class="pbar todo" title="todo"><i></i></div><div class="n">LIVE FACTORY: actor/product/project/command/run/heartbeat/cost/blocker/output</div><div class="next"><span class="k">Next</span> Implement after Bridge job/run schema freeze</div><div class="deps-line"><span class="dep">← Bridge adapter</span><span class="dep">→ EXECUTION LEDGER</span></div></div><div class="item"><div class="pbar todo" title="todo"><i></i></div><div class="n">EXECUTION LEDGER: immutable run history</div><div class="next"><span class="k">Next</span> Bind to receipt/evidence ids</div><div class="deps-line"><span class="dep">← LIVE FACTORY</span><span class="dep">← Decision receipts</span></div></div><div class="item"><div class="pbar todo" title="todo"><i></i></div><div class="n">COMMAND HISTORY: authorized command + terminal receipt</div><div class="next"><span class="k">Next</span> Same Command schema as appendix in blueprint</div><div class="deps-line"><span class="dep">← Bridge adapter</span></div></div></td>
+<td class="col"><div class="item"><div class="pbar todo" title="todo"><i></i></div><div class="n">EXECUTION QUEUE: position/priority/deps/locks + actions w/ consequence</div><div class="next"><span class="k">Next</span> Read-only first; mutations wait for locks design</div><div class="deps-line"><span class="dep">← LIVE FACTORY</span></div></div><div class="item"><div class="pbar todo" title="todo"><i></i></div><div class="n">CHANGE QUEUE: proposed change + impacts + approvals</div><div class="next"><span class="k">Next</span> After typed Decision exists for change approvals</div><div class="deps-line"><span class="dep">← Decision Inbox</span></div></div></td>
 <td class="col"><span class="empty">—</span></td>
 </tr>
 <tr>
@@ -111,13 +122,13 @@ td.status{width:120px}
 <td class="status"><span class="badge st-open">Not started</span><span class="st-note">Queued for Phase 2</span></td>
 <td class="col"><span class="empty">—</span></td>
 <td class="col"><span class="empty">—</span></td>
-<td class="col"><div class="item"><div class="n">Human / Agent / Chat / Service roster fields</div><div class="next"><span class="k">Next</span> Start Humans-only roster</div><div class="deps-line"><span class="dep">→ People &amp; Access</span></div></div><div class="item"><div class="n">Workload / capacity forecast / skill search / assignment history</div><div class="next"><span class="k">Next</span> After Work ledger has actors</div><div class="deps-line"><span class="dep">← Work</span></div></div><div class="item"><div class="n">DM / Send Command / suspend</div><div class="next"><span class="k">Next</span> Command send stays PAUSED</div><div class="deps-line"><span class="dep">← Work / COMMAND HISTORY</span></div></div></td>
-<td class="col"><div class="item"><div class="n">Agents as managed workers (first-class actor depth)</div><span class="hint">defer</span><div class="next"><span class="k">Next</span> After human Director path proven</div><div class="deps-line"><span class="dep">← AI &amp; Models</span></div></div></td>
+<td class="col"><div class="item"><div class="pbar todo" title="todo"><i></i></div><div class="n">Human / Agent / Chat / Service roster fields</div><div class="next"><span class="k">Next</span> Start Humans-only roster</div><div class="deps-line"><span class="dep">→ People &amp; Access</span></div></div><div class="item"><div class="pbar todo" title="todo"><i></i></div><div class="n">Workload / capacity forecast / skill search / assignment history</div><div class="next"><span class="k">Next</span> After Work ledger has actors</div><div class="deps-line"><span class="dep">← Work</span></div></div><div class="item"><div class="pbar todo" title="todo"><i></i></div><div class="n">DM / Send Command / suspend</div><div class="next"><span class="k">Next</span> Command send stays PAUSED</div><div class="deps-line"><span class="dep">← Work / COMMAND HISTORY</span></div></div></td>
+<td class="col"><div class="item"><div class="pbar defer" title="defer"><i></i></div><div class="n">Agents as managed workers (first-class actor depth)</div><span class="hint">defer</span><div class="next"><span class="k">Next</span> After human Director path proven</div><div class="deps-line"><span class="dep">← AI &amp; Models</span></div></div></td>
 </tr>
 <tr>
 <td class="menu-name"><div class="n">Conversation bar</div><div class="src">Gate12 / PR #36</div></td>
 <td class="status"><span class="badge st-now">In PR #36</span><span class="st-note">Baseline in apps/factory-os</span></td>
-<td class="col"><div class="item"><div class="n">Ask status / open decision / request paused job</div><div class="next"><span class="k">Next</span> Route intents to Home / Decision / Work</div><div class="deps-line"><span class="dep">↔ Home</span><span class="dep">↔ Decision Inbox</span><span class="dep">↔ Work</span></div></div><div class="item"><div class="n">Protected-step confirm</div><div class="next"><span class="k">Next</span> Keep confirm gate for any mutating intent</div></div></td>
+<td class="col"><div class="item"><div class="pbar done" title="done"><i></i></div><div class="n">Ask status / open decision / request paused job</div><div class="next"><span class="k">Next</span> Route intents to Home / Decision / Work</div><div class="deps-line"><span class="dep">↔ Home</span><span class="dep">↔ Decision Inbox</span><span class="dep">↔ Work</span></div></div><div class="item"><div class="pbar done" title="done"><i></i></div><div class="n">Protected-step confirm</div><div class="next"><span class="k">Next</span> Keep confirm gate for any mutating intent</div></div></td>
 <td class="col"><span class="empty">—</span></td>
 <td class="col"><span class="empty">—</span></td>
 <td class="col"><span class="empty">—</span></td>
@@ -129,7 +140,7 @@ td.status{width:120px}
 <td class="menu-name"><div class="n">Ideas &amp; Concepts</div><div class="src">Post-R3 §11</div></td>
 <td class="status"><span class="badge st-open">Not started</span><span class="st-note">Queued for Phase 1 after freezes</span></td>
 <td class="col"><span class="empty">—</span></td>
-<td class="col"><div class="item"><div class="n">Idea capture fields</div><div class="next"><span class="k">Next</span> Create Idea after object-id scheme frozen</div><div class="deps-line"><span class="dep">→ Conception Projects</span></div></div><div class="item"><div class="n">Outcomes REJECT/HOLD/MERGE/RESEARCH/OPEN CONCEPTION PROJECT + rationale</div><div class="next"><span class="k">Next</span> Promotion writes ConceptionProject</div><div class="deps-line"><span class="dep">→ Conception Projects</span></div></div></td>
+<td class="col"><div class="item"><div class="pbar todo" title="todo"><i></i></div><div class="n">Idea capture fields</div><div class="next"><span class="k">Next</span> Create Idea after object-id scheme frozen</div><div class="deps-line"><span class="dep">→ Conception Projects</span></div></div><div class="item"><div class="pbar todo" title="todo"><i></i></div><div class="n">Outcomes REJECT/HOLD/MERGE/RESEARCH/OPEN CONCEPTION PROJECT + rationale</div><div class="next"><span class="k">Next</span> Promotion writes ConceptionProject</div><div class="deps-line"><span class="dep">→ Conception Projects</span></div></div></td>
 <td class="col"><span class="empty">—</span></td>
 <td class="col"><span class="empty">—</span></td>
 </tr>
@@ -137,16 +148,16 @@ td.status{width:120px}
 <td class="menu-name"><div class="n">Conception Projects</div><div class="src">Post-R3 §12</div></td>
 <td class="status"><span class="badge st-open">Not started</span><span class="st-note">Queued for Phase 1 after freezes</span></td>
 <td class="col"><span class="empty">—</span></td>
-<td class="col"><div class="item"><div class="n">Schema name ConceptionProject (rename freeze)</div><div class="next"><span class="k">Next</span> Daniel confirm rename in shop-drawing pack</div><div class="deps-line"><span class="dep">blocks all Conception tabs</span></div></div><div class="item"><div class="n">Tab: Problem &amp; Opportunity</div><div class="next"><span class="k">Next</span> Build after schema freeze</div><div class="deps-line"><span class="dep">← ConceptionProject rename</span></div></div><div class="item"><div class="n">Tab: Users &amp; Market</div><div class="next"><span class="k">Next</span> Same</div><div class="deps-line"><span class="dep">← ConceptionProject rename</span></div></div><div class="item"><div class="n">Tab: Research</div><div class="next"><span class="k">Next</span> Same</div><div class="deps-line"><span class="dep">← ConceptionProject rename</span></div></div><div class="item"><div class="n">Tab: Features (+ Proposed→Rejected states)</div><div class="next"><span class="k">Next</span> Same</div><div class="deps-line"><span class="dep">← ConceptionProject rename</span></div></div><div class="item"><div class="n">Tab: Feasibility &amp; Economics</div><div class="next"><span class="k">Next</span> Cost estimates stay manual until Cost menu</div><div class="deps-line"><span class="dep">← Costs &amp; Vendors (Later)</span></div></div><div class="item"><div class="n">Tab: Product Definition</div><div class="next"><span class="k">Next</span> Feeds Definitions &amp; Blueprints</div><div class="deps-line"><span class="dep">→ Definitions &amp; Blueprints</span></div></div><div class="item"><div class="n">Tab: Decisions</div><div class="next"><span class="k">Next</span> Reuse typed Decision pattern</div><div class="deps-line"><span class="dep">← Decision Inbox</span></div></div><div class="item"><div class="n">Tab: Knowledge &amp; Evidence</div><div class="next"><span class="k">Next</span> Reuse evidence refs</div><div class="deps-line"><span class="dep">← Knowledge</span></div></div><div class="item"><div class="n">Tab: Blueprint Review</div><div class="next"><span class="k">Next</span> Before Daniel Approval</div><div class="deps-line"><span class="dep">→ Daniel Approval</span></div></div><div class="item"><div class="n">Tab: Daniel Approval APPROVE/RETURN/HOLD/REJECT</div><div class="next"><span class="k">Next</span> Use Bridge challenge path when ready</div><div class="deps-line"><span class="dep">← Blueprint Review</span><span class="dep">← Decision Inbox</span></div></div></td>
-<td class="col"><div class="item"><div class="n">Tab: Product Flow (visual journey)</div><div class="next"><span class="k">Next</span> After core tabs</div><div class="deps-line"><span class="dep">← Features tab</span></div></div><div class="item"><div class="n">Tab: Visual Concepts (design workspace)</div><div class="next"><span class="k">Next</span> After Product Flow</div><div class="deps-line"><span class="dep">← Product Flow</span></div></div><div class="item"><div class="n">Tab: Team &amp; Access</div><div class="next"><span class="k">Next</span> After People &amp; Access thin</div><div class="deps-line"><span class="dep">← People &amp; Access</span></div></div></td>
+<td class="col"><div class="item"><div class="pbar todo" title="todo"><i></i></div><div class="n">Schema name ConceptionProject (rename freeze)</div><div class="next"><span class="k">Next</span> Daniel confirm rename in shop-drawing pack</div><div class="deps-line"><span class="dep">blocks all Conception tabs</span></div></div><div class="item"><div class="pbar todo" title="todo"><i></i></div><div class="n">Tab: Problem &amp; Opportunity</div><div class="next"><span class="k">Next</span> Build after schema freeze</div><div class="deps-line"><span class="dep">← ConceptionProject rename</span></div></div><div class="item"><div class="pbar todo" title="todo"><i></i></div><div class="n">Tab: Users &amp; Market</div><div class="next"><span class="k">Next</span> Same</div><div class="deps-line"><span class="dep">← ConceptionProject rename</span></div></div><div class="item"><div class="pbar todo" title="todo"><i></i></div><div class="n">Tab: Research</div><div class="next"><span class="k">Next</span> Same</div><div class="deps-line"><span class="dep">← ConceptionProject rename</span></div></div><div class="item"><div class="pbar todo" title="todo"><i></i></div><div class="n">Tab: Features (+ Proposed→Rejected states)</div><div class="next"><span class="k">Next</span> Same</div><div class="deps-line"><span class="dep">← ConceptionProject rename</span></div></div><div class="item"><div class="pbar todo" title="todo"><i></i></div><div class="n">Tab: Feasibility &amp; Economics</div><div class="next"><span class="k">Next</span> Cost estimates stay manual until Cost menu</div><div class="deps-line"><span class="dep">← Costs &amp; Vendors (Later)</span></div></div><div class="item"><div class="pbar todo" title="todo"><i></i></div><div class="n">Tab: Product Definition</div><div class="next"><span class="k">Next</span> Feeds Definitions &amp; Blueprints</div><div class="deps-line"><span class="dep">→ Definitions &amp; Blueprints</span></div></div><div class="item"><div class="pbar todo" title="todo"><i></i></div><div class="n">Tab: Decisions</div><div class="next"><span class="k">Next</span> Reuse typed Decision pattern</div><div class="deps-line"><span class="dep">← Decision Inbox</span></div></div><div class="item"><div class="pbar todo" title="todo"><i></i></div><div class="n">Tab: Knowledge &amp; Evidence</div><div class="next"><span class="k">Next</span> Reuse evidence refs</div><div class="deps-line"><span class="dep">← Knowledge</span></div></div><div class="item"><div class="pbar todo" title="todo"><i></i></div><div class="n">Tab: Blueprint Review</div><div class="next"><span class="k">Next</span> Before Daniel Approval</div><div class="deps-line"><span class="dep">→ Daniel Approval</span></div></div><div class="item"><div class="pbar todo" title="todo"><i></i></div><div class="n">Tab: Daniel Approval APPROVE/RETURN/HOLD/REJECT</div><div class="next"><span class="k">Next</span> Use Bridge challenge path when ready</div><div class="deps-line"><span class="dep">← Blueprint Review</span><span class="dep">← Decision Inbox</span></div></div></td>
+<td class="col"><div class="item"><div class="pbar todo" title="todo"><i></i></div><div class="n">Tab: Product Flow (visual journey)</div><div class="next"><span class="k">Next</span> After core tabs</div><div class="deps-line"><span class="dep">← Features tab</span></div></div><div class="item"><div class="pbar todo" title="todo"><i></i></div><div class="n">Tab: Visual Concepts (design workspace)</div><div class="next"><span class="k">Next</span> After Product Flow</div><div class="deps-line"><span class="dep">← Product Flow</span></div></div><div class="item"><div class="pbar todo" title="todo"><i></i></div><div class="n">Tab: Team &amp; Access</div><div class="next"><span class="k">Next</span> After People &amp; Access thin</div><div class="deps-line"><span class="dep">← People &amp; Access</span></div></div></td>
 <td class="col"><span class="empty">—</span></td>
 </tr>
 <tr>
 <td class="menu-name"><div class="n">Definitions &amp; Blueprints</div><div class="src">Post-R3 §13</div></td>
 <td class="status"><span class="badge st-open">Not started</span><span class="st-note">Queued for Phase 1 after freezes</span></td>
 <td class="col"><span class="empty">—</span></td>
-<td class="col"><div class="item"><div class="n">Blueprint candidates · version · diff · history</div><div class="next"><span class="k">Next</span> After Product Definition exists</div><div class="deps-line"><span class="dep">← Conception / Product Definition</span></div></div><div class="item"><div class="n">Traceability / assumptions / exceptions / waivers</div><div class="next"><span class="k">Next</span> Same package</div><div class="deps-line"><span class="dep">← Blueprint candidates</span></div></div><div class="item"><div class="n">Product / Architecture / Security review records</div><div class="next"><span class="k">Next</span> Review board pattern</div><div class="deps-line"><span class="dep">← Blueprint candidates</span></div></div></td>
-<td class="col"><div class="item"><div class="n">Hash + Blueprint Execution Package</div><div class="next"><span class="k">Next</span> Handoff into Delivery</div><div class="deps-line"><span class="dep">→ Delivery</span></div></div><div class="item"><div class="n">Resulting Product/Project link</div><div class="next"><span class="k">Next</span> Creates ImplementationProject</div><div class="deps-line"><span class="dep">→ Products &amp; Projects</span></div></div></td>
+<td class="col"><div class="item"><div class="pbar todo" title="todo"><i></i></div><div class="n">Blueprint candidates · version · diff · history</div><div class="next"><span class="k">Next</span> After Product Definition exists</div><div class="deps-line"><span class="dep">← Conception / Product Definition</span></div></div><div class="item"><div class="pbar todo" title="todo"><i></i></div><div class="n">Traceability / assumptions / exceptions / waivers</div><div class="next"><span class="k">Next</span> Same package</div><div class="deps-line"><span class="dep">← Blueprint candidates</span></div></div><div class="item"><div class="pbar todo" title="todo"><i></i></div><div class="n">Product / Architecture / Security review records</div><div class="next"><span class="k">Next</span> Review board pattern</div><div class="deps-line"><span class="dep">← Blueprint candidates</span></div></div></td>
+<td class="col"><div class="item"><div class="pbar todo" title="todo"><i></i></div><div class="n">Hash + Blueprint Execution Package</div><div class="next"><span class="k">Next</span> Handoff into Delivery</div><div class="deps-line"><span class="dep">→ Delivery</span></div></div><div class="item"><div class="pbar todo" title="todo"><i></i></div><div class="n">Resulting Product/Project link</div><div class="next"><span class="k">Next</span> Creates ImplementationProject</div><div class="deps-line"><span class="dep">→ Products &amp; Projects</span></div></div></td>
 <td class="col"><span class="empty">—</span></td>
 </tr>
 </tbody></table></div></section>
@@ -156,8 +167,8 @@ td.status{width:120px}
 <td class="menu-name"><div class="n">Products &amp; Projects</div><div class="src">Post-R3 §14</div></td>
 <td class="status"><span class="badge st-open">Not started</span><span class="st-note">Queued for Phase 1 after freezes</span></td>
 <td class="col"><span class="empty">—</span></td>
-<td class="col"><div class="item"><div class="n">Distinct Product vs Project objects</div><div class="next"><span class="k">Next</span> Freeze object ids with Conception rename</div><div class="deps-line"><span class="dep">↔ Conception Projects</span></div></div><div class="item"><div class="n">ImplementationProject rename freeze</div><div class="next"><span class="k">Next</span> Same shop-drawing freeze batch</div><div class="deps-line"><span class="dep">blocks Delivery</span></div></div></td>
-<td class="col"><div class="item"><div class="n">Product status / health surfaces</div><div class="next"><span class="k">Next</span> After Operate signals</div><div class="deps-line"><span class="dep">← Operations</span></div></div><div class="item"><div class="n">Project delivery linkage</div><div class="next"><span class="k">Next</span> After Delivery menu</div><div class="deps-line"><span class="dep">← Delivery</span></div></div></td>
+<td class="col"><div class="item"><div class="pbar todo" title="todo"><i></i></div><div class="n">Distinct Product vs Project objects</div><div class="next"><span class="k">Next</span> Freeze object ids with Conception rename</div><div class="deps-line"><span class="dep">↔ Conception Projects</span></div></div><div class="item"><div class="pbar todo" title="todo"><i></i></div><div class="n">ImplementationProject rename freeze</div><div class="next"><span class="k">Next</span> Same shop-drawing freeze batch</div><div class="deps-line"><span class="dep">blocks Delivery</span></div></div></td>
+<td class="col"><div class="item"><div class="pbar todo" title="todo"><i></i></div><div class="n">Product status / health surfaces</div><div class="next"><span class="k">Next</span> After Operate signals</div><div class="deps-line"><span class="dep">← Operations</span></div></div><div class="item"><div class="pbar todo" title="todo"><i></i></div><div class="n">Project delivery linkage</div><div class="next"><span class="k">Next</span> After Delivery menu</div><div class="deps-line"><span class="dep">← Delivery</span></div></div></td>
 <td class="col"><span class="empty">—</span></td>
 </tr>
 <tr>
@@ -165,15 +176,15 @@ td.status{width:120px}
 <td class="status"><span class="badge st-open">Not started</span><span class="st-note">Queued for Phase 2</span></td>
 <td class="col"><span class="empty">—</span></td>
 <td class="col"><span class="empty">—</span></td>
-<td class="col"><div class="item"><div class="n">Timeline / phases / epics / milestones / features</div><div class="next"><span class="k">Next</span> Needs Products list</div><div class="deps-line"><span class="dep">← Products &amp; Projects</span></div></div><div class="item"><div class="n">Dependencies / critical path / baseline vs forecast / variance</div><div class="next"><span class="k">Next</span> After timeline</div><div class="deps-line"><span class="dep">← Timeline</span></div></div><div class="item"><div class="n">Capacity / gates / release mapping / customer commitments</div><div class="next"><span class="k">Next</span> Links Releases</div><div class="deps-line"><span class="dep">→ Releases</span></div></div><div class="item"><div class="n">Open underlying record from roadmap item</div><div class="next"><span class="k">Next</span> Universal drawer reuse</div><div class="deps-line"><span class="dep">← Universal drawer</span></div></div></td>
-<td class="col"><div class="item"><div class="n">Scenario planning</div><div class="next"><span class="k">Next</span> Defer</div></div></td>
+<td class="col"><div class="item"><div class="pbar todo" title="todo"><i></i></div><div class="n">Timeline / phases / epics / milestones / features</div><div class="next"><span class="k">Next</span> Needs Products list</div><div class="deps-line"><span class="dep">← Products &amp; Projects</span></div></div><div class="item"><div class="pbar todo" title="todo"><i></i></div><div class="n">Dependencies / critical path / baseline vs forecast / variance</div><div class="next"><span class="k">Next</span> After timeline</div><div class="deps-line"><span class="dep">← Timeline</span></div></div><div class="item"><div class="pbar todo" title="todo"><i></i></div><div class="n">Capacity / gates / release mapping / customer commitments</div><div class="next"><span class="k">Next</span> Links Releases</div><div class="deps-line"><span class="dep">→ Releases</span></div></div><div class="item"><div class="pbar todo" title="todo"><i></i></div><div class="n">Open underlying record from roadmap item</div><div class="next"><span class="k">Next</span> Universal drawer reuse</div><div class="deps-line"><span class="dep">← Universal drawer</span></div></div></td>
+<td class="col"><div class="item"><div class="pbar defer" title="defer"><i></i></div><div class="n">Scenario planning</div><div class="next"><span class="k">Next</span> Defer</div></div></td>
 </tr>
 <tr>
 <td class="menu-name"><div class="n">Delivery</div><div class="src">Post-R3 §16</div></td>
 <td class="status"><span class="badge st-open">Not started</span><span class="st-note">Queued for Phase 2</span></td>
 <td class="col"><span class="empty">—</span></td>
 <td class="col"><span class="empty">—</span></td>
-<td class="col"><div class="item"><div class="n">Blueprint Execution Package consume</div><div class="next"><span class="k">Next</span> Only after hash package exists</div><div class="deps-line"><span class="dep">← Definitions &amp; Blueprints</span></div></div><div class="item"><div class="n">Phases/epics/work items/tasks/workstreams/commands/runs</div><div class="next"><span class="k">Next</span> Command ledger shared with Work</div><div class="deps-line"><span class="dep">↔ Work</span></div></div><div class="item"><div class="n">Commits/PRs/tests/QA/security/repair/blockers/scope changes/cost</div><div class="next"><span class="k">Next</span> CI hooks later</div><div class="deps-line"><span class="dep">← Integrations</span></div></div><div class="item"><div class="n">Gate chain READY TO BUILD→…→READY FOR RELEASE</div><div class="next"><span class="k">Next</span> Thin FLOW-02</div><div class="deps-line"><span class="dep">→ Releases</span></div></div><div class="item"><div class="n">Per-gate criteria/evidence/owner/blocker/cost/next action</div><div class="next"><span class="k">Next</span> Evidence pattern</div><div class="deps-line"><span class="dep">← Evidence bind</span></div></div></td>
+<td class="col"><div class="item"><div class="pbar todo" title="todo"><i></i></div><div class="n">Blueprint Execution Package consume</div><div class="next"><span class="k">Next</span> Only after hash package exists</div><div class="deps-line"><span class="dep">← Definitions &amp; Blueprints</span></div></div><div class="item"><div class="pbar todo" title="todo"><i></i></div><div class="n">Phases/epics/work items/tasks/workstreams/commands/runs</div><div class="next"><span class="k">Next</span> Command ledger shared with Work</div><div class="deps-line"><span class="dep">↔ Work</span></div></div><div class="item"><div class="pbar todo" title="todo"><i></i></div><div class="n">Commits/PRs/tests/QA/security/repair/blockers/scope changes/cost</div><div class="next"><span class="k">Next</span> CI hooks later</div><div class="deps-line"><span class="dep">← Integrations</span></div></div><div class="item"><div class="pbar todo" title="todo"><i></i></div><div class="n">Gate chain READY TO BUILD→…→READY FOR RELEASE</div><div class="next"><span class="k">Next</span> Thin FLOW-02</div><div class="deps-line"><span class="dep">→ Releases</span></div></div><div class="item"><div class="pbar todo" title="todo"><i></i></div><div class="n">Per-gate criteria/evidence/owner/blocker/cost/next action</div><div class="next"><span class="k">Next</span> Evidence pattern</div><div class="deps-line"><span class="dep">← Evidence bind</span></div></div></td>
 <td class="col"><span class="empty">—</span></td>
 </tr>
 <tr>
@@ -181,16 +192,16 @@ td.status{width:120px}
 <td class="status"><span class="badge st-open">Not started</span><span class="st-note">Queued for Phase 2</span></td>
 <td class="col"><span class="empty">—</span></td>
 <td class="col"><span class="empty">—</span></td>
-<td class="col"><div class="item"><div class="n">Release candidate record</div><div class="next"><span class="k">Next</span> After Delivery gates</div><div class="deps-line"><span class="dep">← Delivery</span></div></div><div class="item"><div class="n">Terminal receipt / production approval fields</div><div class="next"><span class="k">Next</span> Daniel approval via Decision Inbox</div><div class="deps-line"><span class="dep">← Decision Inbox</span></div></div><div class="item"><div class="n">Release calendar + version comparison</div><div class="next"><span class="k">Next</span> After candidate record</div><div class="deps-line"><span class="dep">← Release candidate</span></div></div></td>
-<td class="col"><div class="item"><div class="n">Write-enabled production promote</div><span class="hint">blocked</span><div class="next"><span class="k">Next</span> Needs named write class from Daniel</div><div class="deps-line"><span class="dep">← productionWrites policy</span></div></div></td>
+<td class="col"><div class="item"><div class="pbar todo" title="todo"><i></i></div><div class="n">Release candidate record</div><div class="next"><span class="k">Next</span> After Delivery gates</div><div class="deps-line"><span class="dep">← Delivery</span></div></div><div class="item"><div class="pbar todo" title="todo"><i></i></div><div class="n">Terminal receipt / production approval fields</div><div class="next"><span class="k">Next</span> Daniel approval via Decision Inbox</div><div class="deps-line"><span class="dep">← Decision Inbox</span></div></div><div class="item"><div class="pbar todo" title="todo"><i></i></div><div class="n">Release calendar + version comparison</div><div class="next"><span class="k">Next</span> After candidate record</div><div class="deps-line"><span class="dep">← Release candidate</span></div></div></td>
+<td class="col"><div class="item"><div class="pbar defer" title="defer"><i></i></div><div class="n">Write-enabled production promote</div><span class="hint">blocked</span><div class="next"><span class="k">Next</span> Needs named write class from Daniel</div><div class="deps-line"><span class="dep">← productionWrites policy</span></div></div></td>
 </tr>
 <tr>
 <td class="menu-name"><div class="n">Environments</div><div class="src">Post-R3 §18</div></td>
 <td class="status"><span class="badge st-open">Not started</span><span class="st-note">Queued for Phase 2</span></td>
 <td class="col"><span class="empty">—</span></td>
 <td class="col"><span class="empty">—</span></td>
-<td class="col"><div class="item"><div class="n">Records: Local/Design/Sandbox/Staging/Production</div><div class="next"><span class="k">Next</span> Read-only first</div><div class="deps-line"><span class="dep">← Products &amp; Projects</span></div></div><div class="item"><div class="n">Capacity, deps, flags, access, secrets/integration health, cost, backup RTO/RPO</div><div class="next"><span class="k">Next</span> Cost fields stay UNAVAILABLE until Cost menu</div><div class="deps-line"><span class="dep">← Costs &amp; Vendors</span></div></div><div class="item"><div class="n">Production visual risk emphasis</div><div class="next"><span class="k">Next</span> CSS/state only</div></div></td>
-<td class="col"><div class="item"><div class="n">Prod write/deploy actions</div><div class="next"><span class="k">Next</span> Blocked on write class</div><div class="deps-line"><span class="dep">← productionWrites policy</span></div></div></td>
+<td class="col"><div class="item"><div class="pbar todo" title="todo"><i></i></div><div class="n">Records: Local/Design/Sandbox/Staging/Production</div><div class="next"><span class="k">Next</span> Read-only first</div><div class="deps-line"><span class="dep">← Products &amp; Projects</span></div></div><div class="item"><div class="pbar todo" title="todo"><i></i></div><div class="n">Capacity, deps, flags, access, secrets/integration health, cost, backup RTO/RPO</div><div class="next"><span class="k">Next</span> Cost fields stay UNAVAILABLE until Cost menu</div><div class="deps-line"><span class="dep">← Costs &amp; Vendors</span></div></div><div class="item"><div class="pbar todo" title="todo"><i></i></div><div class="n">Production visual risk emphasis</div><div class="next"><span class="k">Next</span> CSS/state only</div></div></td>
+<td class="col"><div class="item"><div class="pbar defer" title="defer"><i></i></div><div class="n">Prod write/deploy actions</div><div class="next"><span class="k">Next</span> Blocked on write class</div><div class="deps-line"><span class="dep">← productionWrites policy</span></div></div></td>
 </tr>
 </tbody></table></div></section>
 <section class="family"><h2>OPERATE</h2><div class="scroll"><table class="menu">
@@ -200,15 +211,15 @@ td.status{width:120px}
 <td class="status"><span class="badge st-open">Not started</span><span class="st-note">Queued for Phase 2</span></td>
 <td class="col"><span class="empty">—</span></td>
 <td class="col"><span class="empty">—</span></td>
-<td class="col"><div class="item"><div class="n">NOC/SRE surface</div><div class="next"><span class="k">Next</span> Bridge health + env signals first</div><div class="deps-line"><span class="dep">← Environments</span><span class="dep">← Bridge adapter</span></div></div><div class="item"><div class="n">Deployments / env health / capacity / backups / recovery</div><div class="next"><span class="k">Next</span> After Environments</div><div class="deps-line"><span class="dep">← Environments</span></div></div><div class="item"><div class="n">Visual service/dependency map</div><div class="next"><span class="k">Next</span> After Integrations inventory</div><div class="deps-line"><span class="dep">← Integrations</span></div></div></td>
-<td class="col"><div class="item"><div class="n">Affected customers/locations + business impact</div><div class="next"><span class="k">Next</span> Needs Customers + geography</div><div class="deps-line"><span class="dep">← Customers</span><span class="dep">← Geography model</span></div></div></td>
+<td class="col"><div class="item"><div class="pbar todo" title="todo"><i></i></div><div class="n">NOC/SRE surface</div><div class="next"><span class="k">Next</span> Bridge health + env signals first</div><div class="deps-line"><span class="dep">← Environments</span><span class="dep">← Bridge adapter</span></div></div><div class="item"><div class="pbar todo" title="todo"><i></i></div><div class="n">Deployments / env health / capacity / backups / recovery</div><div class="next"><span class="k">Next</span> After Environments</div><div class="deps-line"><span class="dep">← Environments</span></div></div><div class="item"><div class="pbar todo" title="todo"><i></i></div><div class="n">Visual service/dependency map</div><div class="next"><span class="k">Next</span> After Integrations inventory</div><div class="deps-line"><span class="dep">← Integrations</span></div></div></td>
+<td class="col"><div class="item"><div class="pbar defer" title="defer"><i></i></div><div class="n">Affected customers/locations + business impact</div><div class="next"><span class="k">Next</span> Needs Customers + geography</div><div class="deps-line"><span class="dep">← Customers</span><span class="dep">← Geography model</span></div></div></td>
 </tr>
 <tr>
 <td class="menu-name"><div class="n">Bugs &amp; Incidents</div><div class="src">Post-R3 §20</div></td>
 <td class="status"><span class="badge st-open">Not started</span><span class="st-note">Queued for Phase 2</span></td>
 <td class="col"><span class="empty">—</span></td>
 <td class="col"><span class="empty">—</span></td>
-<td class="col"><div class="item"><div class="n">Bug object fields + target release</div><div class="next"><span class="k">Next</span> Link Releases</div><div class="deps-line"><span class="dep">→ Releases</span></div></div><div class="item"><div class="n">Incident object fields + timeline/containment/postmortem</div><div class="next"><span class="k">Next</span> Separate from Bug</div><div class="deps-line"><span class="dep">↔ Bugs</span></div></div><div class="item"><div class="n">Keep Bug and Incident separate</div><div class="next"><span class="k">Next</span> Schema rule in freeze pack</div></div></td>
+<td class="col"><div class="item"><div class="pbar todo" title="todo"><i></i></div><div class="n">Bug object fields + target release</div><div class="next"><span class="k">Next</span> Link Releases</div><div class="deps-line"><span class="dep">→ Releases</span></div></div><div class="item"><div class="pbar todo" title="todo"><i></i></div><div class="n">Incident object fields + timeline/containment/postmortem</div><div class="next"><span class="k">Next</span> Separate from Bug</div><div class="deps-line"><span class="dep">↔ Bugs</span></div></div><div class="item"><div class="pbar todo" title="todo"><i></i></div><div class="n">Keep Bug and Incident separate</div><div class="next"><span class="k">Next</span> Schema rule in freeze pack</div></div></td>
 <td class="col"><span class="empty">—</span></td>
 </tr>
 <tr>
@@ -216,7 +227,7 @@ td.status{width:120px}
 <td class="status"><span class="badge st-open">Not started</span><span class="st-note">Queued for Phase 2</span></td>
 <td class="col"><span class="empty">—</span></td>
 <td class="col"><span class="empty">—</span></td>
-<td class="col"><div class="item"><div class="n">Case record</div><div class="next"><span class="k">Next</span> After Customers exist for linkage — or Factory-internal cases first</div><div class="deps-line"><span class="dep">← Customers (Later)</span></div></div><div class="item"><div class="n">Feed Improvement process</div><div class="next"><span class="k">Next</span> Route to Improvement</div><div class="deps-line"><span class="dep">→ Improvement</span></div></div></td>
+<td class="col"><div class="item"><div class="pbar todo" title="todo"><i></i></div><div class="n">Case record</div><div class="next"><span class="k">Next</span> After Customers exist for linkage — or Factory-internal cases first</div><div class="deps-line"><span class="dep">← Customers (Later)</span></div></div><div class="item"><div class="pbar todo" title="todo"><i></i></div><div class="n">Feed Improvement process</div><div class="next"><span class="k">Next</span> Route to Improvement</div><div class="deps-line"><span class="dep">→ Improvement</span></div></div></td>
 <td class="col"><span class="empty">—</span></td>
 </tr>
 <tr>
@@ -225,7 +236,7 @@ td.status{width:120px}
 <td class="col"><span class="empty">—</span></td>
 <td class="col"><span class="empty">—</span></td>
 <td class="col"><span class="empty">—</span></td>
-<td class="col"><div class="item"><div class="n">DAU/WAU/MAU · adoption/retention/feature use</div><div class="next"><span class="k">Next</span> No telemetry API hooked yet</div></div><div class="item"><div class="n">Signal → Improvement route</div><div class="next"><span class="k">Next</span> After Improvement menu</div><div class="deps-line"><span class="dep">→ Improvement</span></div></div></td>
+<td class="col"><div class="item"><div class="pbar defer" title="defer"><i></i></div><div class="n">DAU/WAU/MAU · adoption/retention/feature use</div><div class="next"><span class="k">Next</span> No telemetry API hooked yet</div></div><div class="item"><div class="pbar defer" title="defer"><i></i></div><div class="n">Signal → Improvement route</div><div class="next"><span class="k">Next</span> After Improvement menu</div><div class="deps-line"><span class="dep">→ Improvement</span></div></div></td>
 </tr>
 <tr>
 <td class="menu-name"><div class="n">Improvement</div><div class="src">Journey 3</div></td>
@@ -233,7 +244,7 @@ td.status{width:120px}
 <td class="col"><span class="empty">—</span></td>
 <td class="col"><span class="empty">—</span></td>
 <td class="col"><span class="empty">—</span></td>
-<td class="col"><div class="item"><div class="n">Routes FIX/IMPROVE/REPRICE/REPOSITION/CONSOLIDATE/PAUSE/RETIRE</div><div class="next"><span class="k">Next</span> After Operate signals exist</div><div class="deps-line"><span class="dep">← Operations</span><span class="dep">← Support</span></div></div></td>
+<td class="col"><div class="item"><div class="pbar defer" title="defer"><i></i></div><div class="n">Routes FIX/IMPROVE/REPRICE/REPOSITION/CONSOLIDATE/PAUSE/RETIRE</div><div class="next"><span class="k">Next</span> After Operate signals exist</div><div class="deps-line"><span class="dep">← Operations</span><span class="dep">← Support</span></div></div></td>
 </tr>
 <tr>
 <td class="menu-name"><div class="n">Retirement / EOL</div><div class="src">Audit</div></td>
@@ -241,7 +252,7 @@ td.status{width:120px}
 <td class="col"><span class="empty">—</span></td>
 <td class="col"><span class="empty">—</span></td>
 <td class="col"><span class="empty">—</span></td>
-<td class="col"><div class="item"><div class="n">Migration · technical retirement · economics · closure evidence</div><div class="next"><span class="k">Next</span> After Customers + Cost</div><div class="deps-line"><span class="dep">← Customers</span><span class="dep">← Costs &amp; Vendors</span></div></div></td>
+<td class="col"><div class="item"><div class="pbar defer" title="defer"><i></i></div><div class="n">Migration · technical retirement · economics · closure evidence</div><div class="next"><span class="k">Next</span> After Customers + Cost</div><div class="deps-line"><span class="dep">← Customers</span><span class="dep">← Costs &amp; Vendors</span></div></div></td>
 </tr>
 </tbody></table></div></section>
 <section class="family"><h2>CUSTOMERS</h2><div class="scroll"><table class="menu">
@@ -252,7 +263,7 @@ td.status{width:120px}
 <td class="col"><span class="empty">—</span></td>
 <td class="col"><span class="empty">—</span></td>
 <td class="col"><span class="empty">—</span></td>
-<td class="col"><div class="item"><div class="n">Customer 360</div><div class="next"><span class="k">Next</span> No CRM connector in Phase 0/1</div><div class="deps-line"><span class="dep">→ Onboarding</span><span class="dep">→ Contracts</span></div></div></td>
+<td class="col"><div class="item"><div class="pbar defer" title="defer"><i></i></div><div class="n">Customer 360</div><div class="next"><span class="k">Next</span> No CRM connector in Phase 0/1</div><div class="deps-line"><span class="dep">→ Onboarding</span><span class="dep">→ Contracts</span></div></div></td>
 </tr>
 <tr>
 <td class="menu-name"><div class="n">Onboarding &amp; Implementation</div><div class="src">Post-R3 §23</div></td>
@@ -260,7 +271,7 @@ td.status{width:120px}
 <td class="col"><span class="empty">—</span></td>
 <td class="col"><span class="empty">—</span></td>
 <td class="col"><span class="empty">—</span></td>
-<td class="col"><div class="item"><div class="n">Lifecycle Contract→…→Support Handoff</div><div class="next"><span class="k">Next</span> After Contracts</div><div class="deps-line"><span class="dep">← Contracts &amp; Renewals</span></div></div><div class="item"><div class="n">Global stage/owner/blocker/acceptance/completion receipt</div><div class="next"><span class="k">Next</span> Receipt pattern reuse</div><div class="deps-line"><span class="dep">← Decision receipts</span></div></div></td>
+<td class="col"><div class="item"><div class="pbar defer" title="defer"><i></i></div><div class="n">Lifecycle Contract→…→Support Handoff</div><div class="next"><span class="k">Next</span> After Contracts</div><div class="deps-line"><span class="dep">← Contracts &amp; Renewals</span></div></div><div class="item"><div class="pbar defer" title="defer"><i></i></div><div class="n">Global stage/owner/blocker/acceptance/completion receipt</div><div class="next"><span class="k">Next</span> Receipt pattern reuse</div><div class="deps-line"><span class="dep">← Decision receipts</span></div></div></td>
 </tr>
 <tr>
 <td class="menu-name"><div class="n">Plans &amp; Packaging</div><div class="src">Post-R3 §24</div></td>
@@ -268,7 +279,7 @@ td.status{width:120px}
 <td class="col"><span class="empty">—</span></td>
 <td class="col"><span class="empty">—</span></td>
 <td class="col"><span class="empty">—</span></td>
-<td class="col"><div class="item"><div class="n">Plan version · market/currency · entitlements · limits</div><div class="next"><span class="k">Next</span> After Products</div><div class="deps-line"><span class="dep">← Products &amp; Projects</span></div></div></td>
+<td class="col"><div class="item"><div class="pbar defer" title="defer"><i></i></div><div class="n">Plan version · market/currency · entitlements · limits</div><div class="next"><span class="k">Next</span> After Products</div><div class="deps-line"><span class="dep">← Products &amp; Projects</span></div></div></td>
 </tr>
 <tr>
 <td class="menu-name"><div class="n">Contracts &amp; Renewals</div><div class="src">Post-R3 §25</div></td>
@@ -276,7 +287,7 @@ td.status{width:120px}
 <td class="col"><span class="empty">—</span></td>
 <td class="col"><span class="empty">—</span></td>
 <td class="col"><span class="empty">—</span></td>
-<td class="col"><div class="item"><div class="n">Agreement version · terms · 90/60/30 renewal views</div><div class="next"><span class="k">Next</span> After Customers</div><div class="deps-line"><span class="dep">← Customers</span></div></div></td>
+<td class="col"><div class="item"><div class="pbar defer" title="defer"><i></i></div><div class="n">Agreement version · terms · 90/60/30 renewal views</div><div class="next"><span class="k">Next</span> After Customers</div><div class="deps-line"><span class="dep">← Customers</span></div></div></td>
 </tr>
 </tbody></table></div></section>
 <section class="family"><h2>COMMERCIAL</h2><div class="scroll"><table class="menu">
@@ -287,7 +298,7 @@ td.status{width:120px}
 <td class="col"><span class="empty">—</span></td>
 <td class="col"><span class="empty">—</span></td>
 <td class="col"><span class="empty">—</span></td>
-<td class="col"><div class="item"><div class="n">Pipeline dimensions</div><div class="next"><span class="k">Next</span> FLOW-04 — defer</div><div class="deps-line"><span class="dep">← FLOW-04</span></div></div><div class="item"><div class="n">Proposal versioning · protected terms</div><div class="next"><span class="k">Next</span> Defer</div></div></td>
+<td class="col"><div class="item"><div class="pbar defer" title="defer"><i></i></div><div class="n">Pipeline dimensions</div><div class="next"><span class="k">Next</span> FLOW-04 — defer</div><div class="deps-line"><span class="dep">← FLOW-04</span></div></div><div class="item"><div class="pbar defer" title="defer"><i></i></div><div class="n">Proposal versioning · protected terms</div><div class="next"><span class="k">Next</span> Defer</div></div></td>
 </tr>
 <tr>
 <td class="menu-name"><div class="n">Revenue &amp; Billing</div><div class="src">Post-R3 §27</div></td>
@@ -295,7 +306,7 @@ td.status{width:120px}
 <td class="col"><span class="empty">—</span></td>
 <td class="col"><span class="empty">—</span></td>
 <td class="col"><span class="empty">—</span></td>
-<td class="col"><div class="item"><div class="n">MRR/ARR · invoices · aging</div><div class="next"><span class="k">Next</span> No billing system connected</div></div></td>
+<td class="col"><div class="item"><div class="pbar defer" title="defer"><i></i></div><div class="n">MRR/ARR · invoices · aging</div><div class="next"><span class="k">Next</span> No billing system connected</div></div></td>
 </tr>
 <tr>
 <td class="menu-name"><div class="n">Payments &amp; Receivables</div><div class="src">Post-R3 §28</div></td>
@@ -303,7 +314,7 @@ td.status{width:120px}
 <td class="col"><span class="empty">—</span></td>
 <td class="col"><span class="empty">—</span></td>
 <td class="col"><span class="empty">—</span></td>
-<td class="col"><div class="item"><div class="n">Payment status / receivable presentation</div><div class="next"><span class="k">Next</span> May duplicate Revenue in mock — confirm</div><div class="deps-line"><span class="dep">↔ Revenue &amp; Billing</span></div></div></td>
+<td class="col"><div class="item"><div class="pbar defer" title="defer"><i></i></div><div class="n">Payment status / receivable presentation</div><div class="next"><span class="k">Next</span> May duplicate Revenue in mock — confirm</div><div class="deps-line"><span class="dep">↔ Revenue &amp; Billing</span></div></div></td>
 </tr>
 <tr>
 <td class="menu-name"><div class="n">FLOW-04 Sell &amp; Manage</div><div class="src">Journey 4</div></td>
@@ -311,7 +322,7 @@ td.status{width:120px}
 <td class="col"><span class="empty">—</span></td>
 <td class="col"><span class="empty">—</span></td>
 <td class="col"><span class="empty">—</span></td>
-<td class="col"><div class="item"><div class="n">Lead→…→Margin (+ geography)</div><span class="hint">18-gate</span><div class="next"><span class="k">Next</span> Explicit defer until Operate daily-usable</div><div class="deps-line"><span class="dep">← Operate thin</span></div></div></td>
+<td class="col"><div class="item"><div class="pbar defer" title="defer"><i></i></div><div class="n">Lead→…→Margin (+ geography)</div><span class="hint">18-gate</span><div class="next"><span class="k">Next</span> Explicit defer until Operate daily-usable</div><div class="deps-line"><span class="dep">← Operate thin</span></div></div></td>
 </tr>
 </tbody></table></div></section>
 <section class="family"><h2>COST</h2><div class="scroll"><table class="menu">
@@ -322,7 +333,7 @@ td.status{width:120px}
 <td class="col"><span class="empty">—</span></td>
 <td class="col"><span class="empty">—</span></td>
 <td class="col"><span class="empty">—</span></td>
-<td class="col"><div class="item"><div class="n">Cost ledgers: Cloud/AI/Vendors/Support/Labour…</div><div class="next"><span class="k">Next</span> Design exists; no live cost API in Factory OS yet — see Cost panel on this page</div><div class="deps-line"><span class="dep">← Bridge spend field (Home strip only)</span></div></div><div class="item"><div class="n">Actual/Budget/Committed/Forecast/Remaining/Variance</div><div class="next"><span class="k">Next</span> Needs Budget objects from blueprint</div></div><div class="item"><div class="n">AI cost drill Cost anomaly→…→Tokens→Output</div><div class="next"><span class="k">Next</span> Needs model/run metering from AI &amp; Models</div><div class="deps-line"><span class="dep">← AI &amp; Models</span></div></div><div class="item"><div class="n">Vendor contract/SLA/blast radius/replacement</div><div class="next"><span class="k">Next</span> After Integrations</div><div class="deps-line"><span class="dep">← Integrations</span></div></div><div class="item"><div class="n">Geography cost dimensions</div><span class="hint">defer</span><div class="next"><span class="k">Next</span> Blocked on geography model</div><div class="deps-line"><span class="dep">← Geography model</span></div></div></td>
+<td class="col"><div class="item"><div class="pbar defer" title="defer"><i></i></div><div class="n">Cost ledgers: Cloud/AI/Vendors/Support/Labour…</div><div class="next"><span class="k">Next</span> Design exists; no live cost API in Factory OS yet — see Cost panel on this page</div><div class="deps-line"><span class="dep">← Bridge spend field (Home strip only)</span></div></div><div class="item"><div class="pbar defer" title="defer"><i></i></div><div class="n">Actual/Budget/Committed/Forecast/Remaining/Variance</div><div class="next"><span class="k">Next</span> Needs Budget objects from blueprint</div></div><div class="item"><div class="pbar defer" title="defer"><i></i></div><div class="n">AI cost drill Cost anomaly→…→Tokens→Output</div><div class="next"><span class="k">Next</span> Needs model/run metering from AI &amp; Models</div><div class="deps-line"><span class="dep">← AI &amp; Models</span></div></div><div class="item"><div class="pbar defer" title="defer"><i></i></div><div class="n">Vendor contract/SLA/blast radius/replacement</div><div class="next"><span class="k">Next</span> After Integrations</div><div class="deps-line"><span class="dep">← Integrations</span></div></div><div class="item"><div class="pbar defer" title="defer"><i></i></div><div class="n">Geography cost dimensions</div><span class="hint">defer</span><div class="next"><span class="k">Next</span> Blocked on geography model</div><div class="deps-line"><span class="dep">← Geography model</span></div></div></td>
 </tr>
 </tbody></table></div></section>
 <section class="family"><h2>PLATFORM</h2><div class="scroll"><table class="menu">
@@ -331,8 +342,8 @@ td.status{width:120px}
 <td class="menu-name"><div class="n">Integrations</div><div class="src">Post-R3 §30</div></td>
 <td class="status"><span class="badge st-open">Not started</span><span class="st-note">Queued for Phase 1 after freezes</span></td>
 <td class="col"><span class="empty">—</span></td>
-<td class="col"><div class="item"><div class="n">Bridge adapter contract (health/mode/writes/decisions/jobs/receipts)</div><span class="hint">Phase-1 freeze</span><div class="next"><span class="k">Next</span> Write JSON schemas next — highest leverage next action for whole Factory OS</div><div class="deps-line"><span class="dep">blocks Home KPI truth</span><span class="dep">blocks Decision Bridge packet</span><span class="dep">blocks Work LIVE FACTORY</span></div></div></td>
-<td class="col"><div class="item"><div class="n">Connector health · blast radius · design-only providers</div><div class="next"><span class="k">Next</span> After adapter</div><div class="deps-line"><span class="dep">← Bridge adapter</span></div></div></td>
+<td class="col"><div class="item"><div class="pbar todo" title="todo"><i></i></div><div class="n">Bridge adapter contract (health/mode/writes/decisions/jobs/receipts)</div><span class="hint">Phase-1 freeze</span><div class="next"><span class="k">Next</span> Write JSON schemas next — highest leverage next action for whole Factory OS</div><div class="deps-line"><span class="dep">blocks Home KPI truth</span><span class="dep">blocks Decision Bridge packet</span><span class="dep">blocks Work LIVE FACTORY</span></div></div></td>
+<td class="col"><div class="item"><div class="pbar todo" title="todo"><i></i></div><div class="n">Connector health · blast radius · design-only providers</div><div class="next"><span class="k">Next</span> After adapter</div><div class="deps-line"><span class="dep">← Bridge adapter</span></div></div></td>
 <td class="col"><span class="empty">—</span></td>
 </tr>
 <tr>
@@ -340,7 +351,7 @@ td.status{width:120px}
 <td class="status"><span class="badge st-open">Not started</span><span class="st-note">Queued for Phase 2</span></td>
 <td class="col"><span class="empty">—</span></td>
 <td class="col"><span class="empty">—</span></td>
-<td class="col"><div class="item"><div class="n">Identity classes Humans/Agents/Services/External</div><div class="next"><span class="k">Next</span> Humans first</div><div class="deps-line"><span class="dep">→ Teams</span></div></div><div class="item"><div class="n">Memberships · MFA · effective permissions view</div><div class="next"><span class="k">Next</span> After identity classes</div></div></td>
+<td class="col"><div class="item"><div class="pbar todo" title="todo"><i></i></div><div class="n">Identity classes Humans/Agents/Services/External</div><div class="next"><span class="k">Next</span> Humans first</div><div class="deps-line"><span class="dep">→ Teams</span></div></div><div class="item"><div class="pbar todo" title="todo"><i></i></div><div class="n">Memberships · MFA · effective permissions view</div><div class="next"><span class="k">Next</span> After identity classes</div></div></td>
 <td class="col"><span class="empty">—</span></td>
 </tr>
 <tr>
@@ -348,7 +359,7 @@ td.status{width:120px}
 <td class="status"><span class="badge st-open">Not started</span><span class="st-note">Queued for Phase 2</span></td>
 <td class="col"><span class="empty">—</span></td>
 <td class="col"><span class="empty">—</span></td>
-<td class="col"><div class="item"><div class="n">Protected-action register · findings · reviews · audit events</div><div class="next"><span class="k">Next</span> Align with Decision protected steps</div><div class="deps-line"><span class="dep">↔ Decision Inbox</span></div></div><div class="item"><div class="n">Serialized Daniel gates</div><div class="next"><span class="k">Next</span> Same as Director approval path</div><div class="deps-line"><span class="dep">← Decision Inbox</span></div></div></td>
+<td class="col"><div class="item"><div class="pbar todo" title="todo"><i></i></div><div class="n">Protected-action register · findings · reviews · audit events</div><div class="next"><span class="k">Next</span> Align with Decision protected steps</div><div class="deps-line"><span class="dep">↔ Decision Inbox</span></div></div><div class="item"><div class="pbar todo" title="todo"><i></i></div><div class="n">Serialized Daniel gates</div><div class="next"><span class="k">Next</span> Same as Director approval path</div><div class="deps-line"><span class="dep">← Decision Inbox</span></div></div></td>
 <td class="col"><span class="empty">—</span></td>
 </tr>
 <tr>
@@ -356,7 +367,7 @@ td.status{width:120px}
 <td class="status"><span class="badge st-open">Not started</span><span class="st-note">Queued for Phase 2</span></td>
 <td class="col"><span class="empty">—</span></td>
 <td class="col"><span class="empty">—</span></td>
-<td class="col"><div class="item"><div class="n">Truth/evidence registry · version/hash/authority</div><div class="next"><span class="k">Next</span> Start from Decision/Command evidence refs</div><div class="deps-line"><span class="dep">← Evidence bind</span></div></div></td>
+<td class="col"><div class="item"><div class="pbar todo" title="todo"><i></i></div><div class="n">Truth/evidence registry · version/hash/authority</div><div class="next"><span class="k">Next</span> Start from Decision/Command evidence refs</div><div class="deps-line"><span class="dep">← Evidence bind</span></div></div></td>
 <td class="col"><span class="empty">—</span></td>
 </tr>
 <tr>
@@ -365,7 +376,7 @@ td.status{width:120px}
 <td class="col"><span class="empty">—</span></td>
 <td class="col"><span class="empty">—</span></td>
 <td class="col"><span class="empty">—</span></td>
-<td class="col"><div class="item"><div class="n">Model/prompt/eval registry</div><div class="next"><span class="k">Next</span> Defer agents-as-actors</div></div><div class="item"><div class="n">Agent→Model→Run→Output→Cost→Evaluation</div><span class="hint">defer</span><div class="next"><span class="k">Next</span> After human path + Cost metering</div><div class="deps-line"><span class="dep">← Costs &amp; Vendors</span></div></div></td>
+<td class="col"><div class="item"><div class="pbar defer" title="defer"><i></i></div><div class="n">Model/prompt/eval registry</div><div class="next"><span class="k">Next</span> Defer agents-as-actors</div></div><div class="item"><div class="pbar defer" title="defer"><i></i></div><div class="n">Agent→Model→Run→Output→Cost→Evaluation</div><span class="hint">defer</span><div class="next"><span class="k">Next</span> After human path + Cost metering</div><div class="deps-line"><span class="dep">← Costs &amp; Vendors</span></div></div></td>
 </tr>
 <tr>
 <td class="menu-name"><div class="n">Factory Assets</div><div class="src">Exec plan only</div></td>
@@ -373,7 +384,7 @@ td.status{width:120px}
 <td class="col"><span class="empty">—</span></td>
 <td class="col"><span class="empty">—</span></td>
 <td class="col"><span class="empty">—</span></td>
-<td class="col"><div class="item"><div class="n">No task breakdown in Post-R3 brief</div><span class="hint">docs gap</span><div class="next"><span class="k">Next</span> Do not invent — ask for blueprint addendum</div></div></td>
+<td class="col"><div class="item"><div class="pbar defer" title="defer"><i></i></div><div class="n">No task breakdown in Post-R3 brief</div><span class="hint">docs gap</span><div class="next"><span class="k">Next</span> Do not invent — ask for blueprint addendum</div></div></td>
 </tr>
 <tr>
 <td class="menu-name"><div class="n">Automation &amp; Rules</div><div class="src">Exec plan only</div></td>
@@ -381,7 +392,7 @@ td.status{width:120px}
 <td class="col"><span class="empty">—</span></td>
 <td class="col"><span class="empty">—</span></td>
 <td class="col"><span class="empty">—</span></td>
-<td class="col"><div class="item"><div class="n">No task breakdown in Post-R3 brief</div><span class="hint">docs gap</span><div class="next"><span class="k">Next</span> Do not invent — ask for blueprint addendum</div></div></td>
+<td class="col"><div class="item"><div class="pbar defer" title="defer"><i></i></div><div class="n">No task breakdown in Post-R3 brief</div><span class="hint">docs gap</span><div class="next"><span class="k">Next</span> Do not invent — ask for blueprint addendum</div></div></td>
 </tr>
 </tbody></table></div></section>
 <section class="family"><h2>SYSTEM</h2><div class="scroll"><table class="menu">
@@ -392,15 +403,15 @@ td.status{width:120px}
 <td class="col"><span class="empty">—</span></td>
 <td class="col"><span class="empty">—</span></td>
 <td class="col"><span class="empty">—</span></td>
-<td class="col"><div class="item"><div class="n">Section present; limited task detail</div><span class="hint">docs thin</span><div class="next"><span class="k">Next</span> Do not invent report catalog</div></div></td>
+<td class="col"><div class="item"><div class="pbar defer" title="defer"><i></i></div><div class="n">Section present; limited task detail</div><span class="hint">docs thin</span><div class="next"><span class="k">Next</span> Do not invent report catalog</div></div></td>
 </tr>
 <tr>
 <td class="menu-name"><div class="n">Administration</div><div class="src">Post-R3 §36</div></td>
 <td class="status"><span class="badge st-later">Deferred</span><span class="st-note">Explicitly later / waiting on deps</span></td>
 <td class="col"><span class="empty">—</span></td>
-<td class="col"><div class="item"><div class="n">Status vocabularies freeze (artifact)</div><div class="next"><span class="k">Next</span> Include in five-freeze pack now</div><div class="deps-line"><span class="dep">blocks typed Decision</span><span class="dep">blocks Work statuses</span></div></div></td>
+<td class="col"><div class="item"><div class="pbar todo" title="todo"><i></i></div><div class="n">Status vocabularies freeze (artifact)</div><div class="next"><span class="k">Next</span> Include in five-freeze pack now</div><div class="deps-line"><span class="dep">blocks typed Decision</span><span class="dep">blocks Work statuses</span></div></div></td>
 <td class="col"><span class="empty">—</span></td>
-<td class="col"><div class="item"><div class="n">Full Administration UI</div><div class="next"><span class="k">Next</span> After core floors</div></div></td>
+<td class="col"><div class="item"><div class="pbar defer" title="defer"><i></i></div><div class="n">Full Administration UI</div><div class="next"><span class="k">Next</span> After core floors</div></div></td>
 </tr>
 </tbody></table></div></section>
 <section class="family"><h2>CROSS-CUTTING</h2><div class="scroll"><table class="menu">
@@ -408,26 +419,26 @@ td.status{width:120px}
 <tr>
 <td class="menu-name"><div class="n">Universal record drawer</div><div class="src">Post-R3 §4</div></td>
 <td class="status"><span class="badge st-partial">Partial</span><span class="st-note">P0 in PR #36; later phases open</span></td>
-<td class="col"><div class="item"><div class="n">Pattern for Decision + Command + Receipt only</div><div class="next"><span class="k">Next</span> Stop at three types</div><div class="deps-line"><span class="dep">← Decision Inbox</span><span class="dep">← Work</span></div></div></td>
+<td class="col"><div class="item"><div class="pbar done" title="done"><i></i></div><div class="n">Pattern for Decision + Command + Receipt only</div><div class="next"><span class="k">Next</span> Stop at three types</div><div class="deps-line"><span class="dep">← Decision Inbox</span><span class="dep">← Work</span></div></div></td>
 <td class="col"><span class="empty">—</span></td>
 <td class="col"><span class="empty">—</span></td>
-<td class="col"><div class="item"><div class="n">Full meta-drawer for all object types</div><span class="hint">shrink</span><div class="next"><span class="k">Next</span> Defer platform framework</div></div></td>
+<td class="col"><div class="item"><div class="pbar defer" title="defer"><i></i></div><div class="n">Full meta-drawer for all object types</div><span class="hint">shrink</span><div class="next"><span class="k">Next</span> Defer platform framework</div></div></td>
 </tr>
 <tr>
 <td class="menu-name"><div class="n">FLOW-01 Create Software</div><div class="src">Journey 1</div></td>
 <td class="status"><span class="badge st-open">Not started</span><span class="st-note">Queued for Phase 2</span></td>
 <td class="col"><span class="empty">—</span></td>
 <td class="col"><span class="empty">—</span></td>
-<td class="col"><div class="item"><div class="n">Thin spine Idea→Blueprint candidate</div><div class="next"><span class="k">Next</span> After Discover Phase 1 menus</div><div class="deps-line"><span class="dep">← Ideas</span><span class="dep">← Conception</span><span class="dep">← Definitions</span></div></div></td>
-<td class="col"><div class="item"><div class="n">Full 13-gate chain</div><span class="hint">defer</span><div class="next"><span class="k">Next</span> After Command ledger proven</div><div class="deps-line"><span class="dep">← Work / COMMAND HISTORY</span></div></div></td>
+<td class="col"><div class="item"><div class="pbar todo" title="todo"><i></i></div><div class="n">Thin spine Idea→Blueprint candidate</div><div class="next"><span class="k">Next</span> After Discover Phase 1 menus</div><div class="deps-line"><span class="dep">← Ideas</span><span class="dep">← Conception</span><span class="dep">← Definitions</span></div></div></td>
+<td class="col"><div class="item"><div class="pbar defer" title="defer"><i></i></div><div class="n">Full 13-gate chain</div><span class="hint">defer</span><div class="next"><span class="k">Next</span> After Command ledger proven</div><div class="deps-line"><span class="dep">← Work / COMMAND HISTORY</span></div></div></td>
 </tr>
 <tr>
 <td class="menu-name"><div class="n">FLOW-02 Build &amp; Release</div><div class="src">Journey 2</div></td>
 <td class="status"><span class="badge st-open">Not started</span><span class="st-note">Queued for Phase 2</span></td>
 <td class="col"><span class="empty">—</span></td>
 <td class="col"><span class="empty">—</span></td>
-<td class="col"><div class="item"><div class="n">Thin Approved Blueprint→Terminal Receipt</div><div class="next"><span class="k">Next</span> After Delivery/Releases</div><div class="deps-line"><span class="dep">← Delivery</span><span class="dep">← Releases</span></div></div></td>
-<td class="col"><div class="item"><div class="n">Full watch-the-Factory depth</div><div class="next"><span class="k">Next</span> Defer</div><div class="deps-line"><span class="dep">← Work LIVE FACTORY</span></div></div></td>
+<td class="col"><div class="item"><div class="pbar todo" title="todo"><i></i></div><div class="n">Thin Approved Blueprint→Terminal Receipt</div><div class="next"><span class="k">Next</span> After Delivery/Releases</div><div class="deps-line"><span class="dep">← Delivery</span><span class="dep">← Releases</span></div></div></td>
+<td class="col"><div class="item"><div class="pbar defer" title="defer"><i></i></div><div class="n">Full watch-the-Factory depth</div><div class="next"><span class="k">Next</span> Defer</div><div class="deps-line"><span class="dep">← Work LIVE FACTORY</span></div></div></td>
 </tr>
 <tr>
 <td class="menu-name"><div class="n">FLOW-03 Operate &amp; Improve</div><div class="src">Journey 3</div></td>
@@ -435,7 +446,7 @@ td.status{width:120px}
 <td class="col"><span class="empty">—</span></td>
 <td class="col"><span class="empty">—</span></td>
 <td class="col"><span class="empty">—</span></td>
-<td class="col"><div class="item"><div class="n">Production→…→Improvement chain</div><div class="next"><span class="k">Next</span> After Operate thin</div><div class="deps-line"><span class="dep">← Operations</span><span class="dep">← Improvement</span></div></div></td>
+<td class="col"><div class="item"><div class="pbar defer" title="defer"><i></i></div><div class="n">Production→…→Improvement chain</div><div class="next"><span class="k">Next</span> After Operate thin</div><div class="deps-line"><span class="dep">← Operations</span><span class="dep">← Improvement</span></div></div></td>
 </tr>
 <tr>
 <td class="menu-name"><div class="n">Geography model</div><div class="src">Journey 4 · Cost</div></td>
@@ -443,7 +454,7 @@ td.status{width:120px}
 <td class="col"><span class="empty">—</span></td>
 <td class="col"><span class="empty">—</span></td>
 <td class="col"><span class="empty">—</span></td>
-<td class="col"><div class="item"><div class="n">Country→Region→City durable records</div><div class="next"><span class="k">Next</span> Explicit defer — no fake city KPIs</div></div></td>
+<td class="col"><div class="item"><div class="pbar defer" title="defer"><i></i></div><div class="n">Country→Region→City durable records</div><div class="next"><span class="k">Next</span> Explicit defer — no fake city KPIs</div></div></td>
 </tr>
 </tbody></table></div></section>
 <div class="order"><h2>Critical path (dependency spine)</h2>
