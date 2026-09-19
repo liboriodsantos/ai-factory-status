@@ -1,6 +1,6 @@
 # AI Factory — personal roadmap (Daniel)
 
-Updated: 2026-09-19 ~01:04 (America/Toronto)  
+Updated: 2026-09-19 ~01:55 (America/Toronto)
 Live: https://liboriodsantos.github.io/ai-factory-status/ *(Pages sync may lag; local box is truth)*  
 Source of truth: `/home/box/projects/bigfit/` on Bot computer  
 This is a **roadmap / thinking board**, not the Factory software.
@@ -10,7 +10,15 @@ This is a **roadmap / thinking board**, not the Factory software.
 - **Support stack (decided)** — Freshdesk (helpdesk) + Better Stack (monitoring + status page) + custom proactive AI agent (LLM + Freshdesk API + Better Stack webhooks). Not Intercom Fin / Sierra / Decagon at this stage.
 
 ## One sentence
-Foundation (FR-01) is proven and paused. **Gate 08 is CLOSED / PASS**. **Gate 09 canary-track is CLOSED / PASS**. **Gate 10 is CLOSED / PASS** (~00:49 EDT). **Gate 11 is CLOSED / PASS** (~01:03 EDT). productionWrites remain **false**. Next = Gate 12 / Stage 6 when Daniel directs; client products stay parked.
+Gates 08–11 **CLOSED / PASS**. **Gate 12 Factory OS IN PROGRESS** (Phase 0 design custody + Phase 1 MVP under `apps/factory-os`). productionWrites **false**. Client products parked.
+
+## Object model spine
+Idea → Concept → Conception Project → Definition → Blueprint → Product → Project → Release
+
+## Gate12
+- Authorized by Daniel; building Factory OS Control Room from v2.4 R4
+- Phase 0 + Phase 1 in flight (cloud agent on factory-bridge)
+- Repo: `apps/factory-os` (monorepo for now)
 
 ## Self-build Factory roadmap (Stage 4–5 climb)
 
@@ -24,7 +32,7 @@ Foundation (FR-01) is proven and paused. **Gate 08 is CLOSED / PASS**. **Gate 09
 | Gate 09.2 / ops / HOST_FILE | HOST_FILE + MCP PAUSED on :3001 | **PASS** |
 | Gate 10 | Bundle v1 + v1.1 + compose inert + cutover + reboot recovery + rollback | **CLOSED / PASS** (~00:49 EDT) |
 | Gate 11 | Supervised dependability (repeat jobs; measure quality/cost/repair/recovery) | **CLOSED / PASS** (~01:03 EDT) |
-| Gate 12 / Stage 6 | Ellisbrook / first market product (when Daniel directs) | **NEXT** |
+| Gate 12 / Stage 6 | Factory OS Control Room (R4 → apps/factory-os Phase 0+1) | **IN PROGRESS** |
 | Later gates | Multi-tenant → bounded autonomy | **AHEAD** |
 
 **Hard rule:** productionWrites **OFF**; FACTORY_MODE **PAUSED** until Daniel directs otherwise.
@@ -74,4 +82,4 @@ Foundation (FR-01) is proven and paused. **Gate 08 is CLOSED / PASS**. **Gate 09
 - Dependability Run #2 **PASS** N=3 MCP-compose recovery (mean downtime 1.784s; $0; repair 0)
 - Evidence: `11_DEPENDABILITY_RUN1_PASS.md` + `11_DEPENDABILITY_RUN2_PASS.md`
 - Stay PAUSED / writes false until he says otherwise
-- Next = Gate12 / Stage 6 when Daniel directs
+- Next = finish Gate12 Phase 1 MVP; client products stay parked
