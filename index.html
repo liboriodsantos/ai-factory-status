@@ -120,16 +120,16 @@
     <div class="eyebrow">BIGFIT · AI Factory · personal roadmap (not the software)</div>
     <h1>Where we stand — the whole picture</h1>
     <p class="lede">
-      A thinking board for Daniel: what the Factory already earned, where Gate08/09 stand,
-      and the self-build Factory roadmap ahead. This is a roadmap, not the AI software itself.
-      Truth follows GitHub <code>factory-bridge</code> main; local box under <code>projects/bigfit/</code> may lead Pages.
+      A thinking board for Daniel: earned gates, Gate12 Factory OS build status, and the object-model spine.
+      This is a roadmap board — not the Control Room app itself (that is <code>apps/factory-os</code>).
+      Truth follows GitHub <code>factory-bridge</code>; local box <code>projects/bigfit/</code> may lead Pages.
     </p>
     <div class="meta">
 
-    <div class="chip"><b>Gate11</b> CLOSED / PASS · Run#1+#2 PASS · PAUSED · writes false · 2026-09-19 01:04 EDT</div>
-    <p class="lede">Self-build v1 + v1.1 · Dependability Run #1 + #2. See <a href="self-build-bundle-v1.html" style="color:#8cf">v1</a> · <a href="self-build-bundle-v1.1.html" style="color:#8cf">v1.1</a> · <a href="dependability-run1.html" style="color:#8cf">Run#1</a> · <a href="dependability-run2.html" style="color:#8cf">Run#2</a>.</p>
+    <div class="chip"><b>Gate12</b> IN PROGRESS · Factory OS Phase 0+1 · PAUSED · writes false · 2026-09-19 ~01:55 EDT</div>
+    <p class="lede">Gates 08–11 CLOSED / PASS. Building Factory OS Control Room (R4) as <code>apps/factory-os</code> on <code>factory-bridge</code>. Self-build refs: <a href="self-build-bundle-v1.html" style="color:#8cf">v1</a> · <a href="self-build-bundle-v1.1.html" style="color:#8cf">v1.1</a> · <a href="dependability-run1.html" style="color:#8cf">Run#1</a> · <a href="dependability-run2.html" style="color:#8cf">Run#2</a>.</p>
 
-      <span class="chip">Updated <b>19 Sep 2026 ~01:04 EDT</b> · America/Toronto</span>
+      <span class="chip">Updated <b>19 Sep 2026 ~01:55 EDT</b> · America/Toronto</span>
       <span class="chip">Director <b>BIGFIT Manager</b></span>
       <span class="chip">Product authority <b>Daniel</b></span>
       <span class="chip">Truth <b>GitHub main</b></span>
@@ -138,16 +138,16 @@
     <div class="hero">
       <div class="stat"><div class="k">Foundation</div><div class="v ok">FR-01 complete</div></div>
       <div class="stat"><div class="k">Runtime</div><div class="v warn">Paused · writes OFF</div></div>
-      <div class="stat"><div class="k">Focus now</div><div class="v now">Gate12 when directed</div></div>
-      <div class="stat"><div class="k">Products</div><div class="v later">Ellisbrook parked</div></div>
+      <div class="stat"><div class="k">Focus now</div><div class="v now">Gate12 Factory OS</div></div>
+      <div class="stat"><div class="k">Client products</div><div class="v later">Parked</div></div>
     </div>
 
     <section>
       <h2>One sentence</h2>
       <p class="sub" style="margin:0;color:#e2e8f0;font-size:1rem;">
-        The Factory’s technical foundation is proven and safely paused.
-        Gate08 <b>CLOSED / PASS</b>. Gate09 canary-track <b>CLOSED / PASS</b>. Gate10 <b>CLOSED / PASS</b> (~00:49 EDT).
-        Gate11 <b>CLOSED / PASS</b> (~01:03 EDT). Next <b>Gate12 / Stage 6</b> when Daniel directs. productionWrites <b>false</b> · FACTORY_MODE <b>PAUSED</b>. Client products stay parked.
+        Gates 08–11 are <b>CLOSED / PASS</b>. <b>Gate12 Factory OS</b> is <b>IN PROGRESS</b>: Phase 0 design custody + Phase 1 MVP
+        (Home · Decision Inbox · Work · conversation bar) under <code>apps/factory-os</code> on GitHub <code>factory-bridge</code>.
+        productionWrites <b>false</b> · FACTORY_MODE <b>PAUSED</b>. Client products stay parked.
       </p>
     </section>
 
@@ -213,11 +213,11 @@
         <div class="stage current">
           <div class="badge current">G</div>
           <div>
-            <div class="label">Gate 12 / Stage 6 — next when directed</div>
-            <div class="hint">Ellisbrook / first market product prep</div>
-            <div class="detail">Starts only when Daniel authorizes Gate12 scope. Stay PAUSED / writes false until he says otherwise.</div>
+            <div class="label">Gate 12 — Factory OS (Control Room)</div>
+            <div class="hint">v2.4 R4 product design → real app · thin vertical slice</div>
+            <div class="detail"><b>AUTHORIZED</b> · Phase 0 (design package custody) + Phase 1 MVP in flight via cloud agent on <code>apps/factory-os</code>. StubBridge: PAUSED / writes false. Design authority: blueprint v2.4-R4.</div>
           </div>
-          <span class="tag current">NEXT</span>
+          <span class="tag current">NOW</span>
         </div>
         <div class="stage">
           <div class="badge todo">H</div>
@@ -232,6 +232,43 @@
       <div class="callout" style="margin-top:12px;">
         <b>Hard rule:</b> productionWrites <b>OFF</b> · FACTORY_MODE <b>PAUSED</b> until Daniel directs otherwise. No private keys on host. $0 preferred this track.
       </div>
+    </section>
+
+
+    <section>
+      <h2>Object model spine (Factory OS)</h2>
+      <p class="sub">How work moves through the Factory — from idea to shipped release. Gate12 MVP makes this navigable in the Control Room.</p>
+      <div class="pillrow" style="margin-top:4px;">
+        <div class="pill"><div class="t">1</div><div class="b">Idea</div></div>
+        <div class="pill"><div class="t">2</div><div class="b">Concept</div></div>
+        <div class="pill"><div class="t">3</div><div class="b">Conception Project</div></div>
+        <div class="pill"><div class="t">4</div><div class="b">Definition</div></div>
+        <div class="pill"><div class="t">5</div><div class="b">Blueprint</div></div>
+        <div class="pill"><div class="t">6</div><div class="b">Product</div></div>
+        <div class="pill"><div class="t">7</div><div class="b">Project</div></div>
+        <div class="pill"><div class="t">8</div><div class="b">Release</div></div>
+      </div>
+      <div class="callout" style="margin-top:12px;">
+        <b>Gate12 Phase 1 slice:</b> Home (live Bridge posture) · Decision Inbox · Work · conversation bar.
+        Full journeys (Create Software → Build &amp; Release → Operate &amp; Improve) come after MVP proves.
+        Design authority: <code>docs/design/v2.4-R4</code> (R4 Golden Master).
+      </div>
+    </section>
+
+    <section>
+      <h2>Gate12 build status</h2>
+      <p class="sub">Factory software first. Client products parked.</p>
+      <table>
+        <thead><tr><th>Item</th><th>Status</th></tr></thead>
+        <tbody>
+          <tr><td>Daniel GO</td><td class="ok">Authorized (“agree, lets do it”)</td></tr>
+          <tr><td>Phase 0 — design custody</td><td class="warn">IN PROGRESS — package → <code>apps/factory-os/docs/design/v2.4-R4</code></td></tr>
+          <tr><td>Phase 1 — MVP UI</td><td class="warn">IN PROGRESS — Home + Decision Inbox + Work + chat</td></tr>
+          <tr><td>Repo home</td><td>GitHub <code>factory-bridge</code> / <code>apps/factory-os</code> (extractable later)</td></tr>
+          <tr><td>Bridge posture</td><td>StubBridge · PAUSED · writes <b>false</b></td></tr>
+          <tr><td>Cloud agent</td><td>Running — see cursor.com agents for PR</td></tr>
+        </tbody>
+      </table>
     </section>
 
     <section style="border-color:#ea580c66;box-shadow:inset 0 0 0 1px #ea580c22;">
@@ -321,11 +358,11 @@
         <div class="stage current">
           <div class="badge current">6</div>
           <div>
-            <div class="label">Ellisbrook GC Bidding Portal</div>
-            <div class="hint">First market product after Factory proves delivery — Gate12 when Daniel directs</div>
-            <div class="detail">Named on paper as project 001. App code not attached. FB-00.2 not started on main. Awaits Gate12 scope authorization.</div>
+            <div class="label">Factory OS Control Room</div>
+            <div class="hint">Gate12 — build the Factory software itself (R4 Golden Master)</div>
+            <div class="detail"><b>IN PROGRESS.</b> Phase 0 design custody + Phase 1 MVP (shell, Home, Decision Inbox, Work, chat bar). Lives at <code>apps/factory-os</code>. Client products remain parked after this proves.</div>
           </div>
-          <span class="tag current">NEXT</span>
+          <span class="tag current">NOW</span>
         </div>
         <div class="stage">
           <div class="badge todo">7</div>
@@ -363,6 +400,7 @@
         <li><strong>Gate09 canary-track CLOSED / PASS</strong> — control-receipt paused canary COMPLETED ~19:19 EDT; close pack ~19:26 EDT; writes still OFF.</li>
         <li><strong>Gate10 CLOSED / PASS</strong> — Bundle v1+v1.1, compose cutover, reboot recovery, rollback; close pack ~00:49 EDT 19 Sep 2026; writes still OFF.</li>
         <li><strong>Gate11 CLOSED / PASS</strong> — Dependability Run #1 + Run #2 (N=3 each); close pack ~01:03 EDT 19 Sep 2026; writes still OFF.</li>
+        <li><strong>Gate12 Factory OS authorized</strong> — Phase 0+1 MVP building as <code>apps/factory-os</code>; R4 design package in custody; client products parked.</li>
         <li><strong>Director seat</strong> — BIGFIT Manager operates day-to-day; Personal COS may ping status only.</li>
         <li><strong>Lane split</strong> — Grok primary on Gate08/build/operate; GPT only for roadmap thinking or named bounded tasks.</li>
       </ul>
@@ -463,10 +501,10 @@
     <div class="two">
       <section>
         <h2>Still ahead (bigger picture)</h2>
-        <p class="sub">Stage 5 Gate11 CLOSED — next Gate12 / Stage 6 when Daniel directs.</p>
+        <p class="sub">Stage 5 Gate11 CLOSED — Gate12 Factory OS is the active build.</p>
         <ul class="clean">
-          <li><strong>Gate12 / Stage 6</strong> — Ellisbrook / FB-00.2 attach criteria when Daniel authorizes (still PAUSED / writes false).</li>
-          <li><strong>Ellisbrook</strong> — attach product code and start FB-00.2 only after Factory delivery is proven.</li>
+          <li><strong>Gate12 Factory OS</strong> — Phase 0+1 MVP under <code>apps/factory-os</code> (IN PROGRESS; PAUSED / writes false).</li>
+          <li><strong>Client products</strong> — stay parked until Factory OS MVP proves.</li>
           <li><strong>Multi-product</strong> — tenants and portfolio ops without mixed risk.</li>
           <li><strong>Bounded autonomy</strong> — automation widens; Daniel’s protected approvals stay.</li>
           <li><strong>Control-room UI</strong> — design north star only until Bridge feeds real records.</li>
@@ -476,7 +514,7 @@
         <h2>Parked on purpose</h2>
         <p class="sub">Not forgotten — just not required for the next prove.</p>
         <ul class="clean">
-          <li><strong>Ellisbrook app attach / FB-00.2</strong> — product track waits.</li>
+          <li><strong>Client product attach</strong> — product track waits until after Factory OS MVP.</li>
           <li><strong>Control-room mock meters</strong> — pretty design ≠ live authorization.</li>
           <li><strong>Off-main Director branches</strong> — do not count as “Gate08 done on main.”</li>
           <li><strong>ChatGPT Library register alone</strong> — useful history, not live Bridge authority.</li>
@@ -517,7 +555,7 @@
 
     <p class="foot">
       Source: factory-bridge main (PR #29) · Qual droplet destroyed 17 Sep 2026 · Host factory-runtime-01 Active (Toronto) ·
-      Gate 08 CLOSED · Gate09 canary CLOSED · Gate09.2 MCP PAUSED PASS · Gate10 CLOSED / PASS · Gate11 CLOSED / PASS (Run#1+#2) · next Gate12 when directed · productionWrites OFF · 19 Sep 2026 ~01:04 EDT · Personal roadmap for Daniel.
+      Gate 08–11 CLOSED / PASS · Gate12 Factory OS IN PROGRESS (Phase 0+1 · apps/factory-os) · productionWrites OFF · 19 Sep 2026 ~01:55 EDT · Personal roadmap for Daniel.
     </p>
   </div>
 <!-- GATE092_STATUS --><p><strong>Gate 09.2</strong>: PASS — MCP PAUSED on :3001 (2026-09-18 23:54 EDT)</p>
