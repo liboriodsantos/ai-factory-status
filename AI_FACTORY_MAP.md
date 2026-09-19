@@ -1,6 +1,6 @@
 # AI Factory — personal roadmap (Daniel)
 
-Updated: 2026-09-19 ~00:50 (America/Toronto)  
+Updated: 2026-09-19 ~01:04 (America/Toronto)  
 Live: https://liboriodsantos.github.io/ai-factory-status/ *(Pages sync may lag; local box is truth)*  
 Source of truth: `/home/box/projects/bigfit/` on Bot computer  
 This is a **roadmap / thinking board**, not the Factory software.
@@ -10,9 +10,9 @@ This is a **roadmap / thinking board**, not the Factory software.
 - **Support stack (decided)** — Freshdesk (helpdesk) + Better Stack (monitoring + status page) + custom proactive AI agent (LLM + Freshdesk API + Better Stack webhooks). Not Intercom Fin / Sierra / Decagon at this stage.
 
 ## One sentence
-Foundation (FR-01) is proven and paused. **Gate 08 is CLOSED / PASS**. **Gate 09 canary-track is CLOSED / PASS**. **Gate 10 is CLOSED / PASS** (~00:49 EDT). productionWrites remain **false**. Next = Gate 11 (supervised dependability) when Daniel directs; client products stay parked.
+Foundation (FR-01) is proven and paused. **Gate 08 is CLOSED / PASS**. **Gate 09 canary-track is CLOSED / PASS**. **Gate 10 is CLOSED / PASS** (~00:49 EDT). **Gate 11 is CLOSED / PASS** (~01:03 EDT). productionWrites remain **false**. Next = Gate 12 / Stage 6 when Daniel directs; client products stay parked.
 
-## Self-build Factory roadmap (Stage 4 climb)
+## Self-build Factory roadmap (Stage 4–5 climb)
 
 | Stage | What | Status |
 | --- | --- | --- |
@@ -23,8 +23,9 @@ Foundation (FR-01) is proven and paused. **Gate 08 is CLOSED / PASS**. **Gate 09
 | Gate 09 canary-track | Control-receipt paused canary (09.01–09.03) | **CLOSED / PASS** (~19:26 EDT) |
 | Gate 09.2 / ops / HOST_FILE | HOST_FILE + MCP PAUSED on :3001 | **PASS** |
 | Gate 10 | Bundle v1 + v1.1 + compose inert + cutover + reboot recovery + rollback | **CLOSED / PASS** (~00:49 EDT) |
-| Gate 11 | Supervised dependability (repeat jobs; measure quality/cost/repair/recovery) | **NEXT when Daniel directs** |
-| Later gates | Products → multi-tenant → bounded autonomy | **AHEAD** |
+| Gate 11 | Supervised dependability (repeat jobs; measure quality/cost/repair/recovery) | **CLOSED / PASS** (~01:03 EDT) |
+| Gate 12 / Stage 6 | Ellisbrook / first market product (when Daniel directs) | **NEXT** |
+| Later gates | Multi-tenant → bounded autonomy | **AHEAD** |
 
 **Hard rule:** productionWrites **OFF**; FACTORY_MODE **PAUSED** until Daniel directs otherwise.
 
@@ -50,7 +51,7 @@ Foundation (FR-01) is proven and paused. **Gate 08 is CLOSED / PASS**. **Gate 09
 
 ## Parked (secondary)
 - Ellisbrook / FB-00.2, control-room mocks, off-main Director branches, ChatGPT Library register alone
-- Post-Gate10 optional: unused ceremony transport scopes; Pages refresh lag
+- Post-Gate11 optional: unused ceremony transport scopes; Pages refresh lag
 
 ## Gate 09.2 MCP (2026-09-18 ~23:54 EDT)
 - **PASS** — V2 Director MCP healthy on `127.0.0.1:3001` (now compose retained-shadow)
@@ -66,7 +67,11 @@ Foundation (FR-01) is proven and paused. **Gate 08 is CLOSED / PASS**. **Gate 09
 - Gate08 + Gate09 canary-track remain CLOSED
 - Optional parked: ceremony transport scopes; Pages sync
 
-## Gate11 (next)
-- Roadmap Stage 5 / supervised dependability
-- Repeat useful internal jobs; measure quality, duration, cost, repair, pause and recovery
-- Starts only when Daniel directs; stay PAUSED / writes false until he says otherwise
+## Gate11 — CLOSED / PASS (2026-09-19 ~01:03 EDT)
+- Daniel: "close Gate 11"
+- Close pack: `evidence/11_GATE_CLOSED_20260919.md`
+- Dependability Run #1 **PASS** N=3 Self-Build style (mean 1.124s; $0; repair 0)
+- Dependability Run #2 **PASS** N=3 MCP-compose recovery (mean downtime 1.784s; $0; repair 0)
+- Evidence: `11_DEPENDABILITY_RUN1_PASS.md` + `11_DEPENDABILITY_RUN2_PASS.md`
+- Stay PAUSED / writes false until he says otherwise
+- Next = Gate12 / Stage 6 when Daniel directs

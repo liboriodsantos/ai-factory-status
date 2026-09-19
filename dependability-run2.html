@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8"/>
+<title>Gate11 Dependability Run #2</title>
+<style>
+body{font-family:system-ui,sans-serif;max-width:900px;margin:2rem auto;padding:0 1rem;background:#0b1220;color:#e8eefc}
+h1,h2{color:#9ecbff}.badge{display:inline-block;padding:.2rem .6rem;border-radius:999px;background:#1a3a2a;color:#8f8}
+.card{background:#141c2e;border:1px solid #243044;border-radius:12px;padding:1rem;margin:1rem 0}
+table{border-collapse:collapse;width:100%} td,th{border:1px solid #243044;padding:.4rem .6rem;text-align:left}
+code{background:#0a0f18;padding:.1rem .3rem;border-radius:4px} a{color:#8cf}
+</style></head><body>
+<h1>Gate11 Dependability Run #2</h1>
+<p><span class="badge">PASS 3/3</span> MCP-compose recovery (service restart only) · PAUSED · writes false · $0</p>
+<p>Generated <strong>2026-09-19 00:58–00:59 EDT</strong> on <code>factory-runtime-01</code></p>
+<div class="card"><h2>Job type (different from Run #1)</h2>
+<p>Compose <code>restart director-gateway-shadow</code> → wait healthz → fresh director credential → <code>recover_factory_state</code>. Not a full host reboot (Gate10 already proved that).</p>
+</div>
+<div class="card"><h2>Metrics</h2>
+<table>
+<tr><th>run</th><th>duration_s</th><th>downtime_s</th><th>mcp_http</th><th>quality</th><th>cost</th><th>repair</th><th>pause_ok</th></tr>
+<tr><td>1</td><td>3.147</td><td>1.767</td><td>200</td><td>PASS</td><td>0.00</td><td>0</td><td>true</td></tr>
+<tr><td>2</td><td>3.167</td><td>1.816</td><td>200</td><td>PASS</td><td>0.00</td><td>0</td><td>true</td></tr>
+<tr><td>3</td><td>3.096</td><td>1.768</td><td>200</td><td>PASS</td><td>0.00</td><td>0</td><td>true</td></tr>
+</table>
+<p>Mean duration <strong>3.137 s</strong> · mean downtime <strong>1.784 s</strong> · repair total <strong>0</strong> · MCP <code>gate10-mcp-director-gateway-shadow-1</code></p>
+</div>
+<div class="card"><h2>Gate11</h2>
+<p><strong>Gate11 CLOSED / PASS</strong> (~01:03 EDT) — Run #1 + Run #2 PASS (this page is the Run #2 snapshot). Close pack: <code>evidence/11_GATE_CLOSED_20260919.md</code>.</p>
+<p><a href="dependability-run1.html">Run #1</a> · <a href="index.html">← roadmap</a></p>
+</div>
+<footer><p>Label: supervised Factory output · secrets excluded</p></footer>
+</body></html>

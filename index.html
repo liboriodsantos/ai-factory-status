@@ -126,10 +126,10 @@
     </p>
     <div class="meta">
 
-    <div class="chip"><b>Gate10</b> CLOSED / PASS · next Gate11 (dependability) · PAUSED · writes false · 2026-09-19 00:50 EDT</div>
-    <p class="lede">Self-build v1 + activation/inventory v1.1 under supervised PAUSED MCP. See <a href="self-build-bundle-v1.html" style="color:#8cf">v1</a> · <a href="self-build-bundle-v1.1.html" style="color:#8cf">v1.1</a>.</p>
+    <div class="chip"><b>Gate11</b> CLOSED / PASS · Run#1+#2 PASS · PAUSED · writes false · 2026-09-19 01:04 EDT</div>
+    <p class="lede">Self-build v1 + v1.1 · Dependability Run #1 + #2. See <a href="self-build-bundle-v1.html" style="color:#8cf">v1</a> · <a href="self-build-bundle-v1.1.html" style="color:#8cf">v1.1</a> · <a href="dependability-run1.html" style="color:#8cf">Run#1</a> · <a href="dependability-run2.html" style="color:#8cf">Run#2</a>.</p>
 
-      <span class="chip">Updated <b>19 Sep 2026 ~00:50 EDT</b> · America/Toronto</span>
+      <span class="chip">Updated <b>19 Sep 2026 ~01:04 EDT</b> · America/Toronto</span>
       <span class="chip">Director <b>BIGFIT Manager</b></span>
       <span class="chip">Product authority <b>Daniel</b></span>
       <span class="chip">Truth <b>GitHub main</b></span>
@@ -138,7 +138,7 @@
     <div class="hero">
       <div class="stat"><div class="k">Foundation</div><div class="v ok">FR-01 complete</div></div>
       <div class="stat"><div class="k">Runtime</div><div class="v warn">Paused · writes OFF</div></div>
-      <div class="stat"><div class="k">Focus now</div><div class="v now">Gate11 when directed</div></div>
+      <div class="stat"><div class="k">Focus now</div><div class="v now">Gate12 when directed</div></div>
       <div class="stat"><div class="k">Products</div><div class="v later">Ellisbrook parked</div></div>
     </div>
 
@@ -147,7 +147,7 @@
       <p class="sub" style="margin:0;color:#e2e8f0;font-size:1rem;">
         The Factory’s technical foundation is proven and safely paused.
         Gate08 <b>CLOSED / PASS</b>. Gate09 canary-track <b>CLOSED / PASS</b>. Gate10 <b>CLOSED / PASS</b> (~00:49 EDT).
-        productionWrites <b>false</b> · FACTORY_MODE <b>PAUSED</b>. Next = Gate11 supervised dependability when Daniel directs; client products stay parked.
+        Gate11 <b>CLOSED / PASS</b> (~01:03 EDT). Next <b>Gate12 / Stage 6</b> when Daniel directs. productionWrites <b>false</b> · FACTORY_MODE <b>PAUSED</b>. Client products stay parked.
       </p>
     </section>
 
@@ -201,21 +201,30 @@
           </div>
           <span class="tag done">CLOSED</span>
         </div>
-        <div class="stage current">
-          <div class="badge current">F</div>
+        <div class="stage">
+          <div class="badge done">F</div>
           <div>
             <div class="label">Gate 11 — supervised dependability</div>
             <div class="hint">Repeat useful internal jobs; measure quality, cost, repair, recovery</div>
-            <div class="detail">Roadmap Stage 5. Starts when Daniel directs. Stay PAUSED / productionWrites OFF until he says otherwise.</div>
+            <div class="detail"><b>CLOSED / PASS</b> ~01:03 EDT. Run #1 + Run #2 N=3 each; $0; repair 0. Close pack: evidence/11_GATE_CLOSED_20260919.md.</div>
+          </div>
+          <span class="tag done">CLOSED</span>
+        </div>
+        <div class="stage current">
+          <div class="badge current">G</div>
+          <div>
+            <div class="label">Gate 12 / Stage 6 — next when directed</div>
+            <div class="hint">Ellisbrook / first market product prep</div>
+            <div class="detail">Starts only when Daniel authorizes Gate12 scope. Stay PAUSED / writes false until he says otherwise.</div>
           </div>
           <span class="tag current">NEXT</span>
         </div>
         <div class="stage">
-          <div class="badge todo">G</div>
+          <div class="badge todo">H</div>
           <div>
             <div class="label">Later gates</div>
-            <div class="hint">Ellisbrook/products → multi-tenant → bounded autonomy</div>
-            <div class="detail">Products (incl. Ellisbrook GC Bidding Portal) stay parked until Factory delivery is proven.</div>
+            <div class="hint">Multi-tenant → bounded autonomy</div>
+            <div class="detail">Products stay parked until Factory delivery is proven and Daniel directs.</div>
           </div>
           <span class="tag todo">AHEAD</span>
         </div>
@@ -291,32 +300,32 @@
           </div>
           <span class="tag done">DONE</span>
         </div>
-        <div class="stage current">
-          <div class="badge current">4</div>
+        <div class="stage">
+          <div class="badge done">4</div>
           <div>
             <div class="label">First supervised self-build</div>
-            <div class="hint">Stage 4 splits into three gates below: Gate08, Gate09, Gate10</div>
-            <div class="detail"><b>Gate08 CLOSED.</b> Gate09 canary-track <b>CLOSED / PASS</b>. Gate09.2 MCP PAUSED <b>PASS</b>. Gate10 <b>CLOSED / PASS</b> (~00:49 EDT). Next Gate11 when directed — productionWrites stay OFF.</div>
+            <div class="hint">Stage 4: Gate08, Gate09, Gate10</div>
+            <div class="detail"><b>Gate08 CLOSED.</b> Gate09 canary-track <b>CLOSED / PASS</b>. Gate09.2 MCP PAUSED <b>PASS</b>. Gate10 <b>CLOSED / PASS</b> (~00:49 EDT). productionWrites stay OFF.</div>
           </div>
-          <span class="tag current">NOW</span>
+          <span class="tag done">DONE</span>
         </div>
         <div class="stage">
-          <div class="badge todo">5</div>
+          <div class="badge done">5</div>
           <div>
             <div class="label">Supervised dependability</div>
             <div class="hint">Repeat jobs; measure cost, repair, recovery</div>
-            <div class="detail">Prove the Factory can run the same kinds of jobs again without drama before trusting it with a market product.</div>
+            <div class="detail"><b>Gate11 CLOSED / PASS</b> ~01:03 EDT — Run #1 Self-Build + Run #2 compose recovery (N=3 each; $0; repair 0).</div>
           </div>
-          <span class="tag todo">LATER</span>
+          <span class="tag done">DONE</span>
         </div>
-        <div class="stage">
-          <div class="badge todo">6</div>
+        <div class="stage current">
+          <div class="badge current">6</div>
           <div>
             <div class="label">Ellisbrook GC Bidding Portal</div>
-            <div class="hint">First market product after Factory proves delivery</div>
-            <div class="detail">Named on paper as project 001. App code not attached. FB-00.2 not started on main. Parked until Stage 4–5 earn trust.</div>
+            <div class="hint">First market product after Factory proves delivery — Gate12 when Daniel directs</div>
+            <div class="detail">Named on paper as project 001. App code not attached. FB-00.2 not started on main. Awaits Gate12 scope authorization.</div>
           </div>
-          <span class="tag todo">LATER</span>
+          <span class="tag current">NEXT</span>
         </div>
         <div class="stage">
           <div class="badge todo">7</div>
@@ -341,7 +350,7 @@
 
     <section>
       <h2>Accomplishments so far (earned)</h2>
-      <p class="sub">These are real. Stage 4 earned — Gate08/09/10 CLOSED; Gate11 next when Daniel directs.</p>
+      <p class="sub">These are real. Stage 4 earned — Gate08/09/10 CLOSED; Stage 5 Gate11 <b>CLOSED / PASS</b> (Run#1+#2 PASS).</p>
       <ul class="clean">
         <li><strong>Factory defined</strong> — product vision, authority split, and “GitHub is truth” rule.</li>
         <li><strong>Control plane on GitHub</strong> — checkpoints, decisions, Manager/Builder/QA roles, release path.</li>
@@ -353,6 +362,7 @@
         <li><strong>Gate08 CLOSED / PASS</strong> — 08.04–08.16; Daniel closed ~19:00 EDT 18 Sep 2026.</li>
         <li><strong>Gate09 canary-track CLOSED / PASS</strong> — control-receipt paused canary COMPLETED ~19:19 EDT; close pack ~19:26 EDT; writes still OFF.</li>
         <li><strong>Gate10 CLOSED / PASS</strong> — Bundle v1+v1.1, compose cutover, reboot recovery, rollback; close pack ~00:49 EDT 19 Sep 2026; writes still OFF.</li>
+        <li><strong>Gate11 CLOSED / PASS</strong> — Dependability Run #1 + Run #2 (N=3 each); close pack ~01:03 EDT 19 Sep 2026; writes still OFF.</li>
         <li><strong>Director seat</strong> — BIGFIT Manager operates day-to-day; Personal COS may ping status only.</li>
         <li><strong>Lane split</strong> — Grok primary on Gate08/build/operate; GPT only for roadmap thinking or named bounded tasks.</li>
       </ul>
@@ -429,20 +439,33 @@
     </section>
 
     <section>
-      <h2>Gate 11 — supervised dependability (NEXT)</h2>
-      <p class="sub">Roadmap Stage 5. Starts only when Daniel directs. Stay PAUSED / productionWrites false.</p>
+      <h2>Gate 11 — supervised dependability (CLOSED / PASS)</h2>
+      <p class="sub">Roadmap Stage 5. Closed 2026-09-19 ~01:03 EDT — Daniel: "close Gate 11". Stay PAUSED / productionWrites false.</p>
       <div class="callout">
-        <b>Intent:</b> Repeat useful internal jobs; measure quality, duration, cost, repair, pause and recovery.
-        Recommended first ask: authorize Gate11 scope + first dependability job definition (still writes OFF).
+        <b>CLOSED / PASS.</b> Run #1 <span class="ok">PASS 3/3</span> (Self-Build style; mean 1.124s) · Run #2 <span class="ok">PASS 3/3</span> (MCP-compose recovery; mean downtime 1.784s). Cost $0; repair 0; posture held.
+        Close pack: <code>evidence/11_GATE_CLOSED_20260919.md</code> ·
+        <a href="dependability-run1.html" style="color:#8cf">Run#1</a> · <a href="dependability-run2.html" style="color:#8cf">Run#2</a>.
       </div>
+      <table>
+        <thead><tr><th>ID</th><th>Item</th><th>Status</th></tr></thead>
+        <tbody>
+          <tr><td>11.01</td><td>Scope pack</td><td class="ok">PASS — 11_SCOPE.md</td></tr>
+          <tr><td>11.02</td><td>First job definition</td><td class="ok">PASS — Dependability Run #1</td></tr>
+          <tr><td>11.03</td><td>N=3 Bundle-style repeats</td><td class="ok">PASS — 3/3</td></tr>
+          <tr><td>11.04</td><td>Metrics + evidence Run #1</td><td class="ok">PASS</td></tr>
+          <tr><td>11.06</td><td>MCP-compose recovery Run #2</td><td class="ok">PASS — 3/3</td></tr>
+          <tr><td>11.07</td><td>Metrics + evidence Run #2</td><td class="ok">PASS</td></tr>
+          <tr><td>Gate11</td><td>CLOSE pack</td><td class="ok">CLOSED / PASS — 2026-09-19 ~01:03 EDT</td></tr>
+        </tbody>
+      </table>
     </section>
 
     <div class="two">
       <section>
         <h2>Still ahead (bigger picture)</h2>
-        <p class="sub">After Stage 4 (Gates 08–10 CLOSED) — Gate11 dependability next.</p>
+        <p class="sub">Stage 5 Gate11 CLOSED — next Gate12 / Stage 6 when Daniel directs.</p>
         <ul class="clean">
-          <li><strong>Dependability loop</strong> — cost, repair, recovery measured on repeat jobs.</li>
+          <li><strong>Gate12 / Stage 6</strong> — Ellisbrook / FB-00.2 attach criteria when Daniel authorizes (still PAUSED / writes false).</li>
           <li><strong>Ellisbrook</strong> — attach product code and start FB-00.2 only after Factory delivery is proven.</li>
           <li><strong>Multi-product</strong> — tenants and portfolio ops without mixed risk.</li>
           <li><strong>Bounded autonomy</strong> — automation widens; Daniel’s protected approvals stay.</li>
@@ -494,7 +517,7 @@
 
     <p class="foot">
       Source: factory-bridge main (PR #29) · Qual droplet destroyed 17 Sep 2026 · Host factory-runtime-01 Active (Toronto) ·
-      Gate 08 CLOSED · Gate09 canary CLOSED · Gate09.2 MCP PAUSED PASS · Gate10 CLOSED / PASS · Gate11 NEXT · productionWrites OFF · 19 Sep 2026 ~00:50 EDT · Personal roadmap for Daniel.
+      Gate 08 CLOSED · Gate09 canary CLOSED · Gate09.2 MCP PAUSED PASS · Gate10 CLOSED / PASS · Gate11 CLOSED / PASS (Run#1+#2) · next Gate12 when directed · productionWrites OFF · 19 Sep 2026 ~01:04 EDT · Personal roadmap for Daniel.
     </p>
   </div>
 <!-- GATE092_STATUS --><p><strong>Gate 09.2</strong>: PASS — MCP PAUSED on :3001 (2026-09-18 23:54 EDT)</p>
