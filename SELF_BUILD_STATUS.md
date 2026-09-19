@@ -1,8 +1,13 @@
-# Factory status — Self-Build Bundle v1.1
+# Self-build status
 
-- Result: **PASS** (v1 + v1.1 + compose inert)
-- When: 2026-09-19T00:11:12-0400
-- Mode: PAUSED / productionWrites false
-- MCP recover HTTP: 200
-- Compose inert retained-shadow / candidate config: PASS (no containers started)
-- Gate10 overall: **IN PROGRESS** (cutover / reboot / rollback remain)
+Updated: 2026-09-19 00:50 EDT
+
+- Bundle v1: PASS
+- Bundle v1.1: PASS
+- Compose inert: PASS
+- Compose cutover: PASS (retained-shadow on :3001; downtime 2.425s; rollback prove PASS)
+- Reboot recovery: PASS (full host reboot; MCP downtime 47.229s; documented compose start)
+- Gate10 overall: **CLOSED / PASS** (~00:49 EDT) — close pack `evidence/10_GATE_CLOSED_20260919.md`
+- Optional parked: ceremony scopes; Pages sync
+- Next: Gate11 supervised dependability when Daniel directs
+- productionWrites: false / FACTORY_MODE: PAUSED
