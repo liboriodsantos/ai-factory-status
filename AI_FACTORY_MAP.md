@@ -1,8 +1,9 @@
 # AI Factory — personal roadmap (Daniel)
 
-Updated: 2026-09-19 ~01:55 (America/Toronto)
+Updated: 2026-09-19 ~20:30 (America/Toronto)
 Live: https://liboriodsantos.github.io/ai-factory-status/ *(Pages sync may lag; local box is truth)*  
-Source of truth: `/home/box/projects/bigfit/` on Bot computer  
+Source of truth: GitHub `factory-bridge` `main` (`apps/factory-os`); local box `/home/box/projects/bigfit/`  
+Public pointer: [`BRIDGE_STATE.md`](BRIDGE_STATE.md)  
 This is a **roadmap / thinking board**, not the Factory software.
 
 ## Founding principles
@@ -10,15 +11,19 @@ This is a **roadmap / thinking board**, not the Factory software.
 - **Support stack (decided)** — Freshdesk (helpdesk) + Better Stack (monitoring + status page) + custom proactive AI agent (LLM + Freshdesk API + Better Stack webhooks). Not Intercom Fin / Sierra / Decagon at this stage.
 
 ## One sentence
-Gates 08–11 **CLOSED / PASS**. **Gate 12 Factory OS IN PROGRESS** (Phase 0 design custody + Phase 1 MVP under `apps/factory-os`). productionWrites **false**. Client products parked.
+Gates 08–11 **CLOSED / PASS**. Gate08 remains **CLOSED**. Gate09 canary packet **`HARNESS_PASS_09.06_HOST_RECON_PASS`**. **Factory OS is on `factory-bridge` main** (Home live loopback, FLOW spine, durable Factory DB, Decision Inbox V2, Operate RO). Write class **`factory.self_build.supervised`** (named only; no expansion). productionWrites **false**. FACTORY_MODE **PAUSED**. No Director keys. Client products parked.
 
 ## Object model spine
 Idea → Concept → Conception Project → Definition → Blueprint → Product → Project → Release
 
-## Gate12
-- Authorized by Daniel; building Factory OS Control Room from v2.4 R4
-- Phase 0 + Phase 1 in flight (cloud agent on factory-bridge)
-- Repo: `apps/factory-os` (monorepo for now)
+## Factory OS (on main)
+- Home **live loopback**
+- **FLOW spine**
+- **Durable Factory DB**
+- **Decision Inbox V2**
+- **Operate RO** (read-only)
+- Repo: `apps/factory-os` on `factory-bridge` `main`
+- This Pages agent could not clone `factory-bridge` (404 / out of token scope). Software truth stays on that repo’s `main`.
 
 ## Self-build Factory roadmap (Stage 4–5 climb)
 
@@ -28,14 +33,15 @@ Idea → Concept → Conception Project → Definition → Blueprint → Product
 | Operating system | Roles, routing, queues, budgets, safe stop, QA | **DONE** |
 | FR-01 | Persistent runtime proved E2E, then paused; writes OFF | **DONE** |
 | Gate 08 | Publish/install V2 signing path (08.04–08.16) | **CLOSED / PASS** |
-| Gate 09 canary-track | Control-receipt paused canary (09.01–09.03) | **CLOSED / PASS** (~19:26 EDT) |
+| Gate 09 canary-track | Control-receipt paused canary (09.01–09.03) | **CLOSED / PASS** (~19:26 EDT 18 Sep) |
+| Gate 09 canary packet | `HARNESS_PASS_09.06_HOST_RECON_PASS` | **RECORDED** |
 | Gate 09.2 / ops / HOST_FILE | HOST_FILE + MCP PAUSED on :3001 | **PASS** |
-| Gate 10 | Bundle v1 + v1.1 + compose inert + cutover + reboot recovery + rollback | **CLOSED / PASS** (~00:49 EDT) |
-| Gate 11 | Supervised dependability (repeat jobs; measure quality/cost/repair/recovery) | **CLOSED / PASS** (~01:03 EDT) |
-| Gate 12 / Stage 6 | Factory OS Control Room (R4 → apps/factory-os Phase 0+1) | **IN PROGRESS** |
+| Gate 10 | Bundle v1 + v1.1 + compose inert + cutover + reboot recovery + rollback | **CLOSED / PASS** (~00:49 EDT 19 Sep) |
+| Gate 11 | Supervised dependability (repeat jobs; measure quality/cost/repair/recovery) | **CLOSED / PASS** (~01:03 EDT 19 Sep) |
+| Gate 12 / Stage 6 | Factory OS Control Room on `main` | **ON MAIN** (named surfaces above) |
 | Later gates | Multi-tenant → bounded autonomy | **AHEAD** |
 
-**Hard rule:** productionWrites **OFF**; FACTORY_MODE **PAUSED** until Daniel directs otherwise.
+**Hard rule:** productionWrites **OFF**; FACTORY_MODE **PAUSED** until Daniel directs otherwise. Write class `factory.self_build.supervised` is **named only** — no expansion. No Director keys on host.
 
 ## Gate08 — CLOSED / PASS
 - 08.01–03 accepted offline
@@ -45,12 +51,14 @@ Idea → Concept → Conception Project → Definition → Blueprint → Product
 - **CLOSED** 2026-09-18 ~19:00 EDT — Daniel: "close Gate 08"
 - Close pack: `evidence/08_GATE_CLOSED_20260918.md`
 
-## Gate09 — canary-track CLOSED / PASS
+## Gate09 — canary packet recorded
 - Control-receipt canary **PASS** 2026-09-18 ~19:19 EDT (`PAUSED_CANARY_COMPLETED`, QA PASS)
 - Canary-track **CLOSED** 2026-09-18 ~19:26 EDT — close pack: `evidence/09_GATE_CLOSE_PACK.md`
+- Latest canary packet: **`HARNESS_PASS_09.06_HOST_RECON_PASS`**
 - Evidence: `evidence/09_CANARY_PASS_20260918.md` + close pack
 - productionWrites **false**; FACTORY_MODE **PAUSED**; spend **$0**
-- Full Gate09 **not** claimed — Gate09.2 PASS separately
+- Full Gate09 beyond this packet is **not** claimed
+- Director private key remains **EXTERNAL** — no Director keys on host / none in this repo
 
 ## Daniel direction (2026-09-18 ~19:24 EDT)
 1. Finish current Factory track  
@@ -59,12 +67,12 @@ Idea → Concept → Conception Project → Definition → Blueprint → Product
 
 ## Parked (secondary)
 - Ellisbrook / FB-00.2, control-room mocks, off-main Director branches, ChatGPT Library register alone
-- Post-Gate11 optional: unused ceremony transport scopes; Pages refresh lag
+- Post-Gate11 optional: unused ceremony transport scopes
 
 ## Gate 09.2 MCP (2026-09-18 ~23:54 EDT)
-- **PASS** — V2 Director MCP healthy on `127.0.0.1:3001` (now compose retained-shadow)
+- **PASS** — V2 Director MCP healthy on `127.0.0.1:3001` (compose retained-shadow)
 - FACTORY_MODE=PAUSED; productionWrites=false
-- HOST_FILE admission key live; DIRECTOR_APPROVAL private still EXTERNAL
+- HOST_FILE admission key live; DIRECTOR_APPROVAL private still EXTERNAL (no Director keys)
 
 ## Gate10 — CLOSED / PASS (2026-09-19 ~00:49 EDT)
 - Daniel: "close gate 10 if its fully ready"
@@ -72,8 +80,7 @@ Idea → Concept → Conception Project → Definition → Blueprint → Product
 - Included: Bundle v1 + v1.1; durable MCP + tool-scope; compose inert + cutover + bounded rollback; reboot recovery PASS (MCP downtime 47.229 s)
 - Live MCP: `gate10-mcp-director-gateway-shadow-1` on `127.0.0.1:3001`
 - productionWrites **false** / FACTORY_MODE **PAUSED** throughout
-- Gate08 + Gate09 canary-track remain CLOSED
-- Optional parked: ceremony transport scopes; Pages sync
+- Gate08 CLOSED; Gate09 canary packet `HARNESS_PASS_09.06_HOST_RECON_PASS`
 
 ## Gate11 — CLOSED / PASS (2026-09-19 ~01:03 EDT)
 - Daniel: "close Gate 11"
@@ -82,4 +89,4 @@ Idea → Concept → Conception Project → Definition → Blueprint → Product
 - Dependability Run #2 **PASS** N=3 MCP-compose recovery (mean downtime 1.784s; $0; repair 0)
 - Evidence: `11_DEPENDABILITY_RUN1_PASS.md` + `11_DEPENDABILITY_RUN2_PASS.md`
 - Stay PAUSED / writes false until he says otherwise
-- Next = finish Gate12 Phase 1 MVP; client products stay parked
+- Client products stay parked
