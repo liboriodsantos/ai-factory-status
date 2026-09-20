@@ -1,6 +1,6 @@
 # Self-build status
 
-Updated: 2026-09-20 ~15:50 EDT
+Updated: 2026-09-20 ~17:20 EDT
 
 - Bundle v1: PASS
 - Bundle v1.1: PASS
@@ -66,7 +66,7 @@ Updated: 2026-09-20 ~15:50 EDT
   - Nav sync (**72**) — **DONE** · factory-bridge main `6f66f6f`
   - Host ceremony (**73**) — **PASS** · operator · writes stayed false · **PAUSED**
   - Final host tip sync (**74**) — **DONE** · standing host tip synced to factory-bridge main `3a0b39388d0dbafd0a8b31355b0a21bfaf4fef99` (includes #117–#124) · evidence `74c` · anon GET / → 307 /login · `/api/status` → 401 `LOCAL_AUTH_REQUIRED` · factoryMode **PAUSED** · productionWrites **false** · authed evidenceClass **`HTTP_BRIDGE`** · bind `127.0.0.1:3210` only
-  - Merged factory-bridge PRs — **#117–#124** (items 87–94) still **MERGED**. New batch **#125–#131** Operate through Home NBA fourth pack + **#133** nav sync **MERGED**. Current tip **`2e31aca`** (includes #132). Host tip-sync follow-up **DONE**. **#132** Factory Health strip (item 103) **DONE** @ `2e31aca`. Host tip-sync follow-up **DONE** @ `2e31aca` (includes #132). Per-PR merge SHAs for #125–#131 not in this brief — not invented
+  - Merged factory-bridge PRs — **#117–#124** (items 87–94) still **MERGED**. New batch **#125–#131** Operate through Home NBA fourth pack + **#133** nav sync **MERGED**. **#132** Factory Health strip (item 103) **DONE** @ `2e31aca`. Host tip-sync **105** follow-up **DONE** @ `2e31aca` (includes #132). Batch **107–114** RO deepens **DONE** on main. Named: Releases **#139** (112) · nav **#141** (114). Current tip **`4375131`** (includes #139 / #141). Per-PR merge SHAs for #125–#131 / #139 / #141 not in this brief — not invented
   - Teams follow-up (**87**) — **MERGED** — factory-bridge **#117**
   - Integrations (**88**) — **MERGED** — factory-bridge **#118** `PLATFORM-EV-INTEGRATIONS`
   - FLOW02 Actor gate (**89**) — **MERGED** — factory-bridge **#119**
@@ -80,9 +80,14 @@ Updated: 2026-09-20 ~15:50 EDT
   - Factory Health strip (**103**) — **DONE** — factory-bridge **PR #132** merged @ `2e31aca`. Host tip-sync follow-up **DONE** @ `2e31aca` (includes #132)
   - factory-bridge **104** — **DONE** — included with **#125–#131** / **#133** nav sync · tip **`3cf676f`**
   - Host tip-sync (**105**) — **DONE / PASS** — first at `3cf676f` (Merge #133); follow-up **DONE** — standing host now `2e31aca41854c84b28d2b4ba0fbdddf6c5e91d5a` (includes #132)
-  - Pages honesty (**106**) — **this refresh** — board only · 95–105 DONE incl 103 · host tip DONE @ `2e31aca` (includes #132)
-  - In flight (**107–108**) — in flight · titles/progress not in this brief — not invented
-  - Accepted batch (**105–114**) — accepted · 105 tip-sync DONE · 107–108 in flight · no invented 106–114 software progress (106 is this Pages claim)
+  - Pages honesty (**106**) — **DONE / already live** — this repo **PR #37** @ `3b0bca2` · later **#38/#39** refined 103 + host tip @ `2e31aca`
+  - RO deepens (**107–111**) — **DONE** on main · per-item titles/PRs not in this brief — not invented
+  - Releases RO deepen (**112**) — **DONE** — factory-bridge **#139** (included in tip `4375131`; merge SHA not in this brief — not invented)
+  - Portfolio/Work RO deepen (**113**) — **DONE** on main · PR number/SHA not in this brief — not invented
+  - nav sync (**114**) — **DONE** — factory-bridge **#141** (included in tip `4375131`; merge SHA not in this brief — not invented)
+  - Host tip-sync (**115**) — **DONE** — standing host tip `4375131f4a61f1ddb18404c4ae50e805f6612401` (includes Releases #139 and nav #141) · FACTORY_MODE **PAUSED** · productionWrites **false** · no invented host PASS beyond this tip claim
+  - Pages honesty (**116**) — **this refresh** — board only · 107–115 DONE · tip `4375131`
+  - In flight (**117–119**) — **in flight** · **117** Conception · **118** Definitions · **119** Products · no invented host PASS
   - Item **8** — **deferred** (Daniel secret) · not claimed
   - Environments (**75**) — **DONE** (**PR #105** @ `80b1cfb`; thin)
   - Monitoring (**76**) — **DONE** (**PR #106** @ `15eb0af`; after FLOW03-EV-MONITORING dedupe; thin)
