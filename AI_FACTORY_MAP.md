@@ -1,6 +1,6 @@
 # AI Factory — personal roadmap (Daniel)
 
-Updated: 2026-09-20 ~04:05 (America/Toronto)
+Updated: 2026-09-20 ~04:08 (America/Toronto)
 Live: https://liboriodsantos.github.io/ai-factory-status/ *(Pages sync may lag; local box is truth)*  
 Source of truth: GitHub `factory-bridge` `main` (`apps/factory-os`); local box `/home/box/projects/bigfit/`  
 Public pointer: [`BRIDGE_STATE.md`](BRIDGE_STATE.md)  
@@ -58,7 +58,7 @@ Idea → Concept → Conception Project → Definition → Blueprint → Product
 | Gate 09.2 / ops / HOST_FILE | HOST_FILE + MCP PAUSED on :3001 | **PASS** |
 | Gate 10 | Bundle v1 + v1.1 + compose inert + cutover + reboot recovery + rollback | **CLOSED / PASS** (~00:49 EDT 19 Sep) |
 | Gate 11 | Supervised dependability (repeat jobs; measure quality/cost/repair/recovery) | **CLOSED / PASS** (~01:03 EDT 19 Sep) |
-| Gate 12 / Stage 6 | Factory OS Control Room on `main` + standing host | **ITEMS 45–78,80** (buffer 75–78,80 · Quotes 80 #109 @ `6033a2b` · Improvement #107 · Incidents #104 · Environments #105 · Monitoring #106 · **74 tip sync WIP**) |
+| Gate 12 / Stage 6 | Factory OS Control Room on `main` + standing host | **ITEMS 45–80** (buffer 75–80 · Sales 79 #108 @ `9285da8` · Quotes #109 · **#110** on main · **74 tip sync WIP**) |
 | Later gates | Multi-tenant → bounded autonomy | **AHEAD** |
 
 **Hard rule:** productionWrites **OFF**; FACTORY_MODE **PAUSED** until Daniel directs otherwise. Write class `factory.self_build.supervised` is **named only** — no expansion / **no flip**. No Director keys on host.
@@ -187,8 +187,9 @@ Idea → Concept → Conception Project → Definition → Blueprint → Product
 - **76:** Monitoring **DONE** — factory-bridge **PR #106** @ `15eb0af` (after FLOW03-EV-MONITORING dedupe; thin)
 - **77:** Incidents **DONE** — factory-bridge **PR #104** @ `91c091a` (thin; not full incident/postmortem)
 - **78:** Improvement **DONE** — factory-bridge **PR #107** @ `1c46ca5` (thin; not full FIX/IMPROVE chain)
+- **79:** Sales **DONE** — factory-bridge **PR #108** @ `9285da8` (thin; not full pipeline/proposal journey)
 - **80:** Quotes **DONE** — factory-bridge **PR #109** @ `6033a2b` (thin; not full quote/proposal journey)
-- **docs:** factory-bridge **PR #101**
+- **docs:** factory-bridge **PR #101** · **#110** on main (briefed; subject/SHA not in this brief — not invented)
 - Overnight software PR numbers **#85–#101** from Daniel’s item-67 brief; `factory-bridge` was **not reachable** here. Merge SHAs for those PRs were **not** in the brief — not invented.
 - FACTORY_MODE **PAUSED** · productionWrites **false** · Director keys **off host**
 - Write class `factory.self_build.supervised` named only — **no expansion / no flip**
