@@ -58,7 +58,7 @@ Idea → Concept → Conception Project → Definition → Blueprint → Product
 | Gate 09.2 / ops / HOST_FILE | HOST_FILE + MCP PAUSED on :3001 | **PASS** |
 | Gate 10 | Bundle v1 + v1.1 + compose inert + cutover + reboot recovery + rollback | **CLOSED / PASS** (~00:49 EDT 19 Sep) |
 | Gate 11 | Supervised dependability (repeat jobs; measure quality/cost/repair/recovery) | **CLOSED / PASS** (~01:03 EDT 19 Sep) |
-| Gate 12 / Stage 6 | Factory OS Control Room on `main` + standing host | **ITEMS 45–65** (Pages 37–43 live · Discover/Evidence/Integrations deepen · Home NBA · Portfolio+Work · Teams · FLOW-01..04 · universal records · Decision Inbox · conversation bar · Home strip · Work→receipt · host 69 @ `01f880b` · write-class note 71 @ `24dca85` · docs #101 · 33/36 closed via 54/59) |
+| Gate 12 / Stage 6 | Factory OS Control Room on `main` + standing host | **ITEMS 45–73** (nav 72 @ `6f66f6f` · smoke/ceremony 68/73 PASS · write-class 71 @ `24dca85` · host 69 @ `01f880b` · **74 tip sync WIP**) |
 | Later gates | Multi-tenant → bounded autonomy | **AHEAD** |
 
 **Hard rule:** productionWrites **OFF**; FACTORY_MODE **PAUSED** until Daniel directs otherwise. Write class `factory.self_build.supervised` is **named only** — no expansion / **no flip**. No Director keys on host.
