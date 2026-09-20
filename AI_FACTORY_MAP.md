@@ -1,6 +1,6 @@
 # AI Factory — personal roadmap (Daniel)
 
-Updated: 2026-09-19 ~22:15 (America/Toronto)
+Updated: 2026-09-20 ~00:00 (America/Toronto)
 Live: https://liboriodsantos.github.io/ai-factory-status/ *(Pages sync may lag; local box is truth)*  
 Source of truth: GitHub `factory-bridge` `main` (`apps/factory-os`); local box `/home/box/projects/bigfit/`  
 Public pointer: [`BRIDGE_STATE.md`](BRIDGE_STATE.md)  
@@ -11,26 +11,31 @@ This is a **roadmap / thinking board**, not the Factory software.
 - **Support stack (decided)** — Freshdesk (helpdesk) + Better Stack (monitoring + status page) + custom proactive AI agent (LLM + Freshdesk API + Better Stack webhooks). Not Intercom Fin / Sierra / Decagon at this stage.
 
 ## One sentence
-Gates 08–11 **CLOSED / PASS**. Gate08 remains **CLOSED**. Gate09 canary packet **`HARNESS_PASS_09.06_HOST_RECON_PASS`**. **Factory OS through items 21–30** on `factory-bridge` main and standing host `factory-runtime-01`: auth stub (PR #57), Home cost **`UNAVAILABLE`** (PR #58), host deploy + supervised ceremony (15–16), Ellisbrook live attach **NO-GO** (17), smoke host **PASS** (18), host redeploy latest main (19), durable loopback **`HTTP_BRIDGE`** (20), FLOW-01/02 deepen (21–22), Decision auth-gated approve (23), conversation bar **RO** (24), write-class design doc **no flip** (25), host durability (26–30). Item **31 in flight** — not claimed. Write class **`factory.self_build.supervised`** (named only; no expansion / no flip). productionWrites **false**. FACTORY_MODE **PAUSED**. Director keys **off host**. Client products parked.
+Gates 08–11 **CLOSED / PASS**. Gate08 remains **CLOSED**. Gate09 canary packet **`HARNESS_PASS_09.06_HOST_RECON_PASS`**. **Factory OS through items 31–36** on `factory-bridge` main and standing host `factory-runtime-01` (11–30 still earned; **26** and **28** corrected): auth stub (PR #57), Home cost **`UNAVAILABLE`** (PR #58), host deploy + supervised ceremony (15–16), Ellisbrook live attach **NO-GO** (17), smoke host **PASS** (18), host redeploy latest main (19), durable loopback **`HTTP_BRIDGE`** (20), FLOW-01/02 deepen (21–22), Decision auth-gated approve (23), conversation bar **RO** (24), write-class design doc **no flip** (25), FLOW-03 **DONE** (**26**, **#73**), FLOW-01 universal record **DONE** (**28**, **#76**), host redeploy latest main **DONE** (**31**, auth + `HTTP_BRIDGE`, **PAUSED**), Pages 21–30 already live (**32**), Portfolio+Work **in progress** (**33**, **PR #77**), Teams **DONE** (**34**, **#78**), FLOW-02 universal record **DONE** (**35**, **#79**), FLOW-04 thin RO **in progress** (**36**, **PR #80**). Write class **`factory.self_build.supervised`** (named only; no expansion / no flip). productionWrites **false**. FACTORY_MODE **PAUSED**. Director keys **off host**. Client products parked. Software PR open/merged state was **not verified** from this Pages token.
 
 ## Object model spine
 Idea → Concept → Conception Project → Definition → Blueprint → Product → Project → Release
 
 ## Factory OS (on main + standing host)
-- Home **live loopback** via durable **`HTTP_BRIDGE`** on `factory-runtime-01` (item 20) · host durability (26–30)
+- Home **live loopback** via durable **`HTTP_BRIDGE`** on `factory-runtime-01` (item 20) · latest-main redeploy again (**31**)
 - Home cost strip **`UNAVAILABLE`** (PR #58) — do not treat stub `$0` as earned spend
 - **Auth stub** on main + host (PR #57) — stub only, not full People & Access
 - **FLOW-01 / FLOW-02 deepened** (21–22) — still not full journeys
+- FLOW-01 **universal record** (**28**, **PR #76**) · FLOW-02 **universal record** (**35**, **PR #79**)
+- FLOW-03 **DONE** (**26**, **PR #73**) — thin Operate & Improve, not a full production→improvement chain
+- FLOW-04 **thin RO in progress** (**36**, **PR #80**)
+- Portfolio + Work **in progress** (**33**, **PR #77**)
+- Teams **DONE** (**34**, **PR #78**)
 - **Durable Factory DB**
 - **Decision Inbox V2** · auth-gated approve (23) — not a write-class flip
 - **Operate RO** (read-only)
 - Conversation bar **RO** (24)
 - Write-class design doc (25) — `factory.self_build.supervised` named only; **no flip**
-- Host: deploy + supervised ceremony (15–16) · smoke **PASS** (18) · latest-main redeploy (19) · durability (26–30)
+- Host: deploy + supervised ceremony (15–16) · smoke **PASS** (18) · latest-main redeploy (19) · latest-main redeploy again (31) · remaining host durability (27, 29–30) not re-specified this brief
 - Ellisbrook: readiness docs recorded (17); live attach **NO-GO**
-- Item **31**: in flight — not claimed
+- Pages 21–30: already live (**32**, this repo PR #14)
 - Repo: `apps/factory-os` on `factory-bridge` `main`
-- This Pages agent could not clone `factory-bridge` (404 / out of token scope). Software truth stays on that repo’s `main`.
+- This Pages agent could not clone `factory-bridge` (404 / out of token scope). Software truth stays on that repo’s `main`. Software PR numbers **#73–#80** are from Daniel’s item-38 brief.
 
 ## Self-build Factory roadmap (Stage 4–5 climb)
 
@@ -45,7 +50,7 @@ Idea → Concept → Conception Project → Definition → Blueprint → Product
 | Gate 09.2 / ops / HOST_FILE | HOST_FILE + MCP PAUSED on :3001 | **PASS** |
 | Gate 10 | Bundle v1 + v1.1 + compose inert + cutover + reboot recovery + rollback | **CLOSED / PASS** (~00:49 EDT 19 Sep) |
 | Gate 11 | Supervised dependability (repeat jobs; measure quality/cost/repair/recovery) | **CLOSED / PASS** (~01:03 EDT 19 Sep) |
-| Gate 12 / Stage 6 | Factory OS Control Room on `main` + standing host | **ITEMS 21–30** (FLOW deepen · auth-gated approve · bar RO · design doc no flip · host durability) |
+| Gate 12 / Stage 6 | Factory OS Control Room on `main` + standing host | **ITEMS 31–36** (host redeploy · Pages 21–30 live · Portfolio/Work WIP · Teams DONE · FLOW-02/04 · 26/28 corrected) |
 | Later gates | Multi-tenant → bounded autonomy | **AHEAD** |
 
 **Hard rule:** productionWrites **OFF**; FACTORY_MODE **PAUSED** until Daniel directs otherwise. Write class `factory.self_build.supervised` is **named only** — no expansion / **no flip**. No Director keys on host.
@@ -109,13 +114,26 @@ Idea → Concept → Conception Project → Definition → Blueprint → Product
 - FACTORY_MODE **PAUSED** · productionWrites **false** · Director keys **off host**
 - Write class `factory.self_build.supervised` named only — **no expansion**
 
-## Factory OS items 21–30 (2026-09-19 ~22:15 EDT)
+## Factory OS items 21–30 (corrected 2026-09-20 ~00:00 EDT)
 - **21–22:** FLOW-01 / FLOW-02 deepen — still not full 13-gate / watch-the-Factory journeys
 - **23:** Decision auth-gated approve — not a write-class flip
 - **24:** conversation bar **RO** — no mutating intents
 - **25:** write-class design doc — `factory.self_build.supervised` named only; **no flip**
-- **26–30:** host durability on `factory-runtime-01` — `HTTP_BRIDGE` remains; PAUSED / writes false
-- **31:** in flight — **not claimed** on this board
+- **26:** FLOW-03 **DONE** — factory-bridge **PR #73** (thin; not a full Operate & Improve chain)
+- **27, 29–30:** prior board recorded host durability; **this brief did not re-specify** — not invented
+- **28:** FLOW-01 universal record **DONE** — factory-bridge **PR #76**
+- FACTORY_MODE **PAUSED** · productionWrites **false** · Director keys **off host**
+- Write class `factory.self_build.supervised` named only — **no expansion / no flip**
+- Ellisbrook live attach remains **NO-GO**
+
+## Factory OS items 31–36 (2026-09-20 ~00:00 EDT)
+- **31:** host redeploy latest `main` **DONE** — auth + **`HTTP_BRIDGE`** remain · **PAUSED**
+- **32:** Pages 21–30 **already live** — this repo **PR #14** (last confirmed Pages SHA `8468472`)
+- **33:** Portfolio + Work — **in progress** · factory-bridge **PR #77** (open vs merged not verified from this Pages token)
+- **34:** Teams **DONE** — factory-bridge **PR #78**
+- **35:** FLOW-02 universal record **DONE** — factory-bridge **PR #79**
+- **36:** FLOW-04 thin RO — **in progress** · factory-bridge **PR #80** (open vs merged not verified from this Pages token)
+- Software PR numbers from Daniel’s item-38 brief; `factory-bridge` was **not reachable** here
 - FACTORY_MODE **PAUSED** · productionWrites **false** · Director keys **off host**
 - Write class `factory.self_build.supervised` named only — **no expansion / no flip**
 - Ellisbrook live attach remains **NO-GO**
