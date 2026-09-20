@@ -1,6 +1,6 @@
 # AI Factory — personal roadmap (Daniel)
 
-Updated: 2026-09-20 ~04:33 (America/Toronto)
+Updated: 2026-09-20 ~04:50 (America/Toronto)
 Live: https://liboriodsantos.github.io/ai-factory-status/ *(Pages sync may lag; local box is truth)*  
 Source of truth: GitHub `factory-bridge` `main` (`apps/factory-os`); local box `/home/box/projects/bigfit/`  
 Public pointer: [`BRIDGE_STATE.md`](BRIDGE_STATE.md)  
@@ -11,7 +11,7 @@ This is a **roadmap / thinking board**, not the Factory software.
 - **Support stack (decided)** — Freshdesk (helpdesk) + Better Stack (monitoring + status page) + custom proactive AI agent (LLM + Freshdesk API + Better Stack webhooks). Not Intercom Fin / Sierra / Decagon at this stage.
 
 ## One sentence
-Gates 08–11 **CLOSED / PASS**. Gate08 remains **CLOSED**. Gate09 canary packet **`HARNESS_PASS_09.06_HOST_RECON_PASS`**. **Factory OS through items 45–65** on `factory-bridge` main and standing host `factory-runtime-01` (11–43 still earned; **33** and **36** closed via later **54** / **59**): Pages 37–43 already live (**45**, this repo **#17** @ `fb84e26`), Discover deepen (**46–48**, **#87**), Evidence deepen (**49–50**, **#86**), Integrations deepen (**51–52**, **#88**), Home next-best-action (**53**, **#85**), Portfolio+Work **DONE** (**54**, **#89**), Teams (**55**, **#90**), FLOW-01..04 (**56–59**, **#91–#94**), Discover universal record (**60**, **#95**), Evidence universal record (**61**, **#97**), Decision Inbox (**62**, **#98**), conversation bar (**63**, **#96**), Home strip (**64**, **#99** · cost stays **`UNAVAILABLE`**), Work→receipt (**65**, **#100**), operator host redeploy (**69**, `01f880b` · ANON HTTP **307** · **`HTTP_BRIDGE`** · **PAUSED**), docs **#101**, write-class design note (**71**, `24dca85` · docs only · **no flip**). Prior 37–43 stay earned (host 37 · Pages 31–36 · Discover shells · Evidence ledger · Integrations shell · Home NBA · host 43 @ `ca5fbb0` · probe ANON HTTP **307** · Bridge health **200** · evidenceClass **`HTTP_BRIDGE`**). Write class **`factory.self_build.supervised`** (named only; no expansion / no flip). productionWrites **false**. FACTORY_MODE **PAUSED**. Director keys **off host**. Client products parked. Overnight software PR numbers **#85–#101** are from Daniel’s item-67 brief; this Pages token could not read `factory-bridge`. Merge SHAs for those PRs were **not** in the brief — not invented.
+Gates 08–11 **CLOSED / PASS**. Gate08 remains **CLOSED**. Gate09 canary packet **`HARNESS_PASS_09.06_HOST_RECON_PASS`**. **Factory OS through items 45–65** on `factory-bridge` main and standing host `factory-runtime-01` (11–43 still earned; **33** and **36** closed via later **54** / **59**): Pages 37–43 already live (**45**, this repo **#17** @ `fb84e26`), Discover deepen (**46–48**, **#87**), Evidence deepen (**49–50**, **#86**), Integrations deepen (**51–52**, **#88**), Home next-best-action (**53**, **#85**), Portfolio+Work **DONE** (**54**, **#89**), Teams (**55**, **#90**), FLOW-01..04 (**56–59**, **#91–#94**), Discover universal record (**60**, **#95**), Evidence universal record (**61**, **#97**), Decision Inbox (**62**, **#98**), conversation bar (**63**, **#96**), Home strip (**64**, **#99** · cost stays **`UNAVAILABLE`**), Work→receipt (**65**, **#100**), operator host redeploy (**69**, `01f880b` · ANON HTTP **307** · **`HTTP_BRIDGE`** · **PAUSED**), docs **#101**, write-class design note (**71**, `24dca85` · docs only · **no flip**). Prior 37–43 stay earned (host 37 · Pages 31–36 · Discover shells · Evidence ledger · Integrations shell · Home NBA · host 43 @ `ca5fbb0` · probe ANON HTTP **307** · Bridge health **200** · evidenceClass **`HTTP_BRIDGE`**). Write class **`factory.self_build.supervised`** (named only; no expansion / no flip). productionWrites **false**. FACTORY_MODE **PAUSED**. Director keys **off host**. Client products parked. Buffer **75–86** DONE (Products **86** **#116** @ `b06390b`). Item **74** remains **WIP** — last host tip synced to factory-bridge `6f66f6f`, then main advanced to `b06390b`; host tip / board sync not caught up. Item **70** still **open / not claimed**. Teams factory-bridge **#117** and Integrations **#118** are **open, not merged** (GitHub Actions spending-limit — **not DONE**). Overnight software PR numbers **#85–#101** are from Daniel’s item-67 brief; this Pages token could not read `factory-bridge`. Merge SHAs for those PRs were **not** in the brief — not invented.
 
 ## Object model spine
 Idea → Concept → Conception Project → Definition → Blueprint → Product → Project → Release
@@ -23,13 +23,13 @@ Idea → Concept → Conception Project → Definition → Blueprint → Product
 - **Auth stub** on main + host (PR #57) — stub only, not full People & Access
 - Discover family **shells** (**39**, **#81**) · **deepen** (**46–48**, **#87**) · universal record (**60**, **#95**) — still not full Idea/Conception/Blueprint journeys
 - Evidence & Receipts **ledger** (**40**, **#82**) · **deepen** (**49–50**, **#86**) · universal record (**61**, **#97**) — still not full challenge-id bind
-- Integrations **shell** (**41**, **#83**) · **deepen** (**51–52**, **#88**) — still thin; adapter freeze still open
+- Integrations **shell** (**41**, **#83**) · **deepen** (**51–52**, **#88**) — still thin; adapter freeze still open · follow-up **#118** open, not merged (Actions spending-limit — not DONE)
 - **FLOW-01 / FLOW-02 deepened** (21–22 · **56–57**, **#91–#92**) — still not full journeys
 - FLOW-01 **universal record** (**28**, **#76**) · FLOW-02 **universal record** (**35**, **#79**)
 - FLOW-03 **DONE** (**26**, **#73** · **58**, **#93**) — thin Operate & Improve, not a full production→improvement chain
 - FLOW-04 **thin RO DONE** (**36** closed via **59**, **#94**) — still not a full Sell & Manage journey
 - Portfolio + Work **DONE** (**33** closed via **54**, **#89**) · Work→receipt (**65**, **#100**)
-- Teams **DONE** (**34**, **#78** · **55**, **#90**) — thin roster, not full People & Access
+- Teams **DONE** (**34**, **#78** · **55**, **#90**) — thin roster, not full People & Access · follow-up **#117** open, not merged (Actions spending-limit — not DONE)
 - **Durable Factory DB**
 - **Decision Inbox V2** · auth-gated approve (23) · deepen (**62**, **#98**) — not a write-class flip
 - **Operate RO** (read-only)
@@ -58,10 +58,10 @@ Idea → Concept → Conception Project → Definition → Blueprint → Product
 | Gate 09.2 / ops / HOST_FILE | HOST_FILE + MCP PAUSED on :3001 | **PASS** |
 | Gate 10 | Bundle v1 + v1.1 + compose inert + cutover + reboot recovery + rollback | **CLOSED / PASS** (~00:49 EDT 19 Sep) |
 | Gate 11 | Supervised dependability (repeat jobs; measure quality/cost/repair/recovery) | **CLOSED / PASS** (~01:03 EDT 19 Sep) |
-| Gate 12 / Stage 6 | Factory OS Control Room on `main` + standing host | **ITEMS 45–86** (buffer 75–86 · Products 86 #116 @ `b06390b` · Roadmaps #115 · Releases #114 · Delivery #113 · **#110** on main · **74 tip sync WIP**) |
+| Gate 12 / Stage 6 | Factory OS Control Room on `main` + standing host | **ITEMS 45–86** (buffer 75–86 DONE · Products 86 #116 @ `b06390b` · **74 tip sync WIP** · last host tip `6f66f6f` then main `b06390b` · **70 open / not claimed** · Teams **#117** / Integrations **#118** open, not merged — Actions spending-limit, not DONE) |
 | Later gates | Multi-tenant → bounded autonomy | **AHEAD** |
 
-**Hard rule:** productionWrites **OFF**; FACTORY_MODE **PAUSED** until Daniel directs otherwise. Write class `factory.self_build.supervised` is **named only** — no expansion / **no flip**. No Director keys on host.
+**Hard rule:** productionWrites **OFF**; FACTORY_MODE **PAUSED** until Daniel directs otherwise. Write class `factory.self_build.supervised` is **named only** — no expansion / **no flip**. No Director keys on host. Client products stay **parked**.
 
 ## Gate08 — CLOSED / PASS
 - 08.01–03 accepted offline
@@ -178,11 +178,12 @@ Idea → Concept → Conception Project → Definition → Blueprint → Product
 - **67:** this Pages refresh — `ai-factory-status` board only (PR #18 / #19 follow-ups)
 - **68:** host smoke **PASS** — operator · **PAUSED** / writes false
 - **69:** standing host redeploy **DONE** — factory-bridge main `01f880b` · probe ANON HTTP **307** · evidenceClass **`HTTP_BRIDGE`** · **PAUSED** / writes false
-- **70:** Pages final host-tip sync — **not claimed** (item **74** still in progress)
+- **70:** Pages final host-tip sync — **open / not claimed** (still waits on item **74**; host tip behind current main)
 - **71:** write-class design note **DONE** — factory-bridge `24dca85` · docs only · `factory.self_build.supervised` named · **no flip**
 - **72:** nav sync **DONE** — factory-bridge main `6f66f6f`
 - **73:** host ceremony **PASS** — operator · supervised · writes stayed false · **PAUSED**
-- **74:** final host tip sync — **in progress** · earlier host tip is `6f66f6f` (72) · not claimed done
+- **74:** final host tip sync — **WIP** · last host tip synced to factory-bridge `6f66f6f` (72) · main then advanced to `b06390b` (Products #116) · host tip / board sync not caught up · not claimed done
+- **open:** Teams factory-bridge **#117** · Integrations **#118** — open, not merged · blocked on GitHub Actions spending-limit · **not DONE**
 - **75:** Environments **DONE** — factory-bridge **PR #105** @ `80b1cfb` (thin; not full env records)
 - **76:** Monitoring **DONE** — factory-bridge **PR #106** @ `15eb0af` (after FLOW03-EV-MONITORING dedupe; thin)
 - **77:** Incidents **DONE** — factory-bridge **PR #104** @ `91c091a` (thin; not full incident/postmortem)
