@@ -1,6 +1,6 @@
 # Self-build status
 
-Updated: 2026-09-20 ~03:51 EDT
+Updated: 2026-09-20 ~03:55 EDT
 
 - Bundle v1: PASS
 - Bundle v1.1: PASS
@@ -58,9 +58,14 @@ Updated: 2026-09-20 ~03:51 EDT
   - Home strip (**64**) — **DONE** (**PR #99**; cost stays `UNAVAILABLE`)
   - Work→receipt (**65**) — **DONE** (**PR #100**; thin bind)
   - Operator host redeploy (**66**) — **DONE** · auth + `HTTP_BRIDGE` · **PAUSED**
-  - Pages 45–65 (**67**) — this refresh
+  - Pages 45–65 (**67**) — this refresh (PR #18 / #19 follow-ups)
+  - Host smoke (**68**) — **PASS** · operator · **PAUSED** / writes false
   - Operator host redeploy (**69**) — **DONE** · factory-bridge main `01f880b` · ANON HTTP **307** · `HTTP_BRIDGE` · **PAUSED** / writes false
+  - Pages final tip sync (**70**) — **not claimed** (74 still in progress)
   - Write-class design note (**71**) — **DONE** · `24dca85` · docs only · **no flip**
+  - Nav sync (**72**) — **DONE** · factory-bridge main `6f66f6f`
+  - Host ceremony (**73**) — **PASS** · operator · writes stayed false · **PAUSED**
+  - Final host tip sync (**74**) — **in progress**
   - Docs — factory-bridge **PR #101**
 - Overnight software PR numbers **#85–#101** come from Daniel’s item-67 brief. Merge SHAs for those PRs were **not** in the brief — not invented. This Pages agent could not clone `factory-bridge` (404 / out of token scope). Prior briefed PRs **#73 / #76 / #78 / #79 / #81–#84** still apply for 26–43.
 - Write class: `factory.self_build.supervised` (named only; **no expansion / no flip**)
