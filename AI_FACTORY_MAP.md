@@ -1,6 +1,6 @@
 # AI Factory — personal roadmap (Daniel)
 
-Updated: 2026-09-19 ~21:15 (America/Toronto)
+Updated: 2026-09-19 ~22:15 (America/Toronto)
 Live: https://liboriodsantos.github.io/ai-factory-status/ *(Pages sync may lag; local box is truth)*  
 Source of truth: GitHub `factory-bridge` `main` (`apps/factory-os`); local box `/home/box/projects/bigfit/`  
 Public pointer: [`BRIDGE_STATE.md`](BRIDGE_STATE.md)  
@@ -11,21 +11,24 @@ This is a **roadmap / thinking board**, not the Factory software.
 - **Support stack (decided)** — Freshdesk (helpdesk) + Better Stack (monitoring + status page) + custom proactive AI agent (LLM + Freshdesk API + Better Stack webhooks). Not Intercom Fin / Sierra / Decagon at this stage.
 
 ## One sentence
-Gates 08–11 **CLOSED / PASS**. Gate08 remains **CLOSED**. Gate09 canary packet **`HARNESS_PASS_09.06_HOST_RECON_PASS`**. **Factory OS through items 11–20** on `factory-bridge` main and standing host `factory-runtime-01`: auth stub (PR #57), Home cost **`UNAVAILABLE`** (PR #58), host deploy + supervised ceremony (15–16), Ellisbrook live attach **NO-GO** (17), smoke host **PASS** (18), host redeploy latest main (19), durable loopback **`HTTP_BRIDGE`** (20). Write class **`factory.self_build.supervised`** (named only; no expansion). productionWrites **false**. FACTORY_MODE **PAUSED**. Director keys **off host**. Client products parked.
+Gates 08–11 **CLOSED / PASS**. Gate08 remains **CLOSED**. Gate09 canary packet **`HARNESS_PASS_09.06_HOST_RECON_PASS`**. **Factory OS through items 21–30** on `factory-bridge` main and standing host `factory-runtime-01`: auth stub (PR #57), Home cost **`UNAVAILABLE`** (PR #58), host deploy + supervised ceremony (15–16), Ellisbrook live attach **NO-GO** (17), smoke host **PASS** (18), host redeploy latest main (19), durable loopback **`HTTP_BRIDGE`** (20), FLOW-01/02 deepen (21–22), Decision auth-gated approve (23), conversation bar **RO** (24), write-class design doc **no flip** (25), host durability (26–30). Item **31 in flight** — not claimed. Write class **`factory.self_build.supervised`** (named only; no expansion / no flip). productionWrites **false**. FACTORY_MODE **PAUSED**. Director keys **off host**. Client products parked.
 
 ## Object model spine
 Idea → Concept → Conception Project → Definition → Blueprint → Product → Project → Release
 
 ## Factory OS (on main + standing host)
-- Home **live loopback** via durable **`HTTP_BRIDGE`** on `factory-runtime-01` (item 20)
+- Home **live loopback** via durable **`HTTP_BRIDGE`** on `factory-runtime-01` (item 20) · host durability (26–30)
 - Home cost strip **`UNAVAILABLE`** (PR #58) — do not treat stub `$0` as earned spend
 - **Auth stub** on main + host (PR #57) — stub only, not full People & Access
-- **FLOW spine**
+- **FLOW-01 / FLOW-02 deepened** (21–22) — still not full journeys
 - **Durable Factory DB**
-- **Decision Inbox V2**
+- **Decision Inbox V2** · auth-gated approve (23) — not a write-class flip
 - **Operate RO** (read-only)
-- Host: deploy + supervised ceremony (15–16) · smoke **PASS** (18) · latest-main redeploy (19)
+- Conversation bar **RO** (24)
+- Write-class design doc (25) — `factory.self_build.supervised` named only; **no flip**
+- Host: deploy + supervised ceremony (15–16) · smoke **PASS** (18) · latest-main redeploy (19) · durability (26–30)
 - Ellisbrook: readiness docs recorded (17); live attach **NO-GO**
+- Item **31**: in flight — not claimed
 - Repo: `apps/factory-os` on `factory-bridge` `main`
 - This Pages agent could not clone `factory-bridge` (404 / out of token scope). Software truth stays on that repo’s `main`.
 
@@ -42,10 +45,10 @@ Idea → Concept → Conception Project → Definition → Blueprint → Product
 | Gate 09.2 / ops / HOST_FILE | HOST_FILE + MCP PAUSED on :3001 | **PASS** |
 | Gate 10 | Bundle v1 + v1.1 + compose inert + cutover + reboot recovery + rollback | **CLOSED / PASS** (~00:49 EDT 19 Sep) |
 | Gate 11 | Supervised dependability (repeat jobs; measure quality/cost/repair/recovery) | **CLOSED / PASS** (~01:03 EDT 19 Sep) |
-| Gate 12 / Stage 6 | Factory OS Control Room on `main` + standing host | **ITEMS 11–20** (named surfaces + `HTTP_BRIDGE` loopback) |
+| Gate 12 / Stage 6 | Factory OS Control Room on `main` + standing host | **ITEMS 21–30** (FLOW deepen · auth-gated approve · bar RO · design doc no flip · host durability) |
 | Later gates | Multi-tenant → bounded autonomy | **AHEAD** |
 
-**Hard rule:** productionWrites **OFF**; FACTORY_MODE **PAUSED** until Daniel directs otherwise. Write class `factory.self_build.supervised` is **named only** — no expansion. No Director keys on host.
+**Hard rule:** productionWrites **OFF**; FACTORY_MODE **PAUSED** until Daniel directs otherwise. Write class `factory.self_build.supervised` is **named only** — no expansion / **no flip**. No Director keys on host.
 
 ## Gate08 — CLOSED / PASS
 - 08.01–03 accepted offline
@@ -105,3 +108,14 @@ Idea → Concept → Conception Project → Definition → Blueprint → Product
 - **20:** durable loopback Bridge **`HTTP_BRIDGE`** on standing host `factory-runtime-01`
 - FACTORY_MODE **PAUSED** · productionWrites **false** · Director keys **off host**
 - Write class `factory.self_build.supervised` named only — **no expansion**
+
+## Factory OS items 21–30 (2026-09-19 ~22:15 EDT)
+- **21–22:** FLOW-01 / FLOW-02 deepen — still not full 13-gate / watch-the-Factory journeys
+- **23:** Decision auth-gated approve — not a write-class flip
+- **24:** conversation bar **RO** — no mutating intents
+- **25:** write-class design doc — `factory.self_build.supervised` named only; **no flip**
+- **26–30:** host durability on `factory-runtime-01` — `HTTP_BRIDGE` remains; PAUSED / writes false
+- **31:** in flight — **not claimed** on this board
+- FACTORY_MODE **PAUSED** · productionWrites **false** · Director keys **off host**
+- Write class `factory.self_build.supervised` named only — **no expansion / no flip**
+- Ellisbrook live attach remains **NO-GO**
