@@ -1,6 +1,6 @@
 # AI Factory — personal roadmap (Daniel)
 
-Updated: 2026-09-20 ~03:51 (America/Toronto)
+Updated: 2026-09-20 ~03:55 (America/Toronto)
 Live: https://liboriodsantos.github.io/ai-factory-status/ *(Pages sync may lag; local box is truth)*  
 Source of truth: GitHub `factory-bridge` `main` (`apps/factory-os`); local box `/home/box/projects/bigfit/`  
 Public pointer: [`BRIDGE_STATE.md`](BRIDGE_STATE.md)  
@@ -58,7 +58,7 @@ Idea → Concept → Conception Project → Definition → Blueprint → Product
 | Gate 09.2 / ops / HOST_FILE | HOST_FILE + MCP PAUSED on :3001 | **PASS** |
 | Gate 10 | Bundle v1 + v1.1 + compose inert + cutover + reboot recovery + rollback | **CLOSED / PASS** (~00:49 EDT 19 Sep) |
 | Gate 11 | Supervised dependability (repeat jobs; measure quality/cost/repair/recovery) | **CLOSED / PASS** (~01:03 EDT 19 Sep) |
-| Gate 12 / Stage 6 | Factory OS Control Room on `main` + standing host | **ITEMS 45–65** (Pages 37–43 live · Discover/Evidence/Integrations deepen · Home NBA · Portfolio+Work · Teams · FLOW-01..04 · universal records · Decision Inbox · conversation bar · Home strip · Work→receipt · host 69 @ `01f880b` · write-class note 71 @ `24dca85` · docs #101 · 33/36 closed via 54/59) |
+| Gate 12 / Stage 6 | Factory OS Control Room on `main` + standing host | **ITEMS 45–73** (nav 72 @ `6f66f6f` · smoke/ceremony 68/73 PASS · write-class 71 @ `24dca85` · host 69 @ `01f880b` · **74 tip sync WIP**) |
 | Later gates | Multi-tenant → bounded autonomy | **AHEAD** |
 
 **Hard rule:** productionWrites **OFF**; FACTORY_MODE **PAUSED** until Daniel directs otherwise. Write class `factory.self_build.supervised` is **named only** — no expansion / **no flip**. No Director keys on host.
@@ -175,9 +175,14 @@ Idea → Concept → Conception Project → Definition → Blueprint → Product
 - **64:** Home strip **DONE** — factory-bridge **PR #99** (cost stays **`UNAVAILABLE`**)
 - **65:** Work→receipt **DONE** — factory-bridge **PR #100** (thin bind; not full LIVE FACTORY ledger)
 - **66:** standing host redeploy **DONE** — operator · auth + **`HTTP_BRIDGE`** remain · **PAUSED**
-- **67:** this Pages refresh — `ai-factory-status` board only
+- **67:** this Pages refresh — `ai-factory-status` board only (PR #18 / #19 follow-ups)
+- **68:** host smoke **PASS** — operator · **PAUSED** / writes false
 - **69:** standing host redeploy **DONE** — factory-bridge main `01f880b` · probe ANON HTTP **307** · evidenceClass **`HTTP_BRIDGE`** · **PAUSED** / writes false
+- **70:** Pages final host-tip sync — **not claimed** (item **74** still in progress)
 - **71:** write-class design note **DONE** — factory-bridge `24dca85` · docs only · `factory.self_build.supervised` named · **no flip**
+- **72:** nav sync **DONE** — factory-bridge main `6f66f6f`
+- **73:** host ceremony **PASS** — operator · supervised · writes stayed false · **PAUSED**
+- **74:** final host tip sync — **in progress** · not claimed done
 - **docs:** factory-bridge **PR #101**
 - Overnight software PR numbers **#85–#101** from Daniel’s item-67 brief; `factory-bridge` was **not reachable** here. Merge SHAs for those PRs were **not** in the brief — not invented.
 - FACTORY_MODE **PAUSED** · productionWrites **false** · Director keys **off host**
