@@ -1,6 +1,6 @@
 # Self-build status
 
-Updated: 2026-09-19 ~22:15 EDT
+Updated: 2026-09-20 ~00:00 EDT
 
 - Bundle v1: PASS
 - Bundle v1.1: PASS
@@ -19,13 +19,22 @@ Updated: 2026-09-19 ~22:15 EDT
   - Smoke host **PASS** (**18**)
   - Host redeploy latest `main` (**19**)
   - Durable loopback Bridge **`HTTP_BRIDGE`** on standing host (**20**)
-- Factory OS items **21–30**:
+- Factory OS items **21–30** (still earned; **26** and **28** corrected this refresh):
   - FLOW-01 / FLOW-02 deepen (**21–22**) — still not full journeys
   - Decision auth-gated approve (**23**) — not a write-class flip
   - Conversation bar **RO** (**24**)
   - Write-class design doc (**25**) — named only; **no flip**
-  - Host durability (**26–30**) — standing host held; `HTTP_BRIDGE` remains
-- Item **31**: **in flight** — not claimed on this board
+  - FLOW-03 (**26**) — **DONE** (**PR #73**)
+  - Host durability (**27**, **29–30**) — prior board; not re-specified this brief
+  - FLOW-01 universal record (**28**) — **DONE** (**PR #76**)
+- Factory OS items **31–36**:
+  - Host redeploy latest `main` (**31**) — **DONE** · auth + `HTTP_BRIDGE` · **PAUSED**
+  - Pages 21–30 (**32**) — **already live** (this repo PR #14)
+  - Portfolio + Work (**33**) — **in progress** (**PR #77**; open/merged not verified here)
+  - Teams (**34**) — **DONE** (**PR #78**)
+  - FLOW-02 universal record (**35**) — **DONE** (**PR #79**)
+  - FLOW-04 thin RO (**36**) — **in progress** (**PR #80**; open/merged not verified here)
+- Software PR numbers **#73 / #76 / #77 / #78 / #79 / #80** come from Daniel’s item-38 brief. This Pages agent could not clone `factory-bridge` (404 / out of token scope).
 - Write class: `factory.self_build.supervised` (named only; **no expansion / no flip**)
 - Close pack refs: `evidence/08_GATE_CLOSED_20260918.md` · `evidence/09_GATE_CLOSE_PACK.md` · `evidence/11_GATE_CLOSED_20260919.md`
 - Pointer: `BRIDGE_STATE.md`
