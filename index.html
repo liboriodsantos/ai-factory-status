@@ -126,10 +126,10 @@
     </p>
     <div class="meta">
 
-    <div class="chip"><b>Factory OS</b> ON MAIN · PAUSED · writes false · write class <code>factory.self_build.supervised</code> · 2026-09-19 ~20:30 EDT</div>
-    <p class="lede">Gates 08–11 CLOSED / PASS. Gate08 CLOSED. Gate09 canary packet <code>HARNESS_PASS_09.06_HOST_RECON_PASS</code>. Factory OS on <code>factory-bridge</code> <code>main</code>: Home live loopback · FLOW spine · durable Factory DB · Decision Inbox V2 · Operate RO. <a href="build-roadmap.html" style="color:#8cf">Build sequence</a> · <a href="BRIDGE_STATE.md" style="color:#8cf">BRIDGE_STATE</a> · Self-build refs: <a href="self-build-bundle-v1.html" style="color:#8cf">v1</a> · <a href="self-build-bundle-v1.1.html" style="color:#8cf">v1.1</a> · <a href="dependability-run1.html" style="color:#8cf">Run#1</a> · <a href="dependability-run2.html" style="color:#8cf">Run#2</a>.</p>
+    <div class="chip"><b>Factory OS</b> items 11–20 · HTTP_BRIDGE on host · PAUSED · writes false · write class <code>factory.self_build.supervised</code> · 2026-09-19 ~21:15 EDT</div>
+    <p class="lede">Gates 08–11 CLOSED / PASS. Factory OS through items 11–20: auth stub (PR #57) · Home cost <code>UNAVAILABLE</code> (PR #58) · host deploy + supervised ceremony (15–16) · Ellisbrook live attach <b>NO-GO</b> (17) · smoke host PASS (18) · host redeploy latest main (19) · durable loopback <code>HTTP_BRIDGE</code> on standing host (20). <a href="build-roadmap.html" style="color:#8cf">Build sequence</a> · <a href="BRIDGE_STATE.md" style="color:#8cf">BRIDGE_STATE</a> · Self-build refs: <a href="self-build-bundle-v1.html" style="color:#8cf">v1</a> · <a href="self-build-bundle-v1.1.html" style="color:#8cf">v1.1</a> · <a href="dependability-run1.html" style="color:#8cf">Run#1</a> · <a href="dependability-run2.html" style="color:#8cf">Run#2</a>.</p>
 
-      <span class="chip">Updated <b>19 Sep 2026 ~20:30 EDT</b> · America/Toronto</span>
+      <span class="chip">Updated <b>19 Sep 2026 ~21:15 EDT</b> · America/Toronto</span>
       <span class="chip">Director <b>BIGFIT Manager</b></span>
       <span class="chip">Product authority <b>Daniel</b></span>
       <span class="chip">Truth <b>GitHub main</b></span>
@@ -139,7 +139,7 @@
     <div class="hero">
       <div class="stat"><div class="k">Foundation</div><div class="v ok">FR-01 complete</div></div>
       <div class="stat"><div class="k">Runtime</div><div class="v warn">Paused · writes OFF</div></div>
-      <div class="stat"><div class="k">Focus now</div><div class="v now">Factory OS on main</div></div>
+      <div class="stat"><div class="k">Focus now</div><div class="v now">OS items 11–20 on host</div></div>
       <div class="stat"><div class="k">Client products</div><div class="v later">Parked</div></div>
     </div>
 
@@ -147,10 +147,13 @@
       <h2>One sentence</h2>
       <p class="sub" style="margin:0;color:#e2e8f0;font-size:1rem;">
         Gates 08–11 are <b>CLOSED / PASS</b>. Gate08 is <b>CLOSED</b>. Gate09 canary packet
-        <code>HARNESS_PASS_09.06_HOST_RECON_PASS</code>. <b>Factory OS is on <code>factory-bridge</code> main</b>:
-        Home live loopback · FLOW spine · durable Factory DB · Decision Inbox V2 · Operate RO.
-        Write class <code>factory.self_build.supervised</code> is <b>named only</b> — no expansion.
-        productionWrites <b>false</b> · FACTORY_MODE <b>PAUSED</b> · no Director keys. Client products stay parked.
+        <code>HARNESS_PASS_09.06_HOST_RECON_PASS</code>. <b>Factory OS through items 11–20</b> on
+        <code>factory-bridge</code> main and standing host <code>factory-runtime-01</code>:
+        auth stub · Home cost <code>UNAVAILABLE</code> · host deploy + supervised ceremony · smoke PASS ·
+        latest-main redeploy · durable loopback <code>HTTP_BRIDGE</code>.
+        Ellisbrook live attach is <b>NO-GO</b>. Write class <code>factory.self_build.supervised</code> is
+        <b>named only</b> — no expansion. productionWrites <b>false</b> · FACTORY_MODE <b>PAUSED</b> ·
+        Director keys <b>off host</b>. Client products stay parked.
       </p>
     </section>
 
@@ -218,7 +221,7 @@
           <div>
             <div class="label">Gate 12 — Factory OS (Control Room)</div>
             <div class="hint">v2.4 R4 product design → real app · thin vertical slice</div>
-            <div class="detail"><b>ON MAIN</b> — Home live loopback · FLOW spine · durable Factory DB · Decision Inbox V2 · Operate RO. Write class <code>factory.self_build.supervised</code> named only. PAUSED / writes false. No Director keys.</div>
+            <div class="detail"><b>ITEMS 11–20</b> — auth stub (PR #57) · Home cost <code>UNAVAILABLE</code> (PR #58) · host deploy + ceremony (15–16) · Ellisbrook attach <b>NO-GO</b> (17) · smoke PASS (18) · latest-main redeploy (19) · durable <code>HTTP_BRIDGE</code> loopback on host (20). Write class named only. PAUSED / writes false. Director keys off host.</div>
           </div>
           <span class="tag current">NOW</span>
         </div>
@@ -252,27 +255,50 @@
         <div class="pill"><div class="t">8</div><div class="b">Release</div></div>
       </div>
       <div class="callout" style="margin-top:12px;">
-        <b>On main now:</b> Home <b>live loopback</b> · <b>FLOW spine</b> · durable Factory DB · <b>Decision Inbox V2</b> · <b>Operate RO</b>.
+        <b>On main + host now:</b> Home <b>live loopback via durable <code>HTTP_BRIDGE</code></b> · <b>FLOW spine</b> · durable Factory DB · <b>Decision Inbox V2</b> · <b>Operate RO</b> · <b>auth stub</b> · Home cost <code>UNAVAILABLE</code>.
         Full journeys (Create Software → Build &amp; Release → Operate &amp; Improve) stay thin beyond that spine.
-        Design authority: <code>docs/design/v2.4-R4</code> (R4 Golden Master).
+        Design authority: <code>docs/design/v2.4-R4</code> (R4 Golden Master). Ellisbrook live attach remains <b>NO-GO</b>.
       </div>
     </section>
 
     <section>
-      <h2>Factory OS on main</h2>
-      <p class="sub">Software lives on <code>factory-bridge</code> <code>main</code> / <code>apps/factory-os</code>. This Pages board does not expand writes.</p>
+      <h2>Factory OS on main + standing host</h2>
+      <p class="sub">Software lives on <code>factory-bridge</code> <code>main</code> / <code>apps/factory-os</code>. Host is <code>factory-runtime-01</code>. This Pages board does not expand writes.</p>
       <table>
         <thead><tr><th>Item</th><th>Status</th></tr></thead>
         <tbody>
           <tr><td>Daniel GO</td><td class="ok">Authorized (“agree, lets do it”)</td></tr>
-          <tr><td>Home</td><td class="ok">Live loopback on main</td></tr>
+          <tr><td>Home</td><td class="ok">Live loopback · cost strip <code>UNAVAILABLE</code> (PR #58)</td></tr>
           <tr><td>FLOW</td><td class="ok">Spine on main</td></tr>
           <tr><td>Factory DB</td><td class="ok">Durable Factory DB on main</td></tr>
           <tr><td>Decision Inbox</td><td class="ok">V2 on main</td></tr>
           <tr><td>Operate</td><td class="ok">RO (read-only) on main</td></tr>
+          <tr><td>Auth stub</td><td class="ok">On main + host (PR #57) — stub only, not full People &amp; Access</td></tr>
+          <tr><td>Loopback Bridge</td><td class="ok">Durable <code>HTTP_BRIDGE</code> on standing host (item 20)</td></tr>
           <tr><td>Write class</td><td class="warn"><code>factory.self_build.supervised</code> — named only · no expansion</td></tr>
-          <tr><td>Bridge posture</td><td>PAUSED · productionWrites <b>false</b> · no Director keys</td></tr>
+          <tr><td>Bridge posture</td><td>FACTORY_MODE <b>PAUSED</b> · productionWrites <b>false</b> · Director keys <b>off host</b></td></tr>
+          <tr><td>Ellisbrook</td><td class="warn">Readiness docs recorded (17) · live attach <b>NO-GO</b></td></tr>
           <tr><td>Repo home</td><td>GitHub <code>factory-bridge</code> / <code>apps/factory-os</code> (this Pages agent could not reach that repo)</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section>
+      <h2>Factory OS items 11–20</h2>
+      <p class="sub">Queue progress authorized for this Pages refresh. Software PRs are on <code>factory-bridge</code>. Host work is on <code>factory-runtime-01</code>. No write-class expansion.</p>
+      <div class="callout">
+        <b>Honest bounds:</b> FACTORY_MODE <b>PAUSED</b> · productionWrites <b>false</b> · Director keys <b>off host</b> · Ellisbrook live attach <b>NO-GO</b>.
+        Home spend is <code>UNAVAILABLE</code> — do not read a stub <code>$0</code> as earned cost.
+      </div>
+      <table>
+        <thead><tr><th>Item</th><th>What</th><th>Status</th></tr></thead>
+        <tbody>
+          <tr><td>11–14 software</td><td>Auth stub on main + host · Home cost-strip semantics</td><td class="ok">PR #57 auth stub · PR #58 cost <code>UNAVAILABLE</code></td></tr>
+          <tr><td>15–16</td><td>Host deploy + supervised ceremony</td><td class="ok">Done — supervised; writes stayed false</td></tr>
+          <tr><td>17</td><td>Ellisbrook readiness docs</td><td class="warn">Recorded · live attach <b>NO-GO</b></td></tr>
+          <tr><td>18</td><td>Smoke host</td><td class="ok">PASS</td></tr>
+          <tr><td>19</td><td>Host redeploy latest <code>main</code></td><td class="ok">Done — standing host on latest main</td></tr>
+          <tr><td>20</td><td>Durable loopback Bridge <code>HTTP_BRIDGE</code> on standing host</td><td class="ok">Live on <code>factory-runtime-01</code></td></tr>
         </tbody>
       </table>
     </section>
@@ -366,7 +392,7 @@
           <div>
             <div class="label">Factory OS Control Room</div>
             <div class="hint">Gate12 — build the Factory software itself (R4 Golden Master)</div>
-            <div class="detail"><b>ON MAIN.</b> Home live loopback · FLOW spine · durable Factory DB · Decision Inbox V2 · Operate RO. Lives at <code>apps/factory-os</code>. Client products remain parked.</div>
+            <div class="detail"><b>ITEMS 11–20.</b> Auth stub · Home cost <code>UNAVAILABLE</code> · host deploy + ceremony · smoke PASS · latest-main redeploy · durable <code>HTTP_BRIDGE</code> loopback. Ellisbrook attach NO-GO. Lives at <code>apps/factory-os</code>. Client products remain parked.</div>
           </div>
           <span class="tag current">NOW</span>
         </div>
@@ -393,7 +419,7 @@
 
     <section>
       <h2>Accomplishments so far (earned)</h2>
-      <p class="sub">These are real. Stage 4 earned — Gate08/09/10 CLOSED; Stage 5 Gate11 <b>CLOSED / PASS</b>; Factory OS <b>on main</b> (named surfaces only).</p>
+      <p class="sub">These are real. Stage 4 earned — Gate08/09/10 CLOSED; Stage 5 Gate11 <b>CLOSED / PASS</b>; Factory OS items <b>11–20</b> on main + standing host (named surfaces only).</p>
       <ul class="clean">
         <li><strong>Factory defined</strong> — product vision, authority split, and “GitHub is truth” rule.</li>
         <li><strong>Control plane on GitHub</strong> — checkpoints, decisions, Manager/Builder/QA roles, release path.</li>
@@ -406,7 +432,7 @@
         <li><strong>Gate09 canary packet</strong> — <code>HARNESS_PASS_09.06_HOST_RECON_PASS</code>; earlier canary-track CLOSED / PASS ~19:26 EDT 18 Sep; writes still OFF.</li>
         <li><strong>Gate10 CLOSED / PASS</strong> — Bundle v1+v1.1, compose cutover, reboot recovery, rollback; close pack ~00:49 EDT 19 Sep 2026; writes still OFF.</li>
         <li><strong>Gate11 CLOSED / PASS</strong> — Dependability Run #1 + Run #2 (N=3 each); close pack ~01:03 EDT 19 Sep 2026; writes still OFF.</li>
-        <li><strong>Factory OS on main</strong> — Home live loopback · FLOW spine · durable Factory DB · Decision Inbox V2 · Operate RO; write class <code>factory.self_build.supervised</code> named only; client products parked.</li>
+        <li><strong>Factory OS items 11–20</strong> — auth stub on main + host (PR #57) · Home cost <code>UNAVAILABLE</code> (PR #58) · host deploy + supervised ceremony (15–16) · Ellisbrook readiness docs / live attach <b>NO-GO</b> (17) · smoke host PASS (18) · host redeploy latest main (19) · durable loopback <code>HTTP_BRIDGE</code> on <code>factory-runtime-01</code> (20); write class named only; client products parked.</li>
         <li><strong>Director seat</strong> — BIGFIT Manager operates day-to-day; Personal COS may ping status only.</li>
         <li><strong>Lane split</strong> — Grok primary on Gate08/build/operate; GPT only for roadmap thinking or named bounded tasks.</li>
       </ul>
@@ -508,9 +534,9 @@
     <div class="two">
       <section>
         <h2>Still ahead (bigger picture)</h2>
-        <p class="sub">Stage 5 Gate11 CLOSED — Factory OS named surfaces are on main; later menus stay ahead.</p>
+        <p class="sub">Stage 5 Gate11 CLOSED — Factory OS items 11–20 on main + host; later menus stay ahead.</p>
         <ul class="clean">
-          <li><strong>Factory OS beyond named surfaces</strong> — full FLOW journeys, write-class expansion, and Director keys stay out (PAUSED / writes false).</li>
+          <li><strong>Factory OS beyond items 11–20</strong> — full FLOW journeys, write-class expansion, Director keys, and Ellisbrook live attach stay out (PAUSED / writes false / attach NO-GO).</li>
           <li><strong>Client products</strong> — stay parked until Factory OS MVP proves.</li>
           <li><strong>Multi-product</strong> — tenants and portfolio ops without mixed risk.</li>
           <li><strong>Bounded autonomy</strong> — automation widens; Daniel’s protected approvals stay.</li>
@@ -521,6 +547,7 @@
         <h2>Parked on purpose</h2>
         <p class="sub">Not forgotten — just not required for the next prove.</p>
         <ul class="clean">
+          <li><strong>Ellisbrook live attach</strong> — readiness docs recorded (item 17); live attach is <b>NO-GO</b>.</li>
           <li><strong>Client product attach</strong> — product track waits until after Factory OS MVP.</li>
           <li><strong>Control-room mock meters</strong> — pretty design ≠ live authorization.</li>
           <li><strong>Off-main Director branches</strong> — do not count as “Gate08 done on main.”</li>
@@ -561,8 +588,8 @@
     </section>
 
     <p class="foot">
-      Source: factory-bridge main (PR #29) · Qual droplet destroyed 17 Sep 2026 · Host factory-runtime-01 Active (Toronto) ·
-      Gate 08–11 CLOSED / PASS · Gate09 packet HARNESS_PASS_09.06_HOST_RECON_PASS · Factory OS ON MAIN (Home live loopback · FLOW spine · durable Factory DB · Decision Inbox V2 · Operate RO) · write class factory.self_build.supervised named only · productionWrites OFF · no Director keys · 19 Sep 2026 ~20:30 EDT · Personal roadmap for Daniel.
+      Source: factory-bridge main (PR #29; OS PRs #57 auth stub, #58 cost UNAVAILABLE) · Qual droplet destroyed 17 Sep 2026 · Host factory-runtime-01 Active (Toronto) ·
+      Gate 08–11 CLOSED / PASS · Gate09 packet HARNESS_PASS_09.06_HOST_RECON_PASS · Factory OS items 11–20 (HTTP_BRIDGE loopback on host · smoke PASS · latest-main redeploy) · Ellisbrook live attach NO-GO · write class factory.self_build.supervised named only · productionWrites OFF · FACTORY_MODE PAUSED · Director keys off host · 19 Sep 2026 ~21:15 EDT · Personal roadmap for Daniel.
     </p>
   </div>
 <!-- GATE092_STATUS --><p><strong>Gate 09.2</strong>: PASS — MCP PAUSED on :3001 (2026-09-18 23:54 EDT)</p>

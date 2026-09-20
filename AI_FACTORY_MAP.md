@@ -1,6 +1,6 @@
 # AI Factory — personal roadmap (Daniel)
 
-Updated: 2026-09-19 ~20:30 (America/Toronto)
+Updated: 2026-09-19 ~21:15 (America/Toronto)
 Live: https://liboriodsantos.github.io/ai-factory-status/ *(Pages sync may lag; local box is truth)*  
 Source of truth: GitHub `factory-bridge` `main` (`apps/factory-os`); local box `/home/box/projects/bigfit/`  
 Public pointer: [`BRIDGE_STATE.md`](BRIDGE_STATE.md)  
@@ -11,17 +11,21 @@ This is a **roadmap / thinking board**, not the Factory software.
 - **Support stack (decided)** — Freshdesk (helpdesk) + Better Stack (monitoring + status page) + custom proactive AI agent (LLM + Freshdesk API + Better Stack webhooks). Not Intercom Fin / Sierra / Decagon at this stage.
 
 ## One sentence
-Gates 08–11 **CLOSED / PASS**. Gate08 remains **CLOSED**. Gate09 canary packet **`HARNESS_PASS_09.06_HOST_RECON_PASS`**. **Factory OS is on `factory-bridge` main** (Home live loopback, FLOW spine, durable Factory DB, Decision Inbox V2, Operate RO). Write class **`factory.self_build.supervised`** (named only; no expansion). productionWrites **false**. FACTORY_MODE **PAUSED**. No Director keys. Client products parked.
+Gates 08–11 **CLOSED / PASS**. Gate08 remains **CLOSED**. Gate09 canary packet **`HARNESS_PASS_09.06_HOST_RECON_PASS`**. **Factory OS through items 11–20** on `factory-bridge` main and standing host `factory-runtime-01`: auth stub (PR #57), Home cost **`UNAVAILABLE`** (PR #58), host deploy + supervised ceremony (15–16), Ellisbrook live attach **NO-GO** (17), smoke host **PASS** (18), host redeploy latest main (19), durable loopback **`HTTP_BRIDGE`** (20). Write class **`factory.self_build.supervised`** (named only; no expansion). productionWrites **false**. FACTORY_MODE **PAUSED**. Director keys **off host**. Client products parked.
 
 ## Object model spine
 Idea → Concept → Conception Project → Definition → Blueprint → Product → Project → Release
 
-## Factory OS (on main)
-- Home **live loopback**
+## Factory OS (on main + standing host)
+- Home **live loopback** via durable **`HTTP_BRIDGE`** on `factory-runtime-01` (item 20)
+- Home cost strip **`UNAVAILABLE`** (PR #58) — do not treat stub `$0` as earned spend
+- **Auth stub** on main + host (PR #57) — stub only, not full People & Access
 - **FLOW spine**
 - **Durable Factory DB**
 - **Decision Inbox V2**
 - **Operate RO** (read-only)
+- Host: deploy + supervised ceremony (15–16) · smoke **PASS** (18) · latest-main redeploy (19)
+- Ellisbrook: readiness docs recorded (17); live attach **NO-GO**
 - Repo: `apps/factory-os` on `factory-bridge` `main`
 - This Pages agent could not clone `factory-bridge` (404 / out of token scope). Software truth stays on that repo’s `main`.
 
@@ -38,7 +42,7 @@ Idea → Concept → Conception Project → Definition → Blueprint → Product
 | Gate 09.2 / ops / HOST_FILE | HOST_FILE + MCP PAUSED on :3001 | **PASS** |
 | Gate 10 | Bundle v1 + v1.1 + compose inert + cutover + reboot recovery + rollback | **CLOSED / PASS** (~00:49 EDT 19 Sep) |
 | Gate 11 | Supervised dependability (repeat jobs; measure quality/cost/repair/recovery) | **CLOSED / PASS** (~01:03 EDT 19 Sep) |
-| Gate 12 / Stage 6 | Factory OS Control Room on `main` | **ON MAIN** (named surfaces above) |
+| Gate 12 / Stage 6 | Factory OS Control Room on `main` + standing host | **ITEMS 11–20** (named surfaces + `HTTP_BRIDGE` loopback) |
 | Later gates | Multi-tenant → bounded autonomy | **AHEAD** |
 
 **Hard rule:** productionWrites **OFF**; FACTORY_MODE **PAUSED** until Daniel directs otherwise. Write class `factory.self_build.supervised` is **named only** — no expansion. No Director keys on host.
@@ -66,7 +70,8 @@ Idea → Concept → Conception Project → Definition → Blueprint → Product
 3. Continue building the Factory — **not** client products yet  
 
 ## Parked (secondary)
-- Ellisbrook / FB-00.2, control-room mocks, off-main Director branches, ChatGPT Library register alone
+- Ellisbrook / FB-00.2 — readiness docs recorded (item 17); **live attach NO-GO**
+- Control-room mocks, off-main Director branches, ChatGPT Library register alone
 - Post-Gate11 optional: unused ceremony transport scopes
 
 ## Gate 09.2 MCP (2026-09-18 ~23:54 EDT)
@@ -90,3 +95,13 @@ Idea → Concept → Conception Project → Definition → Blueprint → Product
 - Evidence: `11_DEPENDABILITY_RUN1_PASS.md` + `11_DEPENDABILITY_RUN2_PASS.md`
 - Stay PAUSED / writes false until he says otherwise
 - Client products stay parked
+
+## Factory OS items 11–20 (2026-09-19 ~21:15 EDT)
+- **11–14 software:** auth stub on main + host (**PR #57**); Home cost strip **`UNAVAILABLE`** (**PR #58**)
+- **15–16:** host deploy + supervised ceremony (writes stayed false)
+- **17:** Ellisbrook readiness docs — live attach **NO-GO**
+- **18:** smoke host **PASS**
+- **19:** host redeploy latest `main`
+- **20:** durable loopback Bridge **`HTTP_BRIDGE`** on standing host `factory-runtime-01`
+- FACTORY_MODE **PAUSED** · productionWrites **false** · Director keys **off host**
+- Write class `factory.self_build.supervised` named only — **no expansion**

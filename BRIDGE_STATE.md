@@ -1,6 +1,6 @@
 # BRIDGE_STATE (public board pointer)
 
-Updated: 2026-09-19 ~20:30 EDT (America/Toronto)
+Updated: 2026-09-19 ~21:15 EDT (America/Toronto)
 
 This file is the **Pages-repo pointer** for Factory posture. It is not the Factory software, does not authorize writes, and does not hold Director keys.
 
@@ -11,10 +11,18 @@ This file is the **Pages-repo pointer** for Factory posture. It is not the Facto
 | Software truth | GitHub `factory-bridge` `main` (`apps/factory-os`) — **this agent could not reach that repo** (404 / out of token scope) |
 | Gate08 | **CLOSED / PASS** |
 | Gate09 canary packet | `HARNESS_PASS_09.06_HOST_RECON_PASS` |
+| Factory OS queue | Items **11–20** recorded (auth stub · cost `UNAVAILABLE` · host deploy/ceremony · smoke PASS · latest-main redeploy · `HTTP_BRIDGE`) |
+| Auth stub | On main + host — **PR #57** (stub only) |
+| Home cost strip | **`UNAVAILABLE`** — **PR #58** (do not treat stub `$0` as earned spend) |
+| Host 15–16 | Deploy + supervised ceremony on `factory-runtime-01` |
+| Ellisbrook (17) | Readiness docs recorded · live attach **NO-GO** |
+| Smoke host (18) | **PASS** |
+| Host redeploy (19) | Latest `main` on standing host |
+| Loopback Bridge (20) | Durable **`HTTP_BRIDGE`** on standing host |
 | Write class | `factory.self_build.supervised` (named only; **no expansion**) |
 | productionWrites | **false** |
 | FACTORY_MODE | **PAUSED** |
-| Director keys | **None** on host / none in this repo |
-| Factory OS on main | Home **live loopback** · **FLOW spine** · **durable Factory DB** · **Decision Inbox V2** · **Operate RO** |
+| Director keys | **Off host** / none in this repo |
+| Factory OS surfaces | Home **live loopback** · **FLOW spine** · **durable Factory DB** · **Decision Inbox V2** · **Operate RO** · **auth stub** |
 
-If any other board, chat, or local note disagrees, treat this pointer + `factory-bridge` `main` as the check. Do not infer a write-class expansion or a Director-key install from this file.
+If any other board, chat, or local note disagrees, treat this pointer + `factory-bridge` `main` as the check. Do not infer a write-class expansion, a Director-key install, Ellisbrook live attach, or a real Home spend figure from this file.
