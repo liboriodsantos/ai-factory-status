@@ -1,6 +1,6 @@
 # BRIDGE_STATE (public board pointer)
 
-Updated: 2026-09-20 ~03:58 EDT (America/Toronto)
+Updated: 2026-09-20 ~04:00 EDT (America/Toronto)
 
 This file is the **Pages-repo pointer** for Factory posture. It is not the Factory software, does not authorize writes, and does not hold Director keys.
 
@@ -11,7 +11,7 @@ This file is the **Pages-repo pointer** for Factory posture. It is not the Facto
 | Software truth | GitHub `factory-bridge` `main` (`apps/factory-os`) — **this agent could not reach that repo** (404 / out of token scope). Overnight software PR numbers **#85–#101** are from Daniel’s item-67 brief, not a live `gh` read of that repo. Merge SHAs for those PRs were **not** in the brief — not invented. |
 | Gate08 | **CLOSED / PASS** |
 | Gate09 canary packet | `HARNESS_PASS_09.06_HOST_RECON_PASS` |
-| Factory OS queue | Items **45–76** recorded (11–43 still earned). Overnight **45–74** plus buffer **75–76**. Environments **75** **#105** @ `80b1cfb`. Monitoring **76** **#106** @ `15eb0af` (FLOW03-EV-MONITORING dedupe). Earlier host tip @ `6f66f6f`. Final host tip sync **74** **in progress**. |
+| Factory OS queue | Items **45–77** recorded. Overnight **45–74** plus buffer **75–77**. Incidents **77** **#104** @ `91c091a`. Environments **75** **#105** @ `80b1cfb`. Monitoring **76** **#106** @ `15eb0af`. Final host tip sync **74** **in progress**. |
 | Auth stub | On main + host — **PR #57** (stub only) |
 | Home cost strip | **`UNAVAILABLE`** — **PR #58** · strip deepen **64** / **#99** (do not treat stub `$0` as earned spend) |
 | Host 15–16 | Deploy + supervised ceremony on `factory-runtime-01` |
@@ -64,11 +64,12 @@ This file is the **Pages-repo pointer** for Factory posture. It is not the Facto
 | Final host tip sync (74) | **In progress** — earlier host tip is `6f66f6f` (72); final tip not claimed done |
 | Environments (75) | **DONE** — factory-bridge **PR #105** @ `80b1cfb` (thin; not full env records) |
 | Monitoring (76) | **DONE** — factory-bridge **PR #106** @ `15eb0af` (after FLOW03-EV-MONITORING dedupe; thin) |
+| Incidents (77) | **DONE** — factory-bridge **PR #104** @ `91c091a` (thin; not full incident/postmortem) |
 | Docs | factory-bridge **PR #101** (briefed; this token could not read that repo) |
 | Write class | `factory.self_build.supervised` (named only; design doc 25 + note **71** @ `24dca85`; **no expansion / no flip**) |
 | productionWrites | **false** |
 | FACTORY_MODE | **PAUSED** |
 | Director keys | **Off host** / none in this repo |
-| Factory OS surfaces | Home **live loopback** + strip (**64**) + **next-best-action** (42 · 53) · Discover **deepen** (46–48) + universal record (**60**) · Evidence **deepen** (49–50) + universal record (**61**) · Integrations **deepen** (51–52) · FLOW-01..04 (**56–59**) · Portfolio+Work **DONE** (**54**) · Teams (**55**) · Work→receipt (**65**) · **Decision Inbox** (**62**) · conversation bar **RO** (**63**) · nav sync (**72** @ `6f66f6f`) · **durable Factory DB** · **Operate RO** · **auth stub** · host **69** @ `01f880b` · smoke/ceremony **68**/**73** **PASS** · write-class note **71** @ `24dca85` · Environments **75** · Monitoring **76** · tip sync **74** WIP · docs **#101** |
+| Factory OS surfaces | Home **live loopback** + strip (**64**) + **next-best-action** (42 · 53) · Discover **deepen** (46–48) + universal record (**60**) · Evidence **deepen** (49–50) + universal record (**61**) · Integrations **deepen** (51–52) · FLOW-01..04 (**56–59**) · Portfolio+Work **DONE** (**54**) · Teams (**55**) · Work→receipt (**65**) · **Decision Inbox** (**62**) · conversation bar **RO** (**63**) · nav sync (**72** @ `6f66f6f`) · **durable Factory DB** · **Operate RO** · **auth stub** · host **69** @ `01f880b` · smoke/ceremony **68**/**73** **PASS** · write-class note **71** @ `24dca85` · Environments **75** · Monitoring **76** · Incidents **77** · tip sync **74** WIP · docs **#101** |
 
 If any other board, chat, or local note disagrees, treat this pointer + `factory-bridge` `main` as the check. Do not infer a write-class flip, a Director-key install, Ellisbrook live attach, or a real Home spend figure from this file.
