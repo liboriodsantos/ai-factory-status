@@ -70,6 +70,7 @@ Updated: 2026-09-20 ~04:02 EDT
   - Monitoring (**76**) — **DONE** (**PR #106** @ `15eb0af`; after FLOW03-EV-MONITORING dedupe; thin)
   - Incidents (**77**) — **DONE** (**PR #104** @ `91c091a`; thin; not full incident/postmortem)
   - Improvement (**78**) — **DONE** (**PR #107** @ `1c46ca5`; thin; not full FIX/IMPROVE chain)
+  - Quotes (**80**) — **DONE** (**PR #109** @ `6033a2b`; thin; not full quote/proposal journey)
   - Docs — factory-bridge **PR #101**
 - Overnight software PR numbers **#85–#101** come from Daniel’s item-67 brief. Merge SHAs for those PRs were **not** in the brief — not invented. This Pages agent could not clone `factory-bridge` (404 / out of token scope). Prior briefed PRs **#73 / #76 / #78 / #79 / #81–#84** still apply for 26–43.
 - Write class: `factory.self_build.supervised` (named only; **no expansion / no flip**)
