@@ -1,6 +1,6 @@
 # Self-build status
 
-Updated: 2026-09-20 ~03:55 EDT
+Updated: 2026-09-20 ~03:58 EDT
 
 - Bundle v1: PASS
 - Bundle v1.1: PASS
@@ -65,7 +65,9 @@ Updated: 2026-09-20 ~03:55 EDT
   - Write-class design note (**71**) — **DONE** · `24dca85` · docs only · **no flip**
   - Nav sync (**72**) — **DONE** · factory-bridge main `6f66f6f`
   - Host ceremony (**73**) — **PASS** · operator · writes stayed false · **PAUSED**
-  - Final host tip sync (**74**) — **in progress**
+  - Final host tip sync (**74**) — **in progress** · earlier host tip `6f66f6f`
+  - Environments (**75**) — **DONE** (**PR #105** @ `80b1cfb`; thin)
+  - Monitoring (**76**) — **DONE** (**PR #106** @ `15eb0af`; after FLOW03-EV-MONITORING dedupe; thin)
   - Docs — factory-bridge **PR #101**
 - Overnight software PR numbers **#85–#101** come from Daniel’s item-67 brief. Merge SHAs for those PRs were **not** in the brief — not invented. This Pages agent could not clone `factory-bridge` (404 / out of token scope). Prior briefed PRs **#73 / #76 / #78 / #79 / #81–#84** still apply for 26–43.
 - Write class: `factory.self_build.supervised` (named only; **no expansion / no flip**)
