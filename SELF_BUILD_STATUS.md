@@ -1,6 +1,6 @@
 # Self-build status
 
-Updated: 2026-09-20 ~00:00 EDT
+Updated: 2026-09-20 ~00:25 EDT
 
 - Bundle v1: PASS
 - Bundle v1.1: PASS
@@ -34,7 +34,14 @@ Updated: 2026-09-20 ~00:00 EDT
   - Teams (**34**) — **DONE** (**PR #78**)
   - FLOW-02 universal record (**35**) — **DONE** (**PR #79**)
   - FLOW-04 thin RO (**36**) — **in progress** (**PR #80**; open/merged not verified here)
-- Software PR numbers **#73 / #76 / #77 / #78 / #79 / #80** come from Daniel’s item-38 brief. This Pages agent could not clone `factory-bridge` (404 / out of token scope).
+- Factory OS items **37–42**:
+  - Standing host redeploy (**37**) — **DONE** · earlier ~`53512c5` · auth + `HTTP_BRIDGE` · **PAUSED** · item **43** later redeploy **not claimed**
+  - Pages 31–36 (**38**) — **already live** (this repo PR #15 @ `9d91184`)
+  - Discover family shells (**39**) — **DONE** (**PR #81**; thin shells, not full Discover journeys)
+  - Evidence & Receipts ledger (**40**) — **DONE** (**PR #82** @ `ca5fbb0`; thin ledger)
+  - Integrations shell (**41**) — **DONE** (**PR #83** @ `0d7c7ca`; thin shell)
+  - Home next-best-action (**42**) — **DONE** (**PR #84** @ `eb6fe90`; thin NBA; cost stays `UNAVAILABLE`)
+- Software PR numbers **#81 / #82 / #83 / #84** and merge SHAs come from Daniel’s item-44 brief. This Pages agent could not clone `factory-bridge` (404 / out of token scope). Prior briefed PRs **#73 / #76 / #77 / #78 / #79 / #80** still apply for 26–36.
 - Write class: `factory.self_build.supervised` (named only; **no expansion / no flip**)
 - Close pack refs: `evidence/08_GATE_CLOSED_20260918.md` · `evidence/09_GATE_CLOSE_PACK.md` · `evidence/11_GATE_CLOSED_20260919.md`
 - Pointer: `BRIDGE_STATE.md`
