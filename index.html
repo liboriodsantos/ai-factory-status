@@ -120,34 +120,37 @@
     <div class="eyebrow">BIGFIT · AI Factory · personal roadmap (not the software)</div>
     <h1>Where we stand — the whole picture</h1>
     <p class="lede">
-      A thinking board for Daniel: earned gates, Gate12 Factory OS build status, and the object-model spine.
+      A thinking board for Daniel: earned gates, Factory OS on <code>factory-bridge</code> main, and the object-model spine.
       This is a roadmap board — not the Control Room app itself (that is <code>apps/factory-os</code>).
-      Truth follows GitHub <code>factory-bridge</code>; local box <code>projects/bigfit/</code> may lead Pages.
+      Truth follows GitHub <code>factory-bridge</code> main; this Pages board must not contradict it. Local box <code>projects/bigfit/</code> may lead Pages.
     </p>
     <div class="meta">
 
-    <div class="chip"><b>Gate12</b> IN PROGRESS · Factory OS Phase 0+1 · PAUSED · writes false · 2026-09-19 ~01:55 EDT</div>
-    <p class="lede">Gates 08–11 CLOSED / PASS. Building Factory OS Control Room (R4) as <code>apps/factory-os</code> on <code>factory-bridge</code>. <a href="build-roadmap.html" style="color:#8cf">Build sequence</a> · Self-build refs: <a href="self-build-bundle-v1.html" style="color:#8cf">v1</a> · <a href="self-build-bundle-v1.1.html" style="color:#8cf">v1.1</a> · <a href="dependability-run1.html" style="color:#8cf">Run#1</a> · <a href="dependability-run2.html" style="color:#8cf">Run#2</a>.</p>
+    <div class="chip"><b>Factory OS</b> ON MAIN · PAUSED · writes false · write class <code>factory.self_build.supervised</code> · 2026-09-19 ~20:30 EDT</div>
+    <p class="lede">Gates 08–11 CLOSED / PASS. Gate08 CLOSED. Gate09 canary packet <code>HARNESS_PASS_09.06_HOST_RECON_PASS</code>. Factory OS on <code>factory-bridge</code> <code>main</code>: Home live loopback · FLOW spine · durable Factory DB · Decision Inbox V2 · Operate RO. <a href="build-roadmap.html" style="color:#8cf">Build sequence</a> · <a href="BRIDGE_STATE.md" style="color:#8cf">BRIDGE_STATE</a> · Self-build refs: <a href="self-build-bundle-v1.html" style="color:#8cf">v1</a> · <a href="self-build-bundle-v1.1.html" style="color:#8cf">v1.1</a> · <a href="dependability-run1.html" style="color:#8cf">Run#1</a> · <a href="dependability-run2.html" style="color:#8cf">Run#2</a>.</p>
 
-      <span class="chip">Updated <b>19 Sep 2026 ~01:55 EDT</b> · America/Toronto</span>
+      <span class="chip">Updated <b>19 Sep 2026 ~20:30 EDT</b> · America/Toronto</span>
       <span class="chip">Director <b>BIGFIT Manager</b></span>
       <span class="chip">Product authority <b>Daniel</b></span>
       <span class="chip">Truth <b>GitHub main</b></span>
+      <span class="chip">Write class <b>factory.self_build.supervised</b> · named only</span>
     </div>
 
     <div class="hero">
       <div class="stat"><div class="k">Foundation</div><div class="v ok">FR-01 complete</div></div>
       <div class="stat"><div class="k">Runtime</div><div class="v warn">Paused · writes OFF</div></div>
-      <div class="stat"><div class="k">Focus now</div><div class="v now">Gate12 Factory OS</div></div>
+      <div class="stat"><div class="k">Focus now</div><div class="v now">Factory OS on main</div></div>
       <div class="stat"><div class="k">Client products</div><div class="v later">Parked</div></div>
     </div>
 
     <section>
       <h2>One sentence</h2>
       <p class="sub" style="margin:0;color:#e2e8f0;font-size:1rem;">
-        Gates 08–11 are <b>CLOSED / PASS</b>. <b>Gate12 Factory OS</b> is <b>IN PROGRESS</b>: Phase 0 design custody + Phase 1 MVP
-        (Home · Decision Inbox · Work · conversation bar) under <code>apps/factory-os</code> on GitHub <code>factory-bridge</code>.
-        productionWrites <b>false</b> · FACTORY_MODE <b>PAUSED</b>. Client products stay parked.
+        Gates 08–11 are <b>CLOSED / PASS</b>. Gate08 is <b>CLOSED</b>. Gate09 canary packet
+        <code>HARNESS_PASS_09.06_HOST_RECON_PASS</code>. <b>Factory OS is on <code>factory-bridge</code> main</b>:
+        Home live loopback · FLOW spine · durable Factory DB · Decision Inbox V2 · Operate RO.
+        Write class <code>factory.self_build.supervised</code> is <b>named only</b> — no expansion.
+        productionWrites <b>false</b> · FACTORY_MODE <b>PAUSED</b> · no Director keys. Client products stay parked.
       </p>
     </section>
 
@@ -188,7 +191,7 @@
           <div>
             <div class="label">Gate 09 — control-receipt canary</div>
             <div class="hint">One deterministic paused canary with admission + authorization receipts</div>
-            <div class="detail"><b>CLOSED / PASS</b> ~19:26 EDT — canary COMPLETED/QA PASS ~19:19; close pack 09_GATE_CLOSE_PACK.md. job 30df61de… · writes false proved.</div>
+            <div class="detail"><b>CLOSED / PASS</b> canary-track ~19:26 EDT. Latest packet <code>HARNESS_PASS_09.06_HOST_RECON_PASS</code>. writes false proved. No Director keys.</div>
           </div>
           <span class="tag done">CLOSED</span>
         </div>
@@ -215,7 +218,7 @@
           <div>
             <div class="label">Gate 12 — Factory OS (Control Room)</div>
             <div class="hint">v2.4 R4 product design → real app · thin vertical slice</div>
-            <div class="detail"><b>AUTHORIZED</b> · Phase 0 (design package custody) + Phase 1 MVP in flight via cloud agent on <code>apps/factory-os</code>. StubBridge: PAUSED / writes false. Design authority: blueprint v2.4-R4.</div>
+            <div class="detail"><b>ON MAIN</b> — Home live loopback · FLOW spine · durable Factory DB · Decision Inbox V2 · Operate RO. Write class <code>factory.self_build.supervised</code> named only. PAUSED / writes false. No Director keys.</div>
           </div>
           <span class="tag current">NOW</span>
         </div>
@@ -230,7 +233,7 @@
         </div>
       </div>
       <div class="callout" style="margin-top:12px;">
-        <b>Hard rule:</b> productionWrites <b>OFF</b> · FACTORY_MODE <b>PAUSED</b> until Daniel directs otherwise. No private keys on host. $0 preferred this track.
+        <b>Hard rule:</b> productionWrites <b>OFF</b> · FACTORY_MODE <b>PAUSED</b> until Daniel directs otherwise. Write class <code>factory.self_build.supervised</code> named only — <b>no expansion</b>. No Director keys on host. $0 preferred this track.
       </div>
     </section>
 
@@ -249,24 +252,27 @@
         <div class="pill"><div class="t">8</div><div class="b">Release</div></div>
       </div>
       <div class="callout" style="margin-top:12px;">
-        <b>Gate12 Phase 1 slice:</b> Home (live Bridge posture) · Decision Inbox · Work · conversation bar.
-        Full journeys (Create Software → Build &amp; Release → Operate &amp; Improve) come after MVP proves.
+        <b>On main now:</b> Home <b>live loopback</b> · <b>FLOW spine</b> · durable Factory DB · <b>Decision Inbox V2</b> · <b>Operate RO</b>.
+        Full journeys (Create Software → Build &amp; Release → Operate &amp; Improve) stay thin beyond that spine.
         Design authority: <code>docs/design/v2.4-R4</code> (R4 Golden Master).
       </div>
     </section>
 
     <section>
-      <h2>Gate12 build status</h2>
-      <p class="sub">Factory software first. Client products parked.</p>
+      <h2>Factory OS on main</h2>
+      <p class="sub">Software lives on <code>factory-bridge</code> <code>main</code> / <code>apps/factory-os</code>. This Pages board does not expand writes.</p>
       <table>
         <thead><tr><th>Item</th><th>Status</th></tr></thead>
         <tbody>
           <tr><td>Daniel GO</td><td class="ok">Authorized (“agree, lets do it”)</td></tr>
-          <tr><td>Phase 0 — design custody</td><td class="warn">IN PROGRESS — package → <code>apps/factory-os/docs/design/v2.4-R4</code></td></tr>
-          <tr><td>Phase 1 — MVP UI</td><td class="warn">IN PROGRESS — Home + Decision Inbox + Work + chat</td></tr>
-          <tr><td>Repo home</td><td>GitHub <code>factory-bridge</code> / <code>apps/factory-os</code> (extractable later)</td></tr>
-          <tr><td>Bridge posture</td><td>StubBridge · PAUSED · writes <b>false</b></td></tr>
-          <tr><td>Cloud agent</td><td>Running — see cursor.com agents for PR</td></tr>
+          <tr><td>Home</td><td class="ok">Live loopback on main</td></tr>
+          <tr><td>FLOW</td><td class="ok">Spine on main</td></tr>
+          <tr><td>Factory DB</td><td class="ok">Durable Factory DB on main</td></tr>
+          <tr><td>Decision Inbox</td><td class="ok">V2 on main</td></tr>
+          <tr><td>Operate</td><td class="ok">RO (read-only) on main</td></tr>
+          <tr><td>Write class</td><td class="warn"><code>factory.self_build.supervised</code> — named only · no expansion</td></tr>
+          <tr><td>Bridge posture</td><td>PAUSED · productionWrites <b>false</b> · no Director keys</td></tr>
+          <tr><td>Repo home</td><td>GitHub <code>factory-bridge</code> / <code>apps/factory-os</code> (this Pages agent could not reach that repo)</td></tr>
         </tbody>
       </table>
     </section>
@@ -342,7 +348,7 @@
           <div>
             <div class="label">First supervised self-build</div>
             <div class="hint">Stage 4: Gate08, Gate09, Gate10</div>
-            <div class="detail"><b>Gate08 CLOSED.</b> Gate09 canary-track <b>CLOSED / PASS</b>. Gate09.2 MCP PAUSED <b>PASS</b>. Gate10 <b>CLOSED / PASS</b> (~00:49 EDT). productionWrites stay OFF.</div>
+            <div class="detail"><b>Gate08 CLOSED.</b> Gate09 packet <code>HARNESS_PASS_09.06_HOST_RECON_PASS</code>. Gate09.2 MCP PAUSED <b>PASS</b>. Gate10 <b>CLOSED / PASS</b> (~00:49 EDT). productionWrites stay OFF.</div>
           </div>
           <span class="tag done">DONE</span>
         </div>
@@ -360,7 +366,7 @@
           <div>
             <div class="label">Factory OS Control Room</div>
             <div class="hint">Gate12 — build the Factory software itself (R4 Golden Master)</div>
-            <div class="detail"><b>IN PROGRESS.</b> Phase 0 design custody + Phase 1 MVP (shell, Home, Decision Inbox, Work, chat bar). Lives at <code>apps/factory-os</code>. Client products remain parked after this proves.</div>
+            <div class="detail"><b>ON MAIN.</b> Home live loopback · FLOW spine · durable Factory DB · Decision Inbox V2 · Operate RO. Lives at <code>apps/factory-os</code>. Client products remain parked.</div>
           </div>
           <span class="tag current">NOW</span>
         </div>
@@ -387,7 +393,7 @@
 
     <section>
       <h2>Accomplishments so far (earned)</h2>
-      <p class="sub">These are real. Stage 4 earned — Gate08/09/10 CLOSED; Stage 5 Gate11 <b>CLOSED / PASS</b> (Run#1+#2 PASS).</p>
+      <p class="sub">These are real. Stage 4 earned — Gate08/09/10 CLOSED; Stage 5 Gate11 <b>CLOSED / PASS</b>; Factory OS <b>on main</b> (named surfaces only).</p>
       <ul class="clean">
         <li><strong>Factory defined</strong> — product vision, authority split, and “GitHub is truth” rule.</li>
         <li><strong>Control plane on GitHub</strong> — checkpoints, decisions, Manager/Builder/QA roles, release path.</li>
@@ -397,10 +403,10 @@
         <li><strong>Truth reconciled</strong> — PR #29 merged: Gate08 named as authorized focus and marked incomplete (ended the ChatGPT-vs-GitHub split story).</li>
         <li><strong>Gate08.01–08.03</strong> — offline adapter / QA / orchestration accepted (per handoff).</li>
         <li><strong>Gate08 CLOSED / PASS</strong> — 08.04–08.16; Daniel closed ~19:00 EDT 18 Sep 2026.</li>
-        <li><strong>Gate09 canary-track CLOSED / PASS</strong> — control-receipt paused canary COMPLETED ~19:19 EDT; close pack ~19:26 EDT; writes still OFF.</li>
+        <li><strong>Gate09 canary packet</strong> — <code>HARNESS_PASS_09.06_HOST_RECON_PASS</code>; earlier canary-track CLOSED / PASS ~19:26 EDT 18 Sep; writes still OFF.</li>
         <li><strong>Gate10 CLOSED / PASS</strong> — Bundle v1+v1.1, compose cutover, reboot recovery, rollback; close pack ~00:49 EDT 19 Sep 2026; writes still OFF.</li>
         <li><strong>Gate11 CLOSED / PASS</strong> — Dependability Run #1 + Run #2 (N=3 each); close pack ~01:03 EDT 19 Sep 2026; writes still OFF.</li>
-        <li><strong>Gate12 Factory OS authorized</strong> — Phase 0+1 MVP building as <code>apps/factory-os</code>; R4 design package in custody; client products parked.</li>
+        <li><strong>Factory OS on main</strong> — Home live loopback · FLOW spine · durable Factory DB · Decision Inbox V2 · Operate RO; write class <code>factory.self_build.supervised</code> named only; client products parked.</li>
         <li><strong>Director seat</strong> — BIGFIT Manager operates day-to-day; Personal COS may ping status only.</li>
         <li><strong>Lane split</strong> — Grok primary on Gate08/build/operate; GPT only for roadmap thinking or named bounded tasks.</li>
       </ul>
@@ -434,11 +440,11 @@
     </section>
 
     <section>
-      <h2>Gate 09 — paused canary (canary-track CLOSED / PASS)</h2>
-      <p class="sub">After Gate 08. Canary-track (09.01–09.03) CLOSED. Full Gate09 not claimed — Gate09.2+ / ops / HOST_FILE next.</p>
+      <h2>Gate 09 — paused canary (packet recorded)</h2>
+      <p class="sub">After Gate 08. Canary-track (09.01–09.03) CLOSED. Latest packet <code>HARNESS_PASS_09.06_HOST_RECON_PASS</code>. Full Gate09 beyond this packet is not claimed. No Director keys.</p>
       <div class="callout">
         <b>Budget — Gate 09:</b> one-time <b>$25–80</b>. Recurring: <b>$0</b> extra beyond Gate 08 standing stack.
-        Actual spend: <b>$0.00</b>. Status: <b>canary-track CLOSED / PASS ~19:26 EDT</b> · Gate09.2 <b>prep DONE / BLOCKED on Daniel key</b> · productionWrites <b>false</b> · FACTORY_MODE <b>PAUSED</b>.
+        Actual spend: <b>$0.00</b>. Status: <b>canary packet <code>HARNESS_PASS_09.06_HOST_RECON_PASS</code></b> · Gate09.2 <b>HOST_FILE + MCP PAUSED PASS</b> · productionWrites <b>false</b> · FACTORY_MODE <b>PAUSED</b> · Director private key <b>EXTERNAL</b>.
       </div>
       <table>
         <thead><tr><th>Phase</th><th>Main tasks</th><th>Status</th></tr></thead>
@@ -446,11 +452,12 @@
           <tr><td>09.01</td><td>Admit exact canary package / challenge + control receipts</td><td class="ok">PASS — admission + authorization receipts</td></tr>
           <tr><td>09.02</td><td>Run one supervised paused canary (no production writes)</td><td class="ok">PASS — PAUSED_CANARY_COMPLETED / QA PASS (~19:19 EDT)</td></tr>
           <tr><td>09.03</td><td>Independent QA reconcile + Gate09 canary-track close pack</td><td class="ok">CLOSED / PASS — 09_GATE_CLOSE_PACK.md (~19:26 EDT)</td></tr>
-          <tr><td>09.2</td><td>Ops hardening · MCP admission HOST_FILE + MCP PAUSED wire</td><td class="ok">PASS</td></tr>
+          <tr><td>09.06</td><td>Host recon canary packet</td><td class="ok">HARNESS_PASS_09.06_HOST_RECON_PASS</td></tr>
+          <tr><td>09.2</td><td>Ops hardening · MCP admission HOST_FILE + MCP PAUSED wire</td><td class="ok">PASS — no Director keys</td></tr>
         </tbody>
       </table>
       <div class="callout" style="margin-top:12px;">
-        Evidence: <code>evidence/09_CANARY_PASS_20260918.md</code> · close pack <code>evidence/09_GATE_CLOSE_PACK.md</code> · jobId <code>30df61de…</code> · operationId <code>c8fa0131…</code> · host <code>out-20260918T231800Z</code>.
+        Packet: <code>HARNESS_PASS_09.06_HOST_RECON_PASS</code> · evidence: <code>evidence/09_CANARY_PASS_20260918.md</code> · close pack <code>evidence/09_GATE_CLOSE_PACK.md</code> · jobId <code>30df61de…</code> · operationId <code>c8fa0131…</code> · host <code>out-20260918T231800Z</code>.
       </div>
     </section>
 
@@ -501,9 +508,9 @@
     <div class="two">
       <section>
         <h2>Still ahead (bigger picture)</h2>
-        <p class="sub">Stage 5 Gate11 CLOSED — Gate12 Factory OS is the active build.</p>
+        <p class="sub">Stage 5 Gate11 CLOSED — Factory OS named surfaces are on main; later menus stay ahead.</p>
         <ul class="clean">
-          <li><strong>Gate12 Factory OS</strong> — Phase 0+1 MVP under <code>apps/factory-os</code> (IN PROGRESS; PAUSED / writes false).</li>
+          <li><strong>Factory OS beyond named surfaces</strong> — full FLOW journeys, write-class expansion, and Director keys stay out (PAUSED / writes false).</li>
           <li><strong>Client products</strong> — stay parked until Factory OS MVP proves.</li>
           <li><strong>Multi-product</strong> — tenants and portfolio ops without mixed risk.</li>
           <li><strong>Bounded autonomy</strong> — automation widens; Daniel’s protected approvals stay.</li>
@@ -555,7 +562,7 @@
 
     <p class="foot">
       Source: factory-bridge main (PR #29) · Qual droplet destroyed 17 Sep 2026 · Host factory-runtime-01 Active (Toronto) ·
-      Gate 08–11 CLOSED / PASS · Gate12 Factory OS IN PROGRESS (Phase 0+1 · apps/factory-os) · productionWrites OFF · 19 Sep 2026 ~01:55 EDT · Personal roadmap for Daniel.
+      Gate 08–11 CLOSED / PASS · Gate09 packet HARNESS_PASS_09.06_HOST_RECON_PASS · Factory OS ON MAIN (Home live loopback · FLOW spine · durable Factory DB · Decision Inbox V2 · Operate RO) · write class factory.self_build.supervised named only · productionWrites OFF · no Director keys · 19 Sep 2026 ~20:30 EDT · Personal roadmap for Daniel.
     </p>
   </div>
 <!-- GATE092_STATUS --><p><strong>Gate 09.2</strong>: PASS — MCP PAUSED on :3001 (2026-09-18 23:54 EDT)</p>
