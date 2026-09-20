@@ -1,6 +1,6 @@
 # BRIDGE_STATE (public board pointer)
 
-Updated: 2026-09-20 ~04:10 EDT (America/Toronto)
+Updated: 2026-09-20 ~04:13 EDT (America/Toronto)
 
 This file is the **Pages-repo pointer** for Factory posture. It is not the Factory software, does not authorize writes, and does not hold Director keys.
 
@@ -11,7 +11,7 @@ This file is the **Pages-repo pointer** for Factory posture. It is not the Facto
 | Software truth | GitHub `factory-bridge` `main` (`apps/factory-os`) — **this agent could not reach that repo** (404 / out of token scope). Overnight software PR numbers **#85–#101** are from Daniel’s item-67 brief, not a live `gh` read of that repo. Merge SHAs for those PRs were **not** in the brief — not invented. |
 | Gate08 | **CLOSED / PASS** |
 | Gate09 canary packet | `HARNESS_PASS_09.06_HOST_RECON_PASS` |
-| Factory OS queue | Items **45–81** recorded. Overnight **45–74** plus buffer **75–81**. Customers **81** **#111** @ `eca85b3`. Sales **79** **#108**. Quotes **80** **#109**. Improvement **78** **#107**. factory-bridge **#110** on main. Final host tip sync **74** **in progress**. |
+| Factory OS queue | Items **45–81,83** recorded. Overnight **45–74** plus buffer **75–81,83**. Delivery **83** **#113** @ `c0fe95a`. Customers **81** **#111**. Sales **79** **#108**. Quotes **80** **#109**. factory-bridge **#110** on main. Item **82** not on this fold. Final host tip sync **74** **in progress**. |
 | Auth stub | On main + host — **PR #57** (stub only) |
 | Home cost strip | **`UNAVAILABLE`** — **PR #58** · strip deepen **64** / **#99** (do not treat stub `$0` as earned spend) |
 | Host 15–16 | Deploy + supervised ceremony on `factory-runtime-01` |
@@ -69,11 +69,12 @@ This file is the **Pages-repo pointer** for Factory posture. It is not the Facto
 | Sales (79) | **DONE** — factory-bridge **PR #108** @ `9285da8` (thin; not full pipeline/proposal journey) |
 | Quotes (80) | **DONE** — factory-bridge **PR #109** @ `6033a2b` (thin; not full quote/proposal journey) |
 | Customers (81) | **DONE** — factory-bridge **PR #111** @ `eca85b3` (thin; not full Customer 360) |
+| Delivery (83) | **DONE** — factory-bridge **PR #113** @ `c0fe95a` (thin; not full gate chain) |
 | Docs | factory-bridge **PR #101** · **#110** on main (briefed; subject/SHA not in this brief — not invented) |
 | Write class | `factory.self_build.supervised` (named only; design doc 25 + note **71** @ `24dca85`; **no expansion / no flip**) |
 | productionWrites | **false** |
 | FACTORY_MODE | **PAUSED** |
 | Director keys | **Off host** / none in this repo |
-| Factory OS surfaces | Home **live loopback** + strip (**64**) + **next-best-action** (42 · 53) · Discover **deepen** (46–48) + universal record (**60**) · Evidence **deepen** (49–50) + universal record (**61**) · Integrations **deepen** (51–52) · FLOW-01..04 (**56–59**) · Portfolio+Work **DONE** (**54**) · Teams (**55**) · Work→receipt (**65**) · **Decision Inbox** (**62**) · conversation bar **RO** (**63**) · nav sync (**72** @ `6f66f6f`) · **durable Factory DB** · **Operate RO** · **auth stub** · host **69** @ `01f880b` · smoke/ceremony **68**/**73** **PASS** · write-class note **71** @ `24dca85` · Environments **75** · Monitoring **76** · Incidents **77** · Improvement **78** · Sales **79** · Quotes **80** · Customers **81** · tip sync **74** WIP · docs **#101** · **#110** |
+| Factory OS surfaces | Home **live loopback** + strip (**64**) + **next-best-action** (42 · 53) · Discover **deepen** (46–48) + universal record (**60**) · Evidence **deepen** (49–50) + universal record (**61**) · Integrations **deepen** (51–52) · FLOW-01..04 (**56–59**) · Portfolio+Work **DONE** (**54**) · Teams (**55**) · Work→receipt (**65**) · **Decision Inbox** (**62**) · conversation bar **RO** (**63**) · nav sync (**72** @ `6f66f6f`) · **durable Factory DB** · **Operate RO** · **auth stub** · host **69** @ `01f880b` · smoke/ceremony **68**/**73** **PASS** · write-class note **71** @ `24dca85` · Environments **75** · Monitoring **76** · Incidents **77** · Improvement **78** · Sales **79** · Quotes **80** · Customers **81** · Delivery **83** · tip sync **74** WIP · docs **#101** · **#110** |
 
 If any other board, chat, or local note disagrees, treat this pointer + `factory-bridge` `main` as the check. Do not infer a write-class flip, a Director-key install, Ellisbrook live attach, or a real Home spend figure from this file.
