@@ -1,6 +1,6 @@
 # Self-build status
 
-Updated: 2026-09-20 ~05:15 EDT
+Updated: 2026-09-20 ~05:35 EDT
 
 - Bundle v1: PASS
 - Bundle v1.1: PASS
@@ -66,8 +66,16 @@ Updated: 2026-09-20 ~05:15 EDT
   - Nav sync (**72**) — **DONE** · factory-bridge main `6f66f6f`
   - Host ceremony (**73**) — **PASS** · operator · writes stayed false · **PAUSED**
   - Final host tip sync (**74**) — **DONE** · standing host tip synced to factory-bridge main `b06390b1552d10fce00d93be8734dc00d37bca7b` (includes Products #116) · evidence `74b_HOST_TIP_SYNC_20260920T091034Z.md` · anon GET / → 307 /login · `/api/status` → 401 `LOCAL_AUTH_REQUIRED` · factoryMode **PAUSED** · productionWrites **false** · authed evidenceClass **`HTTP_BRIDGE`** · bind `127.0.0.1:3210` only
-  - Open factory-bridge PRs — Teams **#117** · Integrations **#118** · Actor **#119** · FLOW-03 **#120** (may still be open) · Contract **#121** · conversation-bar **#122** — open, not merged · blocked on GitHub Actions spending-limit · buffer **87–94** not merged · **not DONE**
-  - Item **8** — **deferred** (needs Daniel secret) · not claimed
+  - Open factory-bridge PRs — **#117–#124** (items 87–94) open, not merged · blocked on GitHub Actions spending-limit (jobs never start) · **not DONE**
+  - Teams follow-up (**87**) — **open, not merged** · factory-bridge **#117**
+  - Integrations (**88**) — **open, not merged** · factory-bridge **#118** `PLATFORM-EV-INTEGRATIONS`
+  - FLOW02 Actor gate (**89**) — **open, not merged** · factory-bridge **#119**
+  - FLOW03 Impact gate (**90**) — **open, not merged** · factory-bridge **#120** `FLOW03-IMPACT-GATE`
+  - FLOW04 Contract gate (**91**) — **open, not merged** · factory-bridge **#121** `FLOW04-EV-CONTRACT-GATE`
+  - conversation-bar +2 RO (**92**) — **open, not merged** · factory-bridge **#122**
+  - Home NBA third signal pack (**93**) — **open, not merged** · factory-bridge **#123** `home-nba` in-place
+  - docs/nav sync (**94**) — **open, not merged** · factory-bridge **#124** through Products #116
+  - Item **8** — **deferred** (Daniel secret) · not claimed
   - Environments (**75**) — **DONE** (**PR #105** @ `80b1cfb`; thin)
   - Monitoring (**76**) — **DONE** (**PR #106** @ `15eb0af`; after FLOW03-EV-MONITORING dedupe; thin)
   - Incidents (**77**) — **DONE** (**PR #104** @ `91c091a`; thin; not full incident/postmortem)
