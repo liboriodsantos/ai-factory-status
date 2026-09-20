@@ -1,6 +1,6 @@
 # BRIDGE_STATE (public board pointer)
 
-Updated: 2026-09-20 ~04:50 EDT (America/Toronto)
+Updated: 2026-09-20 ~05:15 EDT (America/Toronto)
 
 This file is the **Pages-repo pointer** for Factory posture. It is not the Factory software, does not authorize writes, and does not hold Director keys.
 
@@ -11,7 +11,7 @@ This file is the **Pages-repo pointer** for Factory posture. It is not the Facto
 | Software truth | GitHub `factory-bridge` `main` (`apps/factory-os`) — **this agent could not reach that repo** (404 / out of token scope). Overnight software PR numbers **#85–#101** are from Daniel’s item-67 brief, not a live `gh` read of that repo. Merge SHAs for those PRs were **not** in the brief — not invented. |
 | Gate08 | **CLOSED / PASS** |
 | Gate09 canary packet | `HARNESS_PASS_09.06_HOST_RECON_PASS` |
-| Factory OS queue | Items **45–86** recorded. Overnight **45–74** plus buffer **75–86** DONE. Products **86** **#116** @ `b06390b`. Final host tip sync **74** **WIP** (last host tip `6f66f6f`; main now `b06390b`). Item **70** still **open / not claimed**. Teams **#117** / Integrations **#118** open, not merged (Actions spending-limit — not DONE). |
+| Factory OS queue | Items **45–86** recorded. Overnight **45–74** plus buffer **75–86** DONE. Products **86** **#116** @ `b06390b`. Final host tip sync **74** **DONE** @ `b06390b1552d10fce00d93be8734dc00d37bca7b` (includes Products #116). Pages final tip sync **70** **DONE** (host current with main through Products #116). Teams **#117** / Integrations **#118** / Actor **#119** / FLOW-03 **#120** (may still be open) / Contract **#121** / conversation-bar **#122** open, not merged (Actions spending-limit — not DONE). Buffer **87–94** not merged. Item **8** still deferred (needs Daniel secret). |
 | Auth stub | On main + host — **PR #57** (stub only) |
 | Home cost strip | **`UNAVAILABLE`** — **PR #58** · strip deepen **64** / **#99** (do not treat stub `$0` as earned spend) |
 | Host 15–16 | Deploy + supervised ceremony on `factory-runtime-01` |
@@ -57,12 +57,13 @@ This file is the **Pages-repo pointer** for Factory posture. It is not the Facto
 | Pages 45–65 (67) | This refresh — `ai-factory-status` board only (PR #18 / #19 follow-ups) |
 | Host smoke (68) | **PASS** — operator · standing host · **PAUSED** / writes false |
 | Host redeploy (69) | **DONE** — factory-bridge main `01f880b` · probe ANON HTTP **307** · evidenceClass **`HTTP_BRIDGE`** · **PAUSED** / writes false |
-| Pages final tip sync (70) | **Open / not claimed** — still waits on item **74** (host tip behind current main) |
+| Pages final tip sync (70) | **DONE** — same tip SHA `b06390b1552d10fce00d93be8734dc00d37bca7b` · host is current with main through Products #116 |
 | Write-class design note (71) | **DONE** — factory-bridge `24dca85` · docs only · `factory.self_build.supervised` named · **no flip** |
 | Nav sync (72) | **DONE** — factory-bridge main `6f66f6f` |
 | Host ceremony (73) | **PASS** — operator · supervised · writes stayed false · **PAUSED** |
-| Final host tip sync (74) | **WIP** — last host tip synced to factory-bridge `6f66f6f` (72); main then advanced to `b06390b` (Products #116); host tip / board sync not caught up — not claimed done |
-| Open factory-bridge PRs | Teams **#117** · Integrations **#118** — **open, not merged** · blocked on GitHub Actions spending-limit · **not DONE** |
+| Final host tip sync (74) | **DONE** — standing host tip synced to factory-bridge main `b06390b1552d10fce00d93be8734dc00d37bca7b` (includes Products #116) · evidence `74b_HOST_TIP_SYNC_20260920T091034Z.md` · anon GET / → 307 /login · `/api/status` → 401 `LOCAL_AUTH_REQUIRED` · factoryMode **PAUSED** · productionWrites **false** · authed evidenceClass **`HTTP_BRIDGE`** · bind `127.0.0.1:3210` only |
+| Open factory-bridge PRs | Teams **#117** · Integrations **#118** · Actor **#119** · FLOW-03 **#120** (may still be open) · Contract **#121** · conversation-bar **#122** — **open, not merged** · blocked on GitHub Actions spending-limit · buffer **87–94** not merged · **not DONE** |
+| Item 8 | **Deferred** — needs Daniel secret · not claimed |
 | Environments (75) | **DONE** — factory-bridge **PR #105** @ `80b1cfb` (thin; not full env records) |
 | Monitoring (76) | **DONE** — factory-bridge **PR #106** @ `15eb0af` (after FLOW03-EV-MONITORING dedupe; thin) |
 | Incidents (77) | **DONE** — factory-bridge **PR #104** @ `91c091a` (thin; not full incident/postmortem) |
@@ -80,6 +81,6 @@ This file is the **Pages-repo pointer** for Factory posture. It is not the Facto
 | productionWrites | **false** |
 | FACTORY_MODE | **PAUSED** |
 | Director keys | **Off host** / none in this repo |
-| Factory OS surfaces | Home **live loopback** + strip (**64**) + **next-best-action** (42 · 53) · Discover **deepen** (46–48) + universal record (**60**) · Evidence **deepen** (49–50) + universal record (**61**) · Integrations **deepen** (51–52) · FLOW-01..04 (**56–59**) · Portfolio+Work **DONE** (**54**) · Teams (**55**) · Work→receipt (**65**) · **Decision Inbox** (**62**) · conversation bar **RO** (**63**) · nav sync (**72** @ `6f66f6f`) · **durable Factory DB** · **Operate RO** · **auth stub** · host **69** @ `01f880b` · smoke/ceremony **68**/**73** **PASS** · write-class note **71** @ `24dca85` · Environments **75** · Monitoring **76** · Incidents **77** · Improvement **78** · Sales **79** · Quotes **80** · Customers **81** · Margin **82** · Delivery **83** · Releases **84** · Roadmaps **85** · Products **86** · tip sync **74** WIP (host tip `6f66f6f` then main `b06390b`) · **70** open / not claimed · Teams **#117** / Integrations **#118** open, not merged (Actions spending-limit — not DONE) · docs **#101** · **#110** · FACTORY_MODE **PAUSED** · productionWrites **false** · client products parked |
+| Factory OS surfaces | Home **live loopback** + strip (**64**) + **next-best-action** (42 · 53) · Discover **deepen** (46–48) + universal record (**60**) · Evidence **deepen** (49–50) + universal record (**61**) · Integrations **deepen** (51–52) · FLOW-01..04 (**56–59**) · Portfolio+Work **DONE** (**54**) · Teams (**55**) · Work→receipt (**65**) · **Decision Inbox** (**62**) · conversation bar **RO** (**63**) · nav sync (**72** @ `6f66f6f`) · **durable Factory DB** · **Operate RO** · **auth stub** · host **69** @ `01f880b` · smoke/ceremony **68**/**73** **PASS** · write-class note **71** @ `24dca85` · Environments **75** · Monitoring **76** · Incidents **77** · Improvement **78** · Sales **79** · Quotes **80** · Customers **81** · Margin **82** · Delivery **83** · Releases **84** · Roadmaps **85** · Products **86** · tip sync **74** **DONE** @ `b06390b1552d10fce00d93be8734dc00d37bca7b` (includes Products #116) · **70** **DONE** (host current with main through Products #116) · Teams **#117** / Integrations **#118** / Actor **#119** / FLOW-03 **#120** / Contract **#121** / conversation-bar **#122** open, not merged (Actions spending-limit — not DONE) · buffer **87–94** not merged · item **8** deferred (needs Daniel secret) · docs **#101** · **#110** · FACTORY_MODE **PAUSED** · productionWrites **false** · client products parked |
 
 If any other board, chat, or local note disagrees, treat this pointer + `factory-bridge` `main` as the check. Do not infer a write-class flip, a Director-key install, Ellisbrook live attach, or a real Home spend figure from this file.
