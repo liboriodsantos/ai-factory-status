@@ -73,6 +73,7 @@ Updated: 2026-09-20 ~04:02 EDT
   - Sales (**79**) — **DONE** (**PR #108** @ `9285da8`; thin; not full pipeline/proposal journey)
   - Quotes (**80**) — **DONE** (**PR #109** @ `6033a2b`; thin; not full quote/proposal journey)
   - Customers (**81**) — **DONE** (**PR #111** @ `eca85b3`; thin; not full Customer 360)
+  - Margin (**82**) — **DONE** (**PR #112** @ `9c66122`; thin; not full Lead→Margin / 18-gate)
   - Delivery (**83**) — **DONE** (**PR #113** @ `c0fe95a`; thin; not full gate chain)
   - Docs — factory-bridge **PR #101** · **#110** on main (briefed; subject/SHA not in this brief — not invented)
 - Overnight software PR numbers **#85–#101** come from Daniel’s item-67 brief. Merge SHAs for those PRs were **not** in the brief — not invented. This Pages agent could not clone `factory-bridge` (404 / out of token scope). Prior briefed PRs **#73 / #76 / #78 / #79 / #81–#84** still apply for 26–43.
