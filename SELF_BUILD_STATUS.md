@@ -1,6 +1,6 @@
 # Self-build status
 
-Updated: 2026-09-20 ~00:50 EDT
+Updated: 2026-09-20 ~03:15 EDT
 
 - Bundle v1: PASS
 - Bundle v1.1: PASS
@@ -30,11 +30,11 @@ Updated: 2026-09-20 ~00:50 EDT
 - Factory OS items **31–36**:
   - Host redeploy latest `main` (**31**) — **DONE** · auth + `HTTP_BRIDGE` · **PAUSED**
   - Pages 21–30 (**32**) — **already live** (this repo PR #14)
-  - Portfolio + Work (**33**) — **in progress** (**PR #77**; open/merged not verified here)
+  - Portfolio + Work (**33**) — **closed via later 54** (**PR #89**; was #77 in progress)
   - Teams (**34**) — **DONE** (**PR #78**)
   - FLOW-02 universal record (**35**) — **DONE** (**PR #79**)
-  - FLOW-04 thin RO (**36**) — **in progress** (**PR #80**; open/merged not verified here)
-- Factory OS items **37–43**:
+  - FLOW-04 thin RO (**36**) — **closed via later 59** (**PR #94**; was #80 in progress)
+- Factory OS items **37–43** (still earned):
   - Standing host redeploy (**37**) — **DONE** · earlier ~`53512c5` · auth + `HTTP_BRIDGE` · **PAUSED** · later redeploy is item **43**
   - Pages 31–36 (**38**) — **already live** (this repo PR #15 @ `9d91184`)
   - Discover family shells (**39**) — **DONE** (**PR #81**; thin shells, not full Discover journeys)
@@ -42,7 +42,25 @@ Updated: 2026-09-20 ~00:50 EDT
   - Integrations shell (**41**) — **DONE** (**PR #83** @ `0d7c7ca`; thin shell)
   - Home next-best-action (**42**) — **DONE** (**PR #84** @ `eb6fe90`; thin NBA; cost stays `UNAVAILABLE`)
   - Standing host Factory OS redeploy (**43**) — **DONE** · factory-bridge origin/main `ca5fbb0bf5e8bad66daec9be0861bfab8f371efc` (includes **#81–#84**) · probe ANON HTTP **307** · Bridge health **200** · evidenceClass **`HTTP_BRIDGE`** · **PAUSED**
-- Software PR numbers **#81 / #82 / #83 / #84** and merge SHAs come from Daniel’s item-44 brief. Item **43** host SHA + probe facts come from Daniel’s item-43 brief. This Pages agent could not clone `factory-bridge` (404 / out of token scope). Prior briefed PRs **#73 / #76 / #77 / #78 / #79 / #80** still apply for 26–36.
+- Factory OS items **45–65**:
+  - Pages 37–43 (**45**) — **already live** (this repo PR #17 @ `fb84e26`)
+  - Discover family deepen (**46–48**) — **DONE** (**PR #87**; thin deepen, not full Discover journeys)
+  - Evidence & Receipts deepen (**49–50**) — **DONE** (**PR #86**; thin deepen, not full challenge-id bind)
+  - Integrations deepen (**51–52**) — **DONE** (**PR #88**; thin deepen; adapter freeze still open)
+  - Home next-best-action (**53**) — **DONE** (**PR #85**; thin NBA; cost stays `UNAVAILABLE`)
+  - Portfolio + Work (**54**) — **DONE** (**PR #89**; closes 33)
+  - Teams (**55**) — **DONE** (**PR #90**; thin roster, not full People & Access)
+  - FLOW-01..04 (**56–59**) — **DONE** (**PR #91–#94**; 59 #94 closes 36; still not full journeys)
+  - Discover universal record (**60**) — **DONE** (**PR #95**)
+  - Evidence universal record (**61**) — **DONE** (**PR #97**)
+  - Decision Inbox (**62**) — **DONE** (**PR #98**; deepen; not a write-class flip)
+  - Conversation bar (**63**) — **DONE** (**PR #96**; still **RO**)
+  - Home strip (**64**) — **DONE** (**PR #99**; cost stays `UNAVAILABLE`)
+  - Work→receipt (**65**) — **DONE** (**PR #100**; thin bind)
+  - Operator host redeploys (**66** / **69**) — **DONE** · auth + `HTTP_BRIDGE` · **PAUSED** · no new probe SHA in this brief
+  - Pages 45–65 (**67**) — this refresh
+  - Docs — factory-bridge **PR #101**
+- Overnight software PR numbers **#85–#101** come from Daniel’s item-67 brief. Merge SHAs for those PRs were **not** in the brief — not invented. This Pages agent could not clone `factory-bridge` (404 / out of token scope). Prior briefed PRs **#73 / #76 / #78 / #79 / #81–#84** still apply for 26–43.
 - Write class: `factory.self_build.supervised` (named only; **no expansion / no flip**)
 - Close pack refs: `evidence/08_GATE_CLOSED_20260918.md` · `evidence/09_GATE_CLOSE_PACK.md` · `evidence/11_GATE_CLOSED_20260919.md`
 - Pointer: `BRIDGE_STATE.md`
