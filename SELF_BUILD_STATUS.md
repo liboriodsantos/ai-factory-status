@@ -1,6 +1,6 @@
 # Self-build status
 
-Updated: 2026-09-20 ~13:10 EDT
+Updated: 2026-09-20 ~15:40 EDT
 
 - Bundle v1: PASS
 - Bundle v1.1: PASS
@@ -66,7 +66,7 @@ Updated: 2026-09-20 ~13:10 EDT
   - Nav sync (**72**) — **DONE** · factory-bridge main `6f66f6f`
   - Host ceremony (**73**) — **PASS** · operator · writes stayed false · **PAUSED**
   - Final host tip sync (**74**) — **DONE** · standing host tip synced to factory-bridge main `3a0b39388d0dbafd0a8b31355b0a21bfaf4fef99` (includes #117–#124) · evidence `74c` · anon GET / → 307 /login · `/api/status` → 401 `LOCAL_AUTH_REQUIRED` · factoryMode **PAUSED** · productionWrites **false** · authed evidenceClass **`HTTP_BRIDGE`** · bind `127.0.0.1:3210` only
-  - Merged factory-bridge PRs — **#117–#124** (items 87–94) **MERGED** (Actions billing unblocked; merge-when-green completed). Merge SHAs not readable from this Pages token — not invented. Host tip sync to post-#124 main **DONE** @ `3a0b393` (74c)
+  - Merged factory-bridge PRs — **#117–#124** (items 87–94) still **MERGED**. New batch **#125–#131** Operate through Home NBA fourth pack + **#133** nav sync **MERGED**. Current tip **`3cf676f`** (Merge #133). **#132** Factory Health strip (item 103) still **OPEN** — not DONE. Per-PR merge SHAs for #125–#131 not in this brief — not invented
   - Teams follow-up (**87**) — **MERGED** — factory-bridge **#117**
   - Integrations (**88**) — **MERGED** — factory-bridge **#118** `PLATFORM-EV-INTEGRATIONS`
   - FLOW02 Actor gate (**89**) — **MERGED** — factory-bridge **#119**
@@ -75,8 +75,14 @@ Updated: 2026-09-20 ~13:10 EDT
   - conversation-bar +2 RO (**92**) — **MERGED** — factory-bridge **#122**
   - Home NBA third signal pack (**93**) — **MERGED** — factory-bridge **#123** `home-nba` in-place
   - docs/nav sync (**94**) — **MERGED** — factory-bridge **#124** through Products #116
-  - Pages honesty catch-up (**95**) — **this refresh** — host tip **DONE** / caught up @ `3a0b393` · evidence 74c
-  - Accepted batch (**96–104**) — accepted on Factory track · not started · no invented progress
+  - Pages honesty catch-up (**95**) — **DONE / already live** — this repo **PR #36** @ `5d30bba` · host tip was `3a0b393` (74c)
+  - factory-bridge **95–102** — **DONE** — **#125–#131** Operate through Home NBA fourth pack MERGED · tip **`3cf676f`** (Merge #133). Per-item titles beyond this brief — not invented
+  - Factory Health strip (**103**) — **OPEN** — factory-bridge **PR #132** · not DONE
+  - factory-bridge **104** — **DONE** — included with **#125–#131** / **#133** nav sync · tip **`3cf676f`**
+  - Host tip-sync (**105**) — **DONE / PASS** — main/host tip **`3cf676f`** (Merge #133)
+  - Pages honesty (**106**) — **this refresh** — board only · 95–102/104–105 DONE · 103 OPEN #132 · tip `3cf676f`
+  - In flight (**107–108**) — in flight · titles/progress not in this brief — not invented
+  - Accepted batch (**105–114**) — accepted · 105 tip-sync DONE · 107–108 in flight · no invented 106–114 software progress (106 is this Pages claim)
   - Item **8** — **deferred** (Daniel secret) · not claimed
   - Environments (**75**) — **DONE** (**PR #105** @ `80b1cfb`; thin)
   - Monitoring (**76**) — **DONE** (**PR #106** @ `15eb0af`; after FLOW03-EV-MONITORING dedupe; thin)
