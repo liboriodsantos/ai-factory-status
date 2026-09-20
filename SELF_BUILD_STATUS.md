@@ -1,6 +1,6 @@
 # Self-build status
 
-Updated: 2026-09-20 ~04:50 EDT
+Updated: 2026-09-20 ~05:15 EDT
 
 - Bundle v1: PASS
 - Bundle v1.1: PASS
@@ -61,12 +61,13 @@ Updated: 2026-09-20 ~04:50 EDT
   - Pages 45–65 (**67**) — this refresh (PR #18 / #19 follow-ups)
   - Host smoke (**68**) — **PASS** · operator · **PAUSED** / writes false
   - Operator host redeploy (**69**) — **DONE** · factory-bridge main `01f880b` · ANON HTTP **307** · `HTTP_BRIDGE` · **PAUSED** / writes false
-  - Pages final tip sync (**70**) — **open / not claimed** (still waits on 74; host tip behind current main)
+  - Pages final tip sync (**70**) — **DONE** · same tip SHA `b06390b1552d10fce00d93be8734dc00d37bca7b` · host is current with main through Products #116
   - Write-class design note (**71**) — **DONE** · `24dca85` · docs only · **no flip**
   - Nav sync (**72**) — **DONE** · factory-bridge main `6f66f6f`
   - Host ceremony (**73**) — **PASS** · operator · writes stayed false · **PAUSED**
-  - Final host tip sync (**74**) — **WIP** · last host tip synced to factory-bridge `6f66f6f` (72) · main then advanced to `b06390b` (Products #116) · host tip / board sync not caught up · not claimed done
-  - Open factory-bridge PRs — Teams **#117** · Integrations **#118** — open, not merged · blocked on GitHub Actions spending-limit · **not DONE**
+  - Final host tip sync (**74**) — **DONE** · standing host tip synced to factory-bridge main `b06390b1552d10fce00d93be8734dc00d37bca7b` (includes Products #116) · evidence `74b_HOST_TIP_SYNC_20260920T091034Z.md` · anon GET / → 307 /login · `/api/status` → 401 `LOCAL_AUTH_REQUIRED` · factoryMode **PAUSED** · productionWrites **false** · authed evidenceClass **`HTTP_BRIDGE`** · bind `127.0.0.1:3210` only
+  - Open factory-bridge PRs — Teams **#117** · Integrations **#118** · Actor **#119** · FLOW-03 **#120** (may still be open) · Contract **#121** · conversation-bar **#122** — open, not merged · blocked on GitHub Actions spending-limit · buffer **87–94** not merged · **not DONE**
+  - Item **8** — **deferred** (needs Daniel secret) · not claimed
   - Environments (**75**) — **DONE** (**PR #105** @ `80b1cfb`; thin)
   - Monitoring (**76**) — **DONE** (**PR #106** @ `15eb0af`; after FLOW03-EV-MONITORING dedupe; thin)
   - Incidents (**77**) — **DONE** (**PR #104** @ `91c091a`; thin; not full incident/postmortem)
