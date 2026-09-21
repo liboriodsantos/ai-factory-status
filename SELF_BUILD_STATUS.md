@@ -1,6 +1,6 @@
 # Self-build status
 
-Updated: 2026-09-20 ~17:20 EDT
+Updated: 2026-09-20 ~22:00 EDT
 
 - Bundle v1: PASS
 - Bundle v1.1: PASS
@@ -66,7 +66,7 @@ Updated: 2026-09-20 ~17:20 EDT
   - Nav sync (**72**) — **DONE** · factory-bridge main `6f66f6f`
   - Host ceremony (**73**) — **PASS** · operator · writes stayed false · **PAUSED**
   - Final host tip sync (**74**) — **DONE** · standing host tip synced to factory-bridge main `3a0b39388d0dbafd0a8b31355b0a21bfaf4fef99` (includes #117–#124) · evidence `74c` · anon GET / → 307 /login · `/api/status` → 401 `LOCAL_AUTH_REQUIRED` · factoryMode **PAUSED** · productionWrites **false** · authed evidenceClass **`HTTP_BRIDGE`** · bind `127.0.0.1:3210` only
-  - Merged factory-bridge PRs — **#117–#124** (items 87–94) still **MERGED**. New batch **#125–#131** Operate through Home NBA fourth pack + **#133** nav sync **MERGED**. **#132** Factory Health strip (item 103) **DONE** @ `2e31aca`. Host tip-sync **105** follow-up **DONE** @ `2e31aca` (includes #132). Batch **107–114** RO deepens **DONE** on main. Named: Releases **#139** (112) · nav **#141** (114). Current tip **`4375131`** (includes #139 / #141). Per-PR merge SHAs for #125–#131 / #139 / #141 not in this brief — not invented
+  - Merged factory-bridge PRs — **#117–#124** (items 87–94) still **MERGED**. New batch **#125–#131** Operate through Home NBA fourth pack + **#133** nav sync **MERGED**. **#132** Factory Health strip (item 103) **DONE** @ `2e31aca`. Host tip-sync **105** follow-up **DONE** @ `2e31aca` (includes #132). Batch **107–114** RO deepens **DONE** on main. Named: Releases **#139** (112) · nav **#141** (114). Prior tip **`4375131`** (includes #139 / #141 · item 115). Current main/host tip **`36264636`** (Merge #188 · item 162 DONE). Per-PR merge SHAs for #125–#131 / #139 / #141 not in this brief — not invented
   - Teams follow-up (**87**) — **MERGED** — factory-bridge **#117**
   - Integrations (**88**) — **MERGED** — factory-bridge **#118** `PLATFORM-EV-INTEGRATIONS`
   - FLOW02 Actor gate (**89**) — **MERGED** — factory-bridge **#119**
@@ -85,9 +85,11 @@ Updated: 2026-09-20 ~17:20 EDT
   - Releases RO deepen (**112**) — **DONE** — factory-bridge **#139** (included in tip `4375131`; merge SHA not in this brief — not invented)
   - Portfolio/Work RO deepen (**113**) — **DONE** on main · PR number/SHA not in this brief — not invented
   - nav sync (**114**) — **DONE** — factory-bridge **#141** (included in tip `4375131`; merge SHA not in this brief — not invented)
-  - Host tip-sync (**115**) — **DONE** — standing host tip `4375131f4a61f1ddb18404c4ae50e805f6612401` (includes Releases #139 and nav #141) · FACTORY_MODE **PAUSED** · productionWrites **false** · no invented host PASS beyond this tip claim
-  - Pages honesty (**116**) — **this refresh** — board only · 107–115 DONE · tip `4375131`
-  - In flight (**117–119**) — **in flight** · **117** Conception · **118** Definitions · **119** Products · no invented host PASS
+  - Host tip-sync (**115**) — **DONE** — standing host tip `4375131f4a61f1ddb18404c4ae50e805f6612401` (includes Releases #139 and nav #141) · FACTORY_MODE **PAUSED** · productionWrites **false**
+  - Pages honesty (**116**) — **DONE / already live** — this repo **PR #40** @ `bddbbe7` · 107–115 DONE · tip `4375131`
+  - **117–142** — not re-specified in this brief — not invented (117 Conception / 118 Definitions / 119 Products last recorded in flight)
+  - Wave-3 RO deepens (**143–161**) — **DONE** on factory-bridge main · FLOW / Decision Inbox / Evidence / Health / Releases / Environments / Teams / Customers / Sales / Delivery / Quotes / Margin / Integrations / Conversation bar / docs-nav · named: Conversation bar **#179** @ `97b069d2` · Integrations **#187** @ `397df441` · Docs/nav **#188** @ `36264636` · software tip **`3626463690a33d3b8eaa05cfae3312cb00eaf5bf`** (Merge #188) · per-item titles/PRs beyond these not invented · still thin · not a write-class flip · this Pages token could not read `factory-bridge`
+  - Pages honesty + host tip-sync (**162**) — **DONE** — Pages this refresh · standing host factory-runtime-01 @ `3626463690a33d3b8eaa05cfae3312cb00eaf5bf` (same tip as factory-bridge main / Merge #188) · evidence `162_HOST_TIP_SYNC_20260921T020021Z.md` · factoryMode **PAUSED** · productionWrites **false** · bind `127.0.0.1` only · no Director keys
   - Item **8** — **deferred** (Daniel secret) · not claimed
   - Environments (**75**) — **DONE** (**PR #105** @ `80b1cfb`; thin)
   - Monitoring (**76**) — **DONE** (**PR #106** @ `15eb0af`; after FLOW03-EV-MONITORING dedupe; thin)
@@ -103,9 +105,9 @@ Updated: 2026-09-20 ~17:20 EDT
   - Products (**86**) — **DONE** (**PR #116** @ `b06390b`; thin; not full Product vs Project / health)
   - Docs — factory-bridge **PR #101** · **#110** on main (briefed; subject/SHA not in this brief — not invented)
 - Overnight software PR numbers **#85–#101** come from Daniel’s item-67 brief. Merge SHAs for those PRs were **not** in the brief — not invented. This Pages agent could not clone `factory-bridge` (404 / out of token scope). Prior briefed PRs **#73 / #76 / #78 / #79 / #81–#84** still apply for 26–43.
-- Write class: `factory.self_build.supervised` (named only; **no expansion / no flip**)
+- Write class: `factory.self_build.supervised` (named only; **no expansion / no flip / no new write class**)
 - Close pack refs: `evidence/08_GATE_CLOSED_20260918.md` · `evidence/09_GATE_CLOSE_PACK.md` · `evidence/11_GATE_CLOSED_20260919.md`
 - Pointer: `BRIDGE_STATE.md`
-- productionWrites: **false** / FACTORY_MODE: **PAUSED**
+- productionWrites: **false** (`productionWrites=false`) / FACTORY_MODE: **PAUSED** (`factoryMode=PAUSED`)
 - Director keys: **off host** / none in this repo
-- Ellisbrook live attach: **NO-GO**
+- Ellisbrook / client product tracks: **NO-GO**
